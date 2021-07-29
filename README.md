@@ -1,7 +1,3 @@
-<div align="center">
-  <img align="center" alt="Mastercontractor Logo" src="/public/logo512.png" height="56" />
-</div>
-
 ## Preview
 
 <div align="center">
