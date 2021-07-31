@@ -1,24 +1,35 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+// import "./styles/App.scss";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
+import Users from "./components/users/Users";
+import User from "./components/users/User";
+import UserForm from "./components/users/UserForm";
+import { Provider } from "react-redux";
+import store, { rrfProps } from "./store";
+import { ReactReduxFirebaseProvider } from "react-redux-firebase";
+import Login from "./components/pages/Login";
+import PrivateRoute from "./components/routes/PrivateRoute";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="text-red-500">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <BrowserRouter>
+          <div className="App">
+            <PrivateRoute component={Navbar} />
+            <Switch>
+              <PrivateRoute exact path="/" component={Users} />
+              <PrivateRoute exact path="/user/:id" component={User} />
+              <PrivateRoute exact path="/userForm/:id?" component={UserForm} />
+              <Route exact path="/login" component={Login} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </ReactReduxFirebaseProvider>
+    </Provider>
   );
 }
 
