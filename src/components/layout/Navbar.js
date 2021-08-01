@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useFirebase } from "react-redux-firebase";
-
+import { useSelector } from "react-redux";
 const Navbar = () => {
   const firebase = useFirebase();
+  const uid = firebase.auth().currentUser.uid;
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-white">
+      <div>{uid}</div>
       <div className="container">
         <Link className="navbar-brand" to="/">
           <h1 height="30px" alt="logo">
@@ -41,7 +43,7 @@ const Navbar = () => {
                   user logo
                 </h1>
                 />
-                <span className="ml-2 navbar-text">Suritam Nandy</span>
+                <span className="ml-2 navbar-text">{uid}</span>
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="!#">
