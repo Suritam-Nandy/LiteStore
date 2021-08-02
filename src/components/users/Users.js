@@ -8,12 +8,13 @@ import Loading from "../layout/Loading";
 
 const Users = () => {
   const firestore = useFirestore();
-  const users = useSelector((state) => state.firestore.ordered.users);
+  const { uid } = useSelector((state) => state.firebase.auth);
+  const users = useSelector((state) => state.firestore.ordered.places);
 
-  useFirestoreConnect([
-    { collection: "users", orderBy: ["createdAt", "desc"] },
-  ]);
-
+  useFirestoreConnect({
+    collection: `users/${uid}/places`,
+    storeAs: "places",
+  });
   if (!users) {
     return <Loading />;
   }

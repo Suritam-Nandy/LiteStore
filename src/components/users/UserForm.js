@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Input from "../layout/Input";
-import { useFirestore } from "react-redux-firebase";
+
+import { useFirestore, useFirebase } from "react-redux-firebase";
 
 const UserForm = () => {
   const firestore = useFirestore();
+  const firebase = useFirebase();
 
+  const uid = firebase.auth().currentUser.uid;
   let history = useHistory();
   const { id } = useParams();
   const docRef = id ? firestore.collection("users").doc(id) : null;
@@ -59,7 +62,7 @@ const UserForm = () => {
       // add new user
       firestore
         .collection("users")
-        .doc(id)
+        .doc(uid)
         .collection("places")
 
         .add({ ...user, createdAt: firestore.FieldValue.serverTimestamp() });

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useFirebase } from "react-redux-firebase";
-import { useSelector } from "react-redux";
 const Navbar = () => {
   const firebase = useFirebase();
   const uid = firebase.auth().currentUser.uid;
@@ -13,7 +12,6 @@ const Navbar = () => {
           <h1 height="30px" alt="logo">
             LOGO
           </h1>
-          />
         </Link>
         <button
           className="navbar-toggler"
