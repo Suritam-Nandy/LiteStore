@@ -26,8 +26,9 @@ const rrfConfig = {
 firebase.initializeApp(fbConfig);
 
 // Initialize other services on firebase instance
-firebase.firestore(); // <- needed if using firestore
-
+firebase.firestore();
+const db = firebase.firestore(); // <- needed if using firestore
+export { db };
 const store = createStore(rootReducer, composeWithDevTools());
 
 export const rrfProps = {

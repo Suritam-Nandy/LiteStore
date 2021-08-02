@@ -9,6 +9,8 @@ import { Provider } from "react-redux";
 import store, { rrfProps } from "./store";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import Login from "./components/pages/Login";
+import ListedSpaces from "./components/listedSpaces/listedspaces";
+
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
@@ -23,6 +25,12 @@ function App() {
               <PrivateRoute exact path="/" component={Users} />
               <PrivateRoute exact path="/user/:id" component={User} />
               <PrivateRoute exact path="/userForm/:id?" component={UserForm} />
+              <PrivateRoute
+                exact
+                path="/listedspaces"
+                component={ListedSpaces}
+              />
+
               <Route exact path="/login" component={Login} />
               <Route component={NotFound} />
             </Switch>

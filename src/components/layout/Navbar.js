@@ -27,7 +27,7 @@ const Navbar = () => {
           <ul className="navbar-nav align-items-center">
             <li className="nav-item">
               <Link to="/userForm" className="btn btn-primary mr-3">
-                Add User
+                Add Space
               </Link>
             </li>
             <li className="nav-item dropdown">
@@ -40,13 +40,17 @@ const Navbar = () => {
                 <h1 alt="admin" height="30">
                   user logo
                 </h1>
-                />
-                <span className="ml-2 navbar-text">{uid}</span>
+                <Link to="/">
+                  <span className="ml-2 navbar-text">{uid}</span>
+                </Link>
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" href="!#">
                   Profile
                 </a>
+                <Link to="/listedspaces" className="dropdown-item">
+                  Listed Spaces
+                </Link>
                 <a
                   className="dropdown-item"
                   href="!#"
