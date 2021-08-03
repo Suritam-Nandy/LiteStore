@@ -8,12 +8,12 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import Loading from "../layout/Loading";
 import { LoadSpaces } from "./LoadSpaces";
 import { db } from "../../store";
+let users = [];
 
 const ListedSpaces = () => {
   const firestore = useFirestore();
   const firebase = useFirebase();
   const { uid } = useSelector((state) => state.firebase.auth);
-  const users = [{}, {}, {}];
 
   // useEffect(() => {
 
@@ -28,6 +28,7 @@ const ListedSpaces = () => {
   useEffect(() => {
     getUsers();
   }, []);
+  console.log(users);
 
   const getUsers = () => {
     const arr = [
@@ -42,11 +43,14 @@ const ListedSpaces = () => {
         .get()
         .then((snap) => {
           snap.forEach((doc) => {
-            users.push(...doc.data());
             console.log(doc.data());
+            users.push(doc.data());
+
+            console.log(users);
           });
         });
     }
+    return users;
   };
   // const getUsers = async () => {
   //   try {

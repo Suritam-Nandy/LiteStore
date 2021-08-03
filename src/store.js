@@ -4,6 +4,7 @@ import rootReducer from "./reducers";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore"; // <- needed if using firestore
+import "firebase/storage";
 
 import { createFirestoreInstance } from "redux-firestore"; // <- needed if using firestore
 
@@ -24,11 +25,11 @@ const rrfConfig = {
 
 // Initialize firebase instance
 firebase.initializeApp(fbConfig);
-
+const storageRef = firebase.storage();
 // Initialize other services on firebase instance
 firebase.firestore();
 const db = firebase.firestore(); // <- needed if using firestore
-export { db };
+export { db, storageRef };
 const store = createStore(rootReducer, composeWithDevTools());
 
 export const rrfProps = {
