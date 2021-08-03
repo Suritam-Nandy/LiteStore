@@ -105,9 +105,9 @@ const Login = () => {
           </div>
         </div>
       </div>
-      {/* <Link to="/listedspaces" className="dropdown-item">
+      <Link to="/allspaces" className="dropdown-item">
         Listed Spaces
-      </Link> */}
+      </Link>
     </>
   );
 };

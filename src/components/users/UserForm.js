@@ -108,6 +108,11 @@ const UserForm = () => {
         .collection("places")
 
         .add({ ...user, createdAt: firestore.FieldValue.serverTimestamp() });
+
+      firestore
+        .collection("places")
+
+        .add({ ...user, createdAt: firestore.FieldValue.serverTimestamp() });
     }
     history.push("/");
   };

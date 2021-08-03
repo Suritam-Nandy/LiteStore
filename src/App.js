@@ -30,7 +30,7 @@ function App() {
                 path="/listedspaces"
                 component={ListedSpaces}
               />
-
+              <Route exact path="/allspaces" component={ListedSpaces} />
               <Route exact path="/login" component={Login} />
               <Route component={NotFound} />
             </Switch>

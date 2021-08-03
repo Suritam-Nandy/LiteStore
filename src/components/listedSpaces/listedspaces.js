@@ -14,6 +14,14 @@ const ListedSpaces = () => {
   const firestore = useFirestore();
   const firebase = useFirebase();
   const { uid } = useSelector((state) => state.firebase.auth);
+  const users = useSelector((state) => state.firestore.ordered.places);
+
+  useFirestoreConnect({
+    collection: "places",
+  });
+  if (!users) {
+    return <Loading />;
+  }
 
   // useEffect(() => {
 
@@ -25,33 +33,40 @@ const ListedSpaces = () => {
 
   // const users = firebase.firestore().collection("users");
 
-  useEffect(() => {
-    getUsers();
-  }, []);
-  console.log(users);
+  // useEffect(() => {
+  //   getUsers();
+  // }, []);
+  // console.log(users);
 
-  const getUsers = () => {
-    const arr = [
-      "Mb6V4kEnp0aDLoyrdhQ85uzReUv1",
-      "eXhlysyYruQDBt1NhNFNcVUDa2H2",
-    ];
-    // LoadSpaces(arr)
-    for (let i = 0; i < arr.length; i++) {
-      db.collection("users")
-        .doc(arr[i])
-        .collection("places")
-        .get()
-        .then((snap) => {
-          snap.forEach((doc) => {
-            console.log(doc.data());
-            users.push(doc.data());
+  // const getUsers = async () => {
+  //   try {
+  //     const arr = [
+  //       "Mb6V4kEnp0aDLoyrdhQ85uzReUv1",
+  //       "eXhlysyYruQDBt1NhNFNcVUDa2H2",
+  //     ];
+  //     // LoadSpaces(arr)
+  //     for (let i = 0; i < arr.length; i++) {
+  //       await db
+  //         .collection("users")
+  //         .doc(arr[i])
+  //         .collection("places")
+  //         .get()
+  //         .then((snap) => {
+  //           snap.forEach((doc) => {
+  //             console.log(doc.data());
+  //             users.push(doc.data());
 
-            console.log(users);
-          });
-        });
-    }
-    return users;
-  };
+  //             console.log(users);
+  //           });
+  //         });
+  //     }
+  //   } catch (error) {
+  //     console.log("Error getting document:", error);
+  //   }
+
+  //   return users;
+  // };
+
   // const getUsers = async () => {
   //   try {
   //     const collection = {};
