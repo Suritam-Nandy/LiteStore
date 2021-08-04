@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Input from "../layout/Input";
-import storageRef from "../../store";
+import { storage } from "../../store";
+import { Field } from "redux-form";
+import ImageField from "../layout/ImageField";
+import PreviewPicture from "../layout/PreviewPicture";
 
 import { useFirestore, useFirebase } from "react-redux-firebase";
 import { BiImageAdd } from "react-icons/bi";
@@ -21,8 +24,9 @@ const UserForm = () => {
     address1: "",
     address2: "",
     availability: true,
+    imgUrl: [""],
   });
-
+  const [image, setImage] = useState(null);
   useEffect(() => {
     if (id) {
       loadUser();
@@ -87,6 +91,25 @@ const UserForm = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  // const onImageChange = (e) => {
+  //   setImage({ ...image, [e.target.name]: e.target.value });
+  //   console.log(image);
+  // };
+  const getPicture = (event) => {
+    console.log("call");
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      console.log(file);
+      setImage(file);
+      // console.log(image.picture.name);
+      // this.setState({
+      //   picture: file,
+      //   pictureUrl: reader.result,
+      // });
+    };
+    reader.readAsDataURL(file);
+  };
   const submitForm = async (e) => {
     e.preventDefault();
     if (id) {
@@ -101,18 +124,38 @@ const UserForm = () => {
         console.error("Error updating document: ", error);
       }
     } else {
+      // console.log(picture);
       // add new user
-      firestore
-        .collection("users")
-        .doc(uid)
-        .collection("places")
+      // file = getPicture
+      // storageRef.ref(`images/${file.name}`).put(file);
+      console.log(image);
+      const uploadData = async () => {
+        console.log("upload image");
 
-        .add({ ...user, createdAt: firestore.FieldValue.serverTimestamp() });
+        storage.ref(`images/${image.name}`).put(image);
+        const url = await storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL();
+        return url;
+      };
+      uploadData().then((url) => {
+        firestore
+          .collection("users")
+          .doc(uid)
+          .collection("places")
 
-      firestore
-        .collection("places")
+          .add({
+            ...user,
+            createdAt: firestore.FieldValue.serverTimestamp(),
+            imgUrl: [url],
+          });
 
-        .add({ ...user, createdAt: firestore.FieldValue.serverTimestamp() });
+        firestore
+          .collection("places")
+
+          .add({ ...user, createdAt: firestore.FieldValue.serverTimestamp() });
+      });
     }
     history.push("/");
   };
@@ -131,6 +174,26 @@ const UserForm = () => {
                       value={user.name}
                       onChange={onInputChange}
                     />
+                  </div>
+                  <div>
+                    <div className="form-group row">
+                      {/* <label className="col-sm-3 col-form-label">{`${label} ${
+            required ? "*" : ""
+          }`}</label> */}
+                      <div className="col-sm-9 w-20">
+                        <input
+                          type="file"
+                          className="form-control"
+                          onChange={(event) => {
+                            getPicture(event);
+                          }}
+                        />
+                      </div>
+                    </div>
+                    {/* <PreviewPicture
+                      picture={this.state.picture}
+                      pictureUrl={this.state.pictureUrl}
+                    /> */}
                   </div>
                   {/* <input
                     hidden

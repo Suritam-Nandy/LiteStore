@@ -25,11 +25,11 @@ const rrfConfig = {
 
 // Initialize firebase instance
 firebase.initializeApp(fbConfig);
-const storageRef = firebase.storage();
+let storage = firebase.storage();
 // Initialize other services on firebase instance
 firebase.firestore();
 const db = firebase.firestore(); // <- needed if using firestore
-export { db, storageRef };
+export { db, storage };
 const store = createStore(rootReducer, composeWithDevTools());
 
 export const rrfProps = {
