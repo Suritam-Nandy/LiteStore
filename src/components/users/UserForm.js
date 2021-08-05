@@ -27,11 +27,11 @@ const UserForm = () => {
     imgUrl: [""],
   });
   const [image, setImage] = useState(null);
-  useEffect(() => {
-    if (id) {
-      loadUser();
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   if (id) {
+  //     loadUser();
+  //   }
+  // }, [id]);
 
   // const fileUpload = (e) => {
   //   const file = e.target.files[0];
@@ -74,18 +74,18 @@ const UserForm = () => {
   //   );
   // };
 
-  const loadUser = async () => {
-    try {
-      const result = await docRef.get();
-      if (result.exists) {
-        setUser(result.data());
-      } else {
-        console.log("No such document!");
-      }
-    } catch (error) {
-      console.log("Error getting document:", error);
-    }
-  };
+  // const loadUser = async () => {
+  //   try {
+  //     const result = await docRef.get();
+  //     if (result.exists) {
+  //       setUser(result.data());
+  //     } else {
+  //       console.log("No such document!");
+  //     }
+  //   } catch (error) {
+  //     console.log("Error getting document:", error);
+  //   }
+  // };
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -111,6 +111,7 @@ const UserForm = () => {
     reader.readAsDataURL(file);
   };
   const submitForm = async (e) => {
+    console.log("submitform");
     e.preventDefault();
     if (id) {
       // update user
@@ -140,6 +141,8 @@ const UserForm = () => {
         return url;
       };
       uploadData().then((url) => {
+        console.log("url");
+
         firestore
           .collection("users")
           .doc(uid)
@@ -148,13 +151,16 @@ const UserForm = () => {
           .add({
             ...user,
             createdAt: firestore.FieldValue.serverTimestamp(),
-            imgUrl: [url],
+            imgUrl: url,
           });
+        console.log("userplaces completed");
 
-        firestore
-          .collection("places")
-
-          .add({ ...user, createdAt: firestore.FieldValue.serverTimestamp() });
+        firestore.collection("allplaces").add({
+          ...user,
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          imgUrl: url,
+        });
+        console.log("places completed");
       });
     }
     history.push("/");
@@ -195,6 +201,7 @@ const UserForm = () => {
                       pictureUrl={this.state.pictureUrl}
                     /> */}
                   </div>
+                  {/* <PreviewPicture picture={file} /> */}
                   {/* <input
                     hidden
                     id="icon-button-file"
