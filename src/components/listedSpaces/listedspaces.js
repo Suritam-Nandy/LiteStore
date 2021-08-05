@@ -8,18 +8,17 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import Loading from "../layout/Loading";
 import { LoadSpaces } from "./LoadSpaces";
 import { db } from "../../store";
-let users = [];
 
 const ListedSpaces = () => {
   const firestore = useFirestore();
   const firebase = useFirebase();
   const { uid } = useSelector((state) => state.firebase.auth);
-  const users = useSelector((state) => state.firestore.ordered.places);
+  const allplaces = useSelector((state) => state.firestore.ordered.allplaces);
 
   useFirestoreConnect({
-    collection: "places",
+    collection: "allplaces",
   });
-  if (!users) {
+  if (!allplaces) {
     return <Loading />;
   }
 
@@ -121,24 +120,24 @@ const ListedSpaces = () => {
     <div className="container">
       <div className="py-4">
         <div className="row">
-          {users.map((user, index) => (
-            <div className="col-lg-3 col-md-6 mb-4" key={user.id}>
+          {allplaces.map((place, index) => (
+            <div className="col-lg-3 col-md-6 mb-4" key={place.id}>
               <div className="card shadow text-center py-4">
                 <Avatar url={`https://i.pravatar.cc/150?img=${index}`} />
                 <div className="card-body">
-                  <h5 className="card-title mb-0">{user.name}</h5>
-                  <h5 className="card-title mb-0">{user.id}</h5>
+                  <h5 className="card-title mb-0">{place.name}</h5>
+                  <h5 className="card-title mb-0">{place.id}</h5>
 
-                  <p className="text-muted small">{user.email}rtegrfed</p>
+                  <p className="text-muted small">{place.email}rtegrfed</p>
                   <Link
-                    to={`/user/${user.id}`}
+                    to={`/user/${place.id}`}
                     className="btn btn-primary btn-profile"
                   >
                     View Profile
                   </Link>
                   <button
                     className="btn btn-edit"
-                    onClick={() => deleteUser(user.id)}
+                    onClick={() => deleteUser(place.id)}
                   >
                     <span className="material-icons">delete_outline</span>
                   </button>
