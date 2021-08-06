@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Input from "../layout/Input";
 import { storage } from "../../store";
-import { Field } from "redux-form";
 import ImageField from "../layout/ImageField";
 import PreviewPicture from "../layout/PreviewPicture";
 

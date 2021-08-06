@@ -10,7 +10,7 @@ import store, { rrfProps } from "./store";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import Login from "./components/pages/Login";
 import ListedSpaces from "./components/listedSpaces/listedspaces";
-
+import Dashboard from "./components/pages/dashboard/Dashboard";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
@@ -19,22 +19,18 @@ function App() {
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
         <BrowserRouter>
-          <div className="App">
-            <PrivateRoute component={Navbar} />
-            <Switch>
-              <PrivateRoute exact path="/" component={Users} />
-              <PrivateRoute exact path="/user/:id" component={User} />
-              <PrivateRoute exact path="/userForm/:id?" component={UserForm} />
-              <PrivateRoute
-                exact
-                path="/listedspaces"
-                component={ListedSpaces}
-              />
-              <Route exact path="/allspaces" component={ListedSpaces} />
-              <Route exact path="/login" component={Login} />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
+          {/* <PrivateRoute component={Navbar} /> */}
+          <Switch>
+            <Route exact path="/" component={Dashboard} />
+
+            <PrivateRoute exact path="/users" component={Users} />
+            <PrivateRoute exact path="/user/:id" component={User} />
+            <PrivateRoute exact path="/userForm/:id?" component={UserForm} />
+            <PrivateRoute exact path="/listedspaces" component={ListedSpaces} />
+            <Route exact path="/allspaces" component={ListedSpaces} />
+            <Route exact path="/login" component={Login} />
+            <Route component={NotFound} />
+          </Switch>
         </BrowserRouter>
       </ReactReduxFirebaseProvider>
     </Provider>
