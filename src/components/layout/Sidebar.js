@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { RiDashboardLine } from "react-icons/ri";
 import { FiMenu } from "react-icons/fi";
 
 const Sidebar = () => {
   const sidebarList = [
-    { name: "Home", icon: <RiDashboardLine />, notificationCount: 0 },
+    {
+      name: "Home",
+      icon: <RiDashboardLine />,
+      notificationCount: 0,
+      link: "",
+    },
     { name: "Profile", notificationCount: 2 },
-    { name: "Listed Spaces", notificationCount: 0 },
+    { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
     { name: "Interested Customers", notificationCount: 0 },
     { name: "Calendar", notificationCount: 0 },
     { name: "Payments", notificationCount: 0 },
@@ -29,17 +35,19 @@ const Sidebar = () => {
           <ul className="mt-12">
             {sidebarList.map((item, index) => {
               return (
-                <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
-                  <div className="flex items-center">
-                    {item.icon}
-                    <span className="text-sm  ml-2">{item.name}</span>
-                  </div>
-                  {item.notificationCount > 0 && (
-                    <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
-                      {item.notificationCount}
+                <Link to={`/${item.link}`}>
+                  <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
+                    <div className="flex items-center">
+                      {item.icon}
+                      <span className="text-sm  ml-2">{item.name}</span>
                     </div>
-                  )}
-                </li>
+                    {item.notificationCount > 0 && (
+                      <div className="py-1 px-3 bg-gray-700 rounded text-gray-500 flex items-center justify-center text-xs">
+                        {item.notificationCount}
+                      </div>
+                    )}
+                  </li>
+                </Link>
               );
             })}
           </ul>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "../../layout/Sidebar";
 const Dashboard = () => {
   const dashboardList = [
     { name: "Home", notificationCount: 0 },
