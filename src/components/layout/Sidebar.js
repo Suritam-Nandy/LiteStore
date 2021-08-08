@@ -11,11 +11,11 @@ const Sidebar = () => {
       notificationCount: 0,
       link: "",
     },
-    { name: "Profile", notificationCount: 2 },
+    { name: "Profile", notificationCount: 2, link: "" },
     { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
-    { name: "Interested Customers", notificationCount: 0 },
-    { name: "Calendar", notificationCount: 0 },
-    { name: "Payments", notificationCount: 0 },
+    { name: "Interested Customers", notificationCount: 0, link: "" },
+    { name: "Calendar", notificationCount: 0, link: "" },
+    { name: "Payments", notificationCount: 0, link: "" },
   ];
   const [open, setOpen] = useState(false);
   console.log(open);
