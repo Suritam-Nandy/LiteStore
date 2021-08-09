@@ -125,39 +125,30 @@ const ListedSpaces = () => {
         {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
         <div className="w-full h-full rounded border-dashed border-2 border-gray-300">
           {/* Place your content here */}
-          <div className="container">
-            <div className="py-4">
-              <div className="row">
-                {allplaces.map((place, index) => (
-                  <div className="col-lg-3 col-md-6 mb-4" key={place.id}>
-                    <div className="card shadow text-center py-4">
-                      <Avatar url={`${place.imgUrl}`} />
-                      <div className="card-body">
-                        <h5 className="card-title mb-0">{place.name}</h5>
-                        <h5 className="card-title mb-0">{place.id}</h5>
-
-                        <p className="text-muted small">
-                          {place.email}rtegrfed
-                        </p>
-                        <Link
-                          to={`/user/${place.id}`}
-                          className="btn btn-primary btn-profile"
-                        >
-                          View Profile
-                        </Link>
-                        <button
-                          className="btn btn-edit"
-                          onClick={() => deleteUser(place.id)}
-                        >
-                          <span className="material-icons">delete_outline</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Space</th>
+                <th scope="col">Area</th>
+                <th scope="col">Pricing</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allplaces.map((place, index) => (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>
+                    <img className="w-36" src={`${place.imgUrl}`} />
+                  </td>
+                  <td>{place.name}</td>
+                  <td>{place.pricing}</td>
+                  <td>Occupied</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

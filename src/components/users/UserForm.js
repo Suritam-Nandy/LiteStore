@@ -18,7 +18,8 @@ const UserForm = () => {
   const docRef = id ? firestore.collection("users").doc(id) : null;
 
   const [user, setUser] = useState({
-    name: "",
+    area: "",
+    pricing: "₹",
 
     address1: "",
     address2: "",
@@ -218,6 +219,15 @@ const UserForm = () => {
                 </div>
 
                 <div className="form-row form-group">
+                  <div className="col-md-6">
+                    <Input
+                      placeholder="Enter Pricing"
+                      name="pricing"
+                      value={user.pricing}
+                      onChange={onInputChange}
+                    />
+                  </div>
+
                   <div className="col-md-6">
                     <Input
                       placeholder="Enter Place Address Line 1"
