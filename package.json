@@ -21,7 +21,8 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-firestore": "^0.15.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "yarn": "^1.22.11"
   },
   "scripts": {
     "start": "craco start",
@@ -46,5 +47,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "<div align=\"center\">   <img alt=\"Screenshot\" src=\"/public/Capture.JPG\" /> </div>",
+  "main": "craco.config.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinClarke/litestore-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinClarke/litestore-1/issues"
+  },
+  "homepage": "https://github.com/JustinClarke/litestore-1#readme"
 }
