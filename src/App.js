@@ -11,6 +11,9 @@ import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import Login from "./components/pages/Login";
 import ListedSpaces from "./components/listedSpaces/listedspaces";
 import Dashboard from "./components/pages/dashboard/Dashboard";
+import AddSpace from "./components/pages/dashboard/AddSpace";
+import Payments from "./components/pages/dashboard/Payments";
+
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
@@ -28,7 +31,11 @@ function App() {
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
             <PrivateRoute exact path="/userForm/:id?" component={UserForm} />
+            <PrivateRoute exact path="/addspace" component={AddSpace} />
+
             <PrivateRoute exact path="/listedspaces" component={ListedSpaces} />
+            <PrivateRoute exact path="/payments" component={Payments} />
+
             <Route exact path="/allspaces" component={ListedSpaces} />
             <Route exact path="/login" component={Login} />
             <Route component={NotFound} />

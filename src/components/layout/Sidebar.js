@@ -14,8 +14,9 @@ const Sidebar = () => {
     { name: "Profile", notificationCount: 2, link: "" },
     { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
     { name: "Interested Customers", notificationCount: 0, link: "" },
+    { name: "Add Space", notificationCount: 0, link: "addspace" },
     { name: "Calendar", notificationCount: 0, link: "" },
-    { name: "Payments", notificationCount: 0, link: "" },
+    { name: "Payments", notificationCount: 0, link: "payments" },
   ];
   const [open, setOpen] = useState(false);
   console.log(open);

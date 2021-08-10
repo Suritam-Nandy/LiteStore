@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import Input from "../layout/Input";
-import { storage } from "../../store";
-import ImageField from "../layout/ImageField";
-import PreviewPicture from "../layout/PreviewPicture";
+import Input from "../../layout/Input";
+import { storage } from "../../../store";
+import Sidebar from "../../layout/Sidebar";
+
+import ImageField from "../../layout/ImageField";
+import PreviewPicture from "../../layout/PreviewPicture";
 
 import { useFirestore, useFirebase } from "react-redux-firebase";
 import { BiImageAdd } from "react-icons/bi";
 
-const UserForm = () => {
+const AddSpace = () => {
   const firestore = useFirestore();
   const firebase = useFirebase();
 
@@ -166,43 +168,48 @@ const UserForm = () => {
     history.push("/");
   };
   return (
-    <div className="container">
-      <div className="py-4">
-        <div className="row ">
-          <div className="col-md-10 mx-auto">
-            <div className="card card-body shadow">
-              <form onSubmit={submitForm}>
-                <div className="form-row form-group mb-4">
-                  <div className="col-md-6">
-                    <Input
-                      placeholder="Enter PLace Name"
-                      name="area"
-                      value={user.area}
-                      onChange={onInputChange}
-                    />
-                  </div>
-                  <div>
-                    <div className="form-group row">
-                      {/* <label className="col-sm-3 col-form-label">{`${label} ${
+    <>
+      <div className="flex flex-no-wrap">
+        <Sidebar />
+        <div className="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6">
+          {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
+          <div className="container">
+            <div className="py-4">
+              <div className="row ">
+                <div className="col-md-10 mx-auto">
+                  <div className="card card-body shadow">
+                    <form onSubmit={submitForm}>
+                      <div className="form-row form-group mb-4">
+                        <div className="col-md-6">
+                          <Input
+                            placeholder="Enter PLace Name"
+                            name="area"
+                            value={user.area}
+                            onChange={onInputChange}
+                          />
+                        </div>
+                        <div>
+                          <div className="form-group row">
+                            {/* <label className="col-sm-3 col-form-label">{`${label} ${
             required ? "*" : ""
           }`}</label> */}
-                      <div className="col-sm-9 w-20">
-                        <input
-                          type="file"
-                          className="form-control"
-                          onChange={(event) => {
-                            getPicture(event);
-                          }}
-                        />
-                      </div>
-                    </div>
-                    {/* <PreviewPicture
+                            <div className="col-sm-9 w-20">
+                              <input
+                                type="file"
+                                className="form-control"
+                                onChange={(event) => {
+                                  getPicture(event);
+                                }}
+                              />
+                            </div>
+                          </div>
+                          {/* <PreviewPicture
                       picture={this.state.picture}
                       pictureUrl={this.state.pictureUrl}
                     /> */}
-                  </div>
-                  {/* <PreviewPicture picture={file} /> */}
-                  {/* <input
+                        </div>
+                        {/* <PreviewPicture picture={file} /> */}
+                        {/* <input
                     hidden
                     id="icon-button-file"
                     onChange={fileUpload}
@@ -216,46 +223,49 @@ const UserForm = () => {
                     <BiImageAdd />
                     button
                   </label> */}
+                      </div>
+
+                      <div className="form-row form-group">
+                        <div className="col-md-6">
+                          <Input
+                            placeholder="Enter Pricing"
+                            name="pricing"
+                            value={user.pricing}
+                            onChange={onInputChange}
+                          />
+                        </div>
+
+                        <div className="col-md-6">
+                          <Input
+                            placeholder="Enter Place Address Line 1"
+                            name="address1"
+                            value={user.address1}
+                            onChange={onInputChange}
+                          />
+                        </div>
+                        <div className="col-md-6">
+                          <Input
+                            placeholder="Enter Place Address Line 2"
+                            name="address2"
+                            value={user.address2}
+                            onChange={onInputChange}
+                          />
+                        </div>
+                      </div>
+
+                      <button type="submit" className="btn btn-primary">
+                        {id ? "Update User" : "Add place"}
+                      </button>
+                    </form>
+                  </div>
                 </div>
-
-                <div className="form-row form-group">
-                  <div className="col-md-6">
-                    <Input
-                      placeholder="Enter Pricing"
-                      name="pricing"
-                      value={user.pricing}
-                      onChange={onInputChange}
-                    />
-                  </div>
-
-                  <div className="col-md-6">
-                    <Input
-                      placeholder="Enter Place Address Line 1"
-                      name="address1"
-                      value={user.address1}
-                      onChange={onInputChange}
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <Input
-                      placeholder="Enter Place Address Line 2"
-                      name="address2"
-                      value={user.address2}
-                      onChange={onInputChange}
-                    />
-                  </div>
-                </div>
-
-                <button type="submit" className="btn btn-primary">
-                  {id ? "Update User" : "Add place"}
-                </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default UserForm;
+export default AddSpace;
