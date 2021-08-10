@@ -1,13 +1,12 @@
 import React from "react";
-import { BsChevronRight, BsList } from "react-icons/bs";
 
 const Footer = () => {
   return(
     <footer id="footer">
       <div className="footer-top">
         <div className="container">
-          <div className="flex h-screen">
-            <div className="flex-1 m-auto footer-contact">
+          <div className="row">
+            <div className="col-lg-2 col-md-6 footer-contact">
               <p>
                 <span style={{fontSize: '30px'}}>LiteStore</span>
                 <br />#58, Domlur Layout,
@@ -17,7 +16,7 @@ const Footer = () => {
                 <strong>Email:</strong> support@litestore.in<br />
               </p>
             </div>
-            <div className="flex-1 m-auto footer-links">
+            <div className="col-lg-2 col-md-6 footer-links">
               <h4>How it works</h4>
               <ul>                            
                 <li> <a href="list-your-space.html">List a Space</a></li>
@@ -25,7 +24,7 @@ const Footer = () => {
                 <li> <a href="services.html">LiteStore Services</a></li>
               </ul>
             </div>
-            <div className="flex-1 m-auto footer-links">
+            <div className="col-lg-2 col-md-6 footer-links">
               <h4>About</h4>
               <ul>
                 <li> <a href="careers.html">Careers</a></li>
@@ -33,7 +32,7 @@ const Footer = () => {
                 <li> <a href="faqs/faq-section.html">FAQs</a></li>
               </ul>
             </div>
-            <div className="flex-1 m-auto footer-links">
+            <div className="col-lg-2 col-md-6 footer-links">
               <h4>Discover</h4>
               <ul>
                 <li> <a href="blogs/list.html">Blog</a></li>
@@ -41,7 +40,7 @@ const Footer = () => {
                 <li> <a href="design.html">DesignHub</a></li>
               </ul>
             </div>
-            <div className="flex-1 m-auto footer-links">
+            <div className="col-lg-2 col-md-6 footer-links">
               <h4>Legal</h4>
               <ul>
                 <li> <a href>Privacy Policy</a></li>
@@ -53,14 +52,14 @@ const Footer = () => {
         </div>
       </div>
       <div className="container d-md-flex py-4" style={{backgroundColor: '#fff'}}>
-        <div className="">
+        <div className="me-md-auto text-center text-md-start">
           <div className="copyright">
             © Copyright 2021 <strong><span>LiteStore</span></strong>. All Rights Reserved
           </div>
         </div>
         <div className="social-links text-center text-md-right pt-3 pt-md-0" style={{textAlign: "end"}}>
-          <a href="blank.html" className="instagram"><i className="bx bxl-instagram" /></a>
-          <a href="https://www.linkedin.com/company/litestore/" className="linkedin"><i className="bx bxl-linkedin" /></a>
+          <a href="blank.html" className="instagram"><i className="fab fa-instagram" /></a>
+          <a href="https://www.linkedin.com/company/litestore/" className="linkedin"><i className="fab fa-linkedin-in" /></a>
         </div>
       </div>
     </footer>

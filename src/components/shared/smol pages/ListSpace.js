@@ -32,9 +32,9 @@ const ListSpace = () => {
                     <div className="row content">
                     <div className="col-lg-6 pt-4 pt-lg-0">
                         <ul>
-                        <li><i className="ri-check-double-line" /> Our streamlined e-contracts makes sure your listing is risk-free. </li>
-                        <li><i className="ri-check-double-line" /> Fix your Price | Hours | Ground Rules</li>
-                        <li><i className="ri-check-double-line" /> Approve brands looking to rent your space.</li>
+                        <li><i className="fas fa-check" /> Our streamlined e-contracts makes sure your listing is risk-free. </li>
+                        <li><i className="fas fa-check" /> Fix your Price | Hours | Ground Rules</li>
+                        <li><i className="fas fa-check" /> Approve brands looking to rent your space.</li>
                         </ul>
                     </div>
                     </div>
