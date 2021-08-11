@@ -172,96 +172,78 @@ const AddSpace = () => {
       <div className="flex flex-no-wrap">
         <Sidebar />
         <div className="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6">
-          {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
-          <div className="container">
-            <div className="py-4">
-              <div className="row ">
-                <div className="col-md-10 mx-auto">
-                  <div className="card card-body shadow">
-                    <form onSubmit={submitForm}>
-                      <div className="form-row form-group mb-4">
-                        <div className="col-md-6">
-                          <Input
-                            placeholder="Enter PLace Name"
-                            name="area"
-                            value={user.area}
-                            onChange={onInputChange}
-                          />
-                        </div>
-                        <div>
-                          <div className="form-group row">
-                            {/* <label className="col-sm-3 col-form-label">{`${label} ${
-            required ? "*" : ""
-          }`}</label> */}
-                            <div className="col-sm-9 w-20">
-                              <input
-                                type="file"
-                                className="form-control"
-                                onChange={(event) => {
-                                  getPicture(event);
-                                }}
-                              />
-                            </div>
-                          </div>
-                          {/* <PreviewPicture
-                      picture={this.state.picture}
-                      pictureUrl={this.state.pictureUrl}
-                    /> */}
-                        </div>
-                        {/* <PreviewPicture picture={file} /> */}
-                        {/* <input
-                    hidden
-                    id="icon-button-file"
-                    onChange={fileUpload}
-                    // type="file"
+          <div className="my-2">
+            <h1 className="text-2xl">Add Space</h1>
+          </div>
+          <form onSubmit={submitForm}>
+            <div className="flex flex-col w-64 md:w-full shadow p-2">
+              <div className="flex flex-col md:flex-row justify-evenly my-2">
+                <div className="flex flex-col m-1 w-full">
+                  <h1>Place</h1>
+                  <Input
+                    placeholder="Enter PLace Name"
+                    name="area"
+                    value={user.area}
+                    onChange={onInputChange}
                   />
-                  <label
-                    htmlFor="icon-button-file"
-                    style={{ height: "24px" }}
-                    onClick={fileUpload}
-                  >
-                    <BiImageAdd />
-                    button
-                  </label> */}
-                      </div>
+                </div>
+                <div className="flex flex-col m-1 w-full">
+                  <h1>Pricing</h1>
 
-                      <div className="form-row form-group">
-                        <div className="col-md-6">
-                          <Input
-                            placeholder="Enter Pricing"
-                            name="pricing"
-                            value={user.pricing}
-                            onChange={onInputChange}
-                          />
-                        </div>
-
-                        <div className="col-md-6">
-                          <Input
-                            placeholder="Enter Place Address Line 1"
-                            name="address1"
-                            value={user.address1}
-                            onChange={onInputChange}
-                          />
-                        </div>
-                        <div className="col-md-6">
-                          <Input
-                            placeholder="Enter Place Address Line 2"
-                            name="address2"
-                            value={user.address2}
-                            onChange={onInputChange}
-                          />
-                        </div>
-                      </div>
-
-                      <button type="submit" className="btn btn-primary">
-                        {id ? "Update User" : "Add place"}
-                      </button>
-                    </form>
-                  </div>
+                  <Input
+                    placeholder="Enter Pricing"
+                    name="pricing"
+                    value={user.pricing}
+                    onChange={onInputChange}
+                  />
                 </div>
               </div>
+              <div className="flex flex-row justify-between my-2">
+                <div className="flex flex-col m-1">
+                  <h1>Add Image</h1>
+
+                  <input
+                    type="file"
+                    className="form-control"
+                    onChange={(event) => {
+                      getPicture(event);
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row justify-evenly my-2">
+                <div className="flex flex-col m-1 w-full">
+                  <h1>Address Line 1</h1>
+                  <Input
+                    placeholder="Enter Place Address Line 1"
+                    name="address1"
+                    value={user.address1}
+                    onChange={onInputChange}
+                  />
+                </div>
+                <div className="flex flex-col m-1 w-full">
+                  <h1>Address Line 2</h1>
+
+                  <Input
+                    placeholder="Enter Place Address Line 2"
+                    name="address2"
+                    value={user.address2}
+                    onChange={onInputChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  {id ? "Update User" : "Add place"}
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
+
+          {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
         </div>
       </div>
     </>

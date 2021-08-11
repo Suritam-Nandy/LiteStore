@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiDashboardLine } from "react-icons/ri";
 import { FiMenu } from "react-icons/fi";
+import { useFirebase } from "react-redux-firebase";
 
 const Sidebar = () => {
+  const firebase = useFirebase();
+  const uid = firebase.auth().currentUser.uid;
+
   const sidebarList = [
     {
       name: "Home",
@@ -27,11 +31,12 @@ const Sidebar = () => {
       <div
         className={`${
           open ? "sm:flex" : "hidden"
-        }  w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex`}
+        }  w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
       >
-        <div className="px-8">
-          <div className="h-16 w-full flex items-center">
+        <div className="px-8 ">
+          <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
             <h1 className="text-4xl text-white">Name</h1>
+            <span className="text-sm">{uid}</span>
           </div>
           <ul className="mt-12">
             {sidebarList.map((item, index) => {
@@ -51,6 +56,18 @@ const Sidebar = () => {
                 </Link>
               );
             })}
+            <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
+              <div className="flex items-center">
+                <Link to="/login">
+                  <span
+                    onClick={() => firebase.logout()}
+                    className="text-sm  ml-2"
+                  >
+                    Logout
+                  </span>
+                </Link>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
