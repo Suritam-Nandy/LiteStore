@@ -41,38 +41,38 @@
   <div id="cloud-scroll"></div>
 </div> */
 
-.news-single {
+.news-single{
   padding-top: 0%;
   margin: 0% 0%;
   text-align: justify;
 }
 
-.news-single a {
-  font-weight: 600;
+.news-single a{
+  font-weight: 600; 
 }
 
-.news-single::after {
+.news-single::after{
   content: "";
   display: inline-block;
   width: 100%;
 }
 
-#blog-list h5 {
+#blog-list h5{
   padding: 5px;
 }
 
-#blog-list {
+#blog-list{
   margin: 0% 20%;
   padding: 0px 0px 25px;
 }
 
-@media (max-width: 450px) {
-  #blog-list {
+ @media (max-width: 450px) {
+   #blog-list{
     margin: 5% 5%;
-  }
-}
+    }
+ }
 
-.card {
+.card{
   margin-top: 20px;
 }
 
@@ -85,17 +85,18 @@
   border-radius: 4px;
 }
 
+
 /*--------------------------------------------------------------
 # Content Styles
 --------------------------------------------------------------*/
-.content-style {
-  padding: 7% 10% 0%;
+.content-style{
+  padding: 7% 10% 0%; 
   margin: 0% 6% 0%;
 }
 
 @media (max-width: 450px) {
-  .content-style {
-    padding: 20% 0%;
+  .content-style{
+    padding: 20% 0%; 
     margin: 0% 2%;
   }
 }
@@ -104,13 +105,13 @@
 # Phone Button on NavBar
 --------------------------------------------------------------*/
 
-.phone-sty {
-  font-family: montserrat;
+.phone-sty{
+  font-family: montserrat; 
   border: 2px solid #000;
   padding: 8px 8px 8px 5px;
 }
 
-.phone-sty:hover {
+.phone-sty:hover{
   border: 2px solid #7e7ca6;
 }
 
@@ -120,7 +121,7 @@
 body {
   font-family: "Raleway", sans-serif;
   color: #444444;
-  align-items: center;
+	align-items: center;
 }
 
 a {
@@ -132,33 +133,26 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a {
+h1, h2, h3, h4, h5, h6{
   font-family: "Raleway", sans-serif;
 }
 
-#signup {
+#signup{
   padding-top: 100px;
   margin: 50px;
 }
 
-#signin {
+#signin{
   padding-top: 100px;
   margin: 50px;
 }
 
-.container-nav {
+.container{
   padding-left: 3%;
   padding-right: 3%;
 }
 
-.btn:hover {
+.btn:hover{
   background-color: #000000;
   color: #fffaf4;
 }
@@ -171,18 +165,17 @@ table {
   margin-right: auto;
 }
 
-td,
-th {
+td, th {
   border-bottom: 1px solid rgb(238, 238, 238);
   padding: 1rem 0rem 1rem 1rem;
   font-size: 20px;
 }
 
-.ts {
+.ts{
   color: #424242;
 }
 
-.top {
+.top{
   border-top: 1px solid rgb(226, 226, 226);
 }
 
@@ -192,9 +185,8 @@ th {
     margin-left: auto;
     margin-right: auto;
   }
-
-  td,
-  th {
+  
+  td, th {
     border-bottom: 1px solid rgb(238, 238, 238);
     padding: 1rem;
     font-size: 12px;
@@ -204,7 +196,7 @@ th {
 
 /* Feature section */
 
-.arrow {
+.arrow{
   padding-top: 80px;
 }
 
@@ -217,6 +209,7 @@ th {
 .feature-box {
   padding: 5% 0% 3%;
 }
+
 
 .feature-boxes {
   padding: 2% 5% 3%;
@@ -234,8 +227,8 @@ th {
 
 /* property single */
 
-.prop-desc {
-  padding: inherit;
+.prop-desc{
+  padding: inherit; 
   margin: 0% 15%;
 }
 
@@ -248,14 +241,15 @@ th {
   color: #7e7ca6;
 }
 
+
 @media (max-width: 450px) {
-  h3 {
+  h3{
     font-size: 16px;
   }
-  p {
+  p{
     font-size: 14px;
   }
-  .arrow {
+  .arrow{
     display: none;
   }
   .feature-box {
@@ -267,8 +261,8 @@ th {
     margin-bottom: 1rem;
     color: #7e7ca6;
   }
-  .prop-desc {
-    padding: inherit;
+  .prop-desc{
+    padding: inherit; 
     margin: 0% 5%;
   }
 }
@@ -441,12 +435,11 @@ th {
   margin-left: 5px;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar li:hover > a {
+.navbar a:hover, .navbar .active, .navbar li:hover > a {
   color: #fff;
   background-color: #7e7ca6;
 }
+
 
 .navbar .dropdown ul {
   display: block;
@@ -477,9 +470,7 @@ th {
   font-size: 12px;
 }
 
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
   color: #fff;
 }
 
@@ -573,9 +564,7 @@ th {
   color: #7e7ca6;
 }
 
-.navbar-mobile a:hover,
-.navbar-mobile .active,
-.navbar-mobile li:hover > a {
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
   color: #fff;
 }
 
@@ -607,9 +596,7 @@ th {
   font-size: 12px;
 }
 
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
   color: #7e7ca6;
 }
 
@@ -625,7 +612,7 @@ th {
   height: calc(100vh - 0px);
   text-align: center;
   position: relative;
-  background: url("../src/assets/design-bg.webp") top center;
+  background: url("../design-bg.webp") top center;
   background-size: cover;
 }
 
@@ -638,7 +625,6 @@ th {
   left: 0;
   right: 0;
 }
-
 
 #head-c {
   width: 100%;
@@ -664,11 +650,11 @@ th {
     height: calc(100vh - 0px);
     text-align: center;
     position: relative;
-    background: url("../src/assets/com-m.webp") top center;
+    background: url("../stock/com-m.webp") top center;
     background-size: cover;
   }
 }
-#head-c h1 {
+#head-c h1{
   color: #fff;
   font-size: 100px;
   padding-bottom: 0px;
@@ -679,7 +665,7 @@ th {
     background-size: cover;
     padding: 400px 0px 400px;
   }
-  #head-c h1 {
+  #head-c h1{
     font-size: 350%;
     padding-bottom: 0px;
   }
@@ -689,6 +675,7 @@ th {
   }
 }
 
+
 #head {
   width: 100%;
   height: calc(100vh - 0px);
@@ -696,7 +683,7 @@ th {
   text-align: center;
   position: relative;
   background-color: #000;
-  background: url("../src/assets/stands.webp") top center;
+  background: url("../stock/stands.webp") top center;
   background-size: cover;
 }
 
@@ -706,7 +693,7 @@ th {
     height: calc(100vh - 0px);
     text-align: center;
     position: relative;
-    background: url("../src/assets/stands-m.webp") top center;
+    background: url("../stock/stands-m.webp") top center;
     background-size: cover;
   }
 }
@@ -812,7 +799,7 @@ th {
     background-size: cover;
     padding: 400px 0px 400px;
   }
-  #head h1 {
+  #head h1{
     font-size: 75px;
     padding-bottom: 0px;
   }
@@ -822,7 +809,7 @@ th {
   }
 }
 
-@media (min-device-width: 481px) and (max-device-width: 768px) {
+@media (min-device-width: 481px) and (max-device-width: 768px){
   #head {
     height: auto;
     padding: 200px 0px 200px;
@@ -861,15 +848,15 @@ section {
   color: #1a1a1a;
 }
 
-.tab-content h3 {
+.tab-content h3{
   padding: 2%;
 }
 
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-#community {
-  background: url("../src/assets/colorr.webp");
+#community{
+  background: url("../stock/colorr.webp");
 }
 
 #community .btn-get-started {
@@ -979,7 +966,7 @@ section {
 }
 
 .about .content .btn-learn-more:hover {
-  background: #f2e0c9;
+  background: #F2E0C9 ;
   color: #fff;
   text-decoration: none;
 }
@@ -987,15 +974,15 @@ section {
 /*--------------------------------------------------------------
 # Services-page
 --------------------------------------------------------------*/
-#tabs a:hover {
+#tabs a:hover{
   color: #000000;
 }
 #services_fas {
   width: 100%;
   height: calc(100vh - 0px);
   text-align: center;
-  position: relative;
-  background: url("../src/assets/com.webp") top center;
+  position: relative;  
+  background: url("../stock/com.webp") top center;
   background-size: cover;
   color: #fff;
 }
@@ -1010,6 +997,7 @@ section {
   right: 0;
 }
 
+
 #services_fas h1 {
   font-size: 100px;
   font-weight: 600;
@@ -1017,21 +1005,8 @@ section {
 
 @media (max-width: 450px) {
   #services_fas h1 {
-    font-size: 50px;
+  font-size: 50px;
   }
-}
-/*--------------------------------------------------------------
-# Video
---------------------------------------------------------------*/
-#video {
-  text-align: center;
-  padding: 40px 0px 80px;
-  background-color: #19171a;
-}
-
-#video h1 {
-  padding-bottom: 30px;
-  color: #fff;
 }
 /*--------------------------------------------------------------
 # Clients
@@ -1040,9 +1015,8 @@ section {
   text-align: center;
 }
 
-.clients h2 {
+.clients h2{
   text-align: center;
-  padding-right: 10px;
 }
 
 .clients img {
@@ -1065,7 +1039,7 @@ section {
 }
 
 @media (max-width: 450px) {
-  .clients .container {
+  .clients .container{
     padding: 5px 4px;
   }
   .clients img {
@@ -1077,22 +1051,23 @@ section {
 /*--------------------------------------------------------------
 # Carousel
 --------------------------------------------------------------*/
-#carousel {
-  background-color: #c0c0c0;
+#carousel{
+  background-color: #c0c0c0; 
   padding: 15px 10px 30px;
   color: rgb(49, 49, 49);
 }
 
-.car-padding {
+.car-padding{
   padding: 0% 10% 0% 10%;
   background-color: #fffaf4;
 }
 
 @media (max-width: 480px) {
-  .car-padding {
+  .car-padding{
     padding: 0% 0% 0% 0%;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1123,8 +1098,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.portfolio #portfolio-flters li:hover,
-.portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #7e7ca6;
 }
 
@@ -1265,10 +1239,7 @@ section {
   position: relative;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -1276,10 +1247,7 @@ section {
   border: 1px solid #2487ce;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet-active {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #2487ce;
 }
 
@@ -1451,24 +1419,25 @@ section {
   fill: #7e7ca6;
 }
 
-#services .serve {
+
+#services .serve{
   padding-left: 7%;
 }
 
 @media (max-width: 450px) {
-  #services .serve {
+  #services .serve{
     padding-left: 14%;
   }
 }
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
-.bg-color {
+.bg-color{
   background-color: #fff;
   color: #343a40;
 }
 
-bg-color p {
+bg-color p{
   color: #000000;
 }
 
@@ -1512,8 +1481,7 @@ bg-color p {
   color: #202020;
 }
 
-.faq .faq-list .icon-show,
-.faq .faq-list .icon-close {
+.faq .faq-list .icon-show, .faq .faq-list .icon-close {
   font-size: 24px;
   position: absolute;
   right: 0;
@@ -1557,7 +1525,7 @@ bg-color p {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-#contact {
+#contact{
   background-color: rgb(247, 247, 247);
 }
 
@@ -1580,7 +1548,7 @@ bg-color p {
   transition: all 0.3s ease-in-out;
 }
 
-.contact h3 {
+.contact h3{
   font-size: 20px;
   padding-bottom: 15px;
 }
@@ -1598,14 +1566,11 @@ bg-color p {
   color: rgb(36, 36, 36);
 }
 
-.contact .info .email,
-.contact .info .phone {
+.contact .info .email, .contact .info .phone {
   margin-top: 40px;
 }
 
-.contact .info .email:hover i,
-.contact .info .address:hover i,
-.contact .info .phone:hover i {
+.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
   background: #7e7ca6;
   color: rgb(247, 247, 247);
 }
@@ -1661,8 +1626,7 @@ bg-color p {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .php-email-form input, .contact .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
@@ -1670,8 +1634,7 @@ bg-color p {
   background-color: #f7f7f7;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
   border-color: #504c4b;
 }
 
@@ -1682,6 +1645,7 @@ bg-color p {
 .contact .php-email-form textarea {
   padding: 10px 12px;
 }
+
 
 .contact .php-email-form button[type="submit"] {
   background: #7e7ca6;
@@ -1716,10 +1680,10 @@ bg-color p {
 }
 
 @media (max-width: 450px) {
-  #contact h3 {
+  #contact h3{
     padding: 0% 20%;
     margin: 0px;
-  }
+  } 
 }
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -1758,7 +1722,7 @@ bg-color p {
 .breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #a66f3f;
+  color: #A66F3F;
   content: "/";
 }
 
@@ -1903,7 +1867,7 @@ bg-color p {
   background: #1f1f1f;
 }
 
-.copyright {
+.copyright{
   color: #000000;
 }
 
@@ -1930,7 +1894,7 @@ bg-color p {
 
 /* Style Two */
 
-.head-section {
+.head-section{
   padding: 100px 0px 0px;
 }
 
@@ -1951,8 +1915,9 @@ bg-color p {
   padding-right: 5px;
 }
 
+
 @media (max-width: 450px) {
-  #footer .footer-top {
+  #footer .footer-top{
     padding-left: 15px;
   }
   #footer .footer-top .footer-links ul li {
@@ -1966,7 +1931,7 @@ bg-color p {
 }
 
 .list-a li:before {
-  content: "";
+  content: '';
   width: 10px;
   height: 2px;
   position: absolute;
@@ -1979,29 +1944,31 @@ bg-color p {
 # Card General
 --------------------------------------------------------------*/
 
-#prop-name h2 {
+#prop-name h2{
   font-size: 25px;
 }
 
-.invisible {
+.invisible{
   display: contents;
 }
 
-.invisible-desk {
+.invisible-desk{
   display: none;
 }
 
 @media (max-width: 450px) {
-  .invisible {
+  .invisible{
     display: none;
   }
-  #prop-name h2 {
+  #prop-name h2{
     font-size: 20px;
   }
-  .invisible-desk {
+  .invisible-desk{
     display: contents;
   }
 }
+
+
 
 @media (max-width: 767px) {
   .card-box-a,
@@ -2041,7 +2008,7 @@ bg-color p {
 .card-box-a .img-b,
 .card-box-b .img-a,
 .card-box-b .img-b {
-  transition: 0.8s all ease-in-out;
+  transition: .8s all ease-in-out;
 }
 
 .card-box-ico {
@@ -2060,7 +2027,7 @@ bg-color p {
 @media (min-width: 768px) {
   .card-box-a .price-a,
   .card-box-b .price-a {
-    font-size: 0.9rem;
+    font-size: .9rem;
   }
 }
 
@@ -2085,19 +2052,14 @@ bg-color p {
 }
 
 .card-shadow:before {
-  content: " ";
+  content: ' ';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.2) 27%,
-    rgba(0, 0, 0, 0.65) 90%
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 27%, rgba(0, 0, 0, 0.65) 90%);
 }
 
 /*===
@@ -2137,7 +2099,7 @@ bg-color p {
 }
 
 .card-overlay-a-content {
-  transition: all 0.5s ease-in;
+  transition: all .5s ease-in;
   position: absolute;
   width: 100%;
   bottom: 0px;
@@ -2163,7 +2125,7 @@ bg-color p {
 .card-header-a .card-title-a {
   color: #ffffff;
   margin-bottom: 0;
-  padding-bottom: 0.7rem;
+  padding-bottom: .7rem;
 }
 
 @media (min-width: 768px) {
@@ -2185,21 +2147,21 @@ bg-color p {
 
 .card-body-a {
   z-index: 2;
-  transition: all 0.5s ease-in;
+  transition: all .5s ease-in;
   padding: 0rem 1rem 2rem 1rem;
 }
 
 .card-body-a .price-box {
-  padding-bottom: 0.5rem;
+  padding-bottom: .5rem;
 }
 
 .price-a {
   color: #ffffff;
-  padding: 0.6rem 0.8rem;
-  border: 2px solid #a66f3f;
+  padding: .6rem .8rem;
+  border: 2px solid #A66F3F;
   border-radius: 50px;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.030em;
 }
 
 .card-footer-a {
@@ -2212,7 +2174,7 @@ bg-color p {
 .card-info {
   list-style: none;
   margin-bottom: 0;
-  padding: 0.5rem 0;
+  padding: .5rem 0;
 }
 
 .card-info .card-info-title {
@@ -2222,7 +2184,7 @@ bg-color p {
 
 @media (min-width: 768px) {
   .card-info .card-info-title {
-    font-size: 0.9rem;
+    font-size: .9rem;
   }
 }
 
@@ -2235,12 +2197,12 @@ bg-color p {
 
 .card-info li span {
   color: #fff;
-  font-size: 0.9rem;
+  font-size: .9rem;
 }
 
 @media (min-width: 768px) {
   .card-info li span {
-    font-size: 0.8rem;
+    font-size: .8rem;
   }
 }
 
@@ -2262,9 +2224,7 @@ bg-color p {
   border-color: #313131;
 }
 
-.property-grid .grid-option .custom-select:hover,
-.property-grid .grid-option .custom-select:active,
-.property-grid .grid-option .custom-select:focus {
+.property-grid .grid-option .custom-select:hover, .property-grid .grid-option .custom-select:active, .property-grid .grid-option .custom-select:focus {
   border-color: #313131;
 }
 
@@ -2323,6 +2283,7 @@ bg-color p {
     margin-top: 2.5rem;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Team
@@ -2401,6 +2362,8 @@ bg-color p {
 .team .member:hover .social {
   opacity: 1;
 }
+
+
 
 /*--------------------------------------------------------------
 # About Video
@@ -2542,7 +2505,3 @@ bg-color p {
     opacity: 0;
   }
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

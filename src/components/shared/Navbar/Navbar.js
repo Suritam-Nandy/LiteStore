@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="container d-flex align-items-center justify-content-between">
           {/* <h1 class="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
           {/* Uncomment below if you prefer to use an image logo */}
-          <a href className="logo"><img src="assets/logo.webp" alt="" className="img-fluid" /></a>
+          <a href className="logo"><img src="assets/img/logo.webp" alt="" className="img-fluid" /></a>
           <nav id="navbar" className="navbar">
             <ul>
               <li><a className="nav-link scrollto" href="community.html" style={{fontWeight: 'bold'}}>Community</a></li>

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-top">
         <div className="container">
           <div className="row">
-            <div className="col-lg-2 col-md-6 footer-contact">
+            <div className="col-lg-3 col-md-6 footer-contact">
               <p>
                 <span style={{fontSize: '30px'}}>LiteStore</span>
                 <br />#58, Domlur Layout,

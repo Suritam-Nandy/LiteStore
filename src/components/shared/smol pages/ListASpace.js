@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListSpace = () => {
+const ListASpace = () => {
     return(
         <div>
             {/*  Heading  */}
@@ -135,4 +135,4 @@ const ListSpace = () => {
     );
 }
 
-export default ListSpace;
+export default ListASpace;

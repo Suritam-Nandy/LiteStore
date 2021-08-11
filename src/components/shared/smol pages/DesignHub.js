@@ -52,33 +52,33 @@ const DesignHub = () => {
                 <div className="row portfolio-container" data-aos="fade-up" data-aos-delay={200}>
                     <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                         <div className="portfolio-wrap">
-                        <img src="assets/portfolio/space-1.webp" className="img-fluid" alt="" />
+                        <img src="assets/img/portfolio/space-1.webp" className="img-fluid" alt="" />
                         <div className="portfolio-info">
                             <div className="portfolio-links">
-                            <a href="assets/portfolio/space-1.webp" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Space 1">View</a> <br />
-                            <a href="https://github.com/JustinClarke/liteStore/raw/master/assets/img/portfolio/space- 1.pdf" title="Download Image">Download</a>
+                            <a href="assets/img/portfolio/space-1.webp" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Space 1">View</a> <br />
+                            <a href="https://github.com/JustinClarke/liteStore/raw/master/assets/img/img/portfolio/space- 1.pdf" title="Download Image">Download</a>
                             </div>
                         </div>
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                         <div className="portfolio-wrap">
-                        <img src="assets/portfolio/space-2.webp" className="img-fluid" alt="" />
+                        <img src="assets/img/portfolio/space-2.webp" className="img-fluid" alt="" />
                         <div className="portfolio-info">
                             <div className="portfolio-links">
-                            <a href="assets/portfolio/space-2.webp" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Space 2">View</a> <br />
-                            <a href="https://github.com/JustinClarke/liteStore/raw/master/assets/img/portfolio/space- 2.pdf" title="Download Image">Download</a>
+                            <a href="assets/img/portfolio/space-2.webp" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Space 2">View</a> <br />
+                            <a href="https://github.com/JustinClarke/liteStore/raw/master/assets/img/img/portfolio/space- 2.pdf" title="Download Image">Download</a>
                             </div>
                         </div>
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                         <div className="portfolio-wrap">
-                        <img src="assets/portfolio/space-3.webp" className="img-fluid" alt="" />
+                        <img src="assets/img/portfolio/space-3.webp" className="img-fluid" alt="" />
                         <div className="portfolio-info">
                             <div className="portfolio-links">
-                            <a href="assets/img/portfolio/space-3.webp" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Space 3">View</a> <br />
-                            <a href="https://github.com/JustinClarke/liteStore/raw/master/assets/img/portfolio/space- 3.pdf" title="Download Image">Download</a>
+                            <a href="assets/img/img/portfolio/space-3.webp" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Space 3">View</a> <br />
+                            <a href="https://github.com/JustinClarke/liteStore/raw/master/assets/img/img/portfolio/space- 3.pdf" title="Download Image">Download</a>
                             </div>
                         </div>
                         </div>

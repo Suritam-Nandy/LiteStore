@@ -14,7 +14,7 @@ import Dashboard from "./components/pages/dashboard/Dashboard";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
-import test from './components/shared/Footer/Footer'
+import test from './components/shared/Test'
 
 function App() {
   return (

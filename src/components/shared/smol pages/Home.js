@@ -72,12 +72,12 @@ const Home = () => {
                 <h1>Introducing LiteStore</h1>
                 <div className="row justify-content-center">
                     <div className="col-lg-10 col-md-8 col-sm-12">
-                        <img src="assets/youtube.jpg" className="img-fluid" alt="" />
+                        <img src="assets/img/youtube.jpg" className="img-fluid" alt="" />
                         <a href="https://www.youtube.com/watch?v=ADTRU2B4D-Q" className="glightbox play-btn mb-4" data-vbtype="video" data-autoplay="true" />
                     </div>
                 </div>
             </div> 
-        </section>/* End About Video Section */}
+        </section> */}{/* End About Video Section */}
         {/*  Services Section  */}
         <section id="services" className="services">
         <div className="container" data-aos="fade-up">
@@ -154,7 +154,7 @@ const Home = () => {
         <section id="community">
         <div className="container">
             <div className="section-title" style={{textAlign: 'center'}}>
-            {/* <img src="assets/stock/colorrr.webp" style="width: 300px;"> */}
+            {/* <img src="assets/img/stock/colorrr.webp" style="width: 300px;"> */}
             <h2 style={{color: '#000', textTransform: 'capitalize'}}><span style={{fontWeight: 'bold', color: '#7e7ca6'}}>LiteStore</span> Community</h2>
             <h3 style={{color: '#000'}}>Driving growth for small businesses and entrepreneurs</h3>
             <a href="community.html" className="btn-get-started scrollto">Know More</a>
@@ -186,12 +186,12 @@ const Home = () => {
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/post-single-2.webp" class="d-block w-100" alt="...">
+                    <img src="assets/img/post-single-2.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/post-single-1.webp" class="d-block w-100" alt="...">
+                    <img src="assets/img/post-single-1.webp" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
@@ -211,10 +211,10 @@ const Home = () => {
         <section id="clients" className="clients" style={{backgroundColor: '#fff'}}>
         <div className="container">
             <h2>Trusted by</h2>
-            <img src="assets/trusted-by/nuage.webp" style={{width: '18%'}} alt="nuage" />
-            <img src="assets/trusted-by/dropvault.webp" style={{width: '28%'}} alt="dropvault" />
-            <img src="assets/trusted-by/brahmaputra.webp" style={{width: '23%'}} alt="brahmaputra fables" />
-            <img src="assets/trusted-by/spring-diaries.webp" style={{width: '23%'}} alt="spring diaries" />
+            <img src="assets/img/trusted-by/nuage.webp" style={{width: '18%'}} alt="nuage" />
+            <img src="assets/img/trusted-by/dropvault.webp" style={{width: '28%'}} alt="dropvault" />
+            <img src="assets/img/trusted-by/brahmaputra.webp" style={{width: '23%'}} alt="brahmaputra fables" />
+            <img src="assets/img/trusted-by/spring-diaries.webp" style={{width: '23%'}} alt="spring diaries" />
         </div>
         </section>{/* End Clients Section */}
     </div>  

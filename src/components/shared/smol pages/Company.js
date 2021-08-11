@@ -33,7 +33,7 @@ const Company = () => {
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay={100}>
               <div className="member">
                 <div className="member-img">
-                  <img src="assets/team/image2.webp" className="img-fluid" alt="" />
+                  <img src="assets/img/team/image2.webp" className="img-fluid" alt="" />
                   <div className="social">
                     <a href=""><i className="fab fa-twitter" /></a>
                     <a href=""><i className="fab fa-facebook" /></a>
@@ -49,7 +49,7 @@ const Company = () => {
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay={200}>
               <div className="member">
                 <div className="member-img">
-                  <img src="assets/team/image3.webp" className="img-fluid" alt="" />
+                  <img src="assets/img/team/image3.webp" className="img-fluid" alt="" />
                   <div className="social">
                     <a href=""><i className="fab fa-twitter" /></a>
                     <a href=""><i className="fab fa-facebook" /></a>
@@ -65,7 +65,7 @@ const Company = () => {
             <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay={300}>
               <div className="member">
                 <div className="member-img">
-                  <img src="assets/team/image1.webp" className="img-fluid" alt="" />
+                  <img src="assets/img/team/image1.jpg" className="img-fluid" alt="" />
                   <div className="social">
                     <a href=""><i className="fab fa-twitter" /></a>
                     <a href=""><i className="fab fa-facebook" /></a>
@@ -86,10 +86,10 @@ const Company = () => {
         <div className="container">
           <h1 style={{paddingBottom: '20px'}}>Press Release</h1>
           <a href="https://www.linkedin.com/feed/update/urn:li:activity:6828933053780520960/">
-            <img src="assets/trusted-by/brigade-reap-logo-share.jpg" style={{width: '18%'}} alt="brigade-reap" />
+            <img src="assets/img/trusted-by/brigade-reap-logo-share.jpg" style={{width: '18%'}} alt="brigade-reap" />
           </a>
           <a href="http://bwdisrupt.businessworld.in/article/Brigade-REAP-partners-with-Habitat-for-Humanity-adds-new-track-in-Cohort-10/03-08-2021-399174/">
-            <img src="assets/trusted-by/bw.png" style={{width: '38%'}} alt="bwdisrupt" />
+            <img src="assets/img/trusted-by/bw.png" style={{width: '38%'}} alt="bwdisrupt" />
           </a>
           <h3 className="content-style">Welcome to LiteStore.</h3>
         </div>
