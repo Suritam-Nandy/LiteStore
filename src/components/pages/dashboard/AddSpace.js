@@ -18,85 +18,25 @@ const AddSpace = () => {
   let history = useHistory();
   const { id } = useParams();
   const docRef = id ? firestore.collection("users").doc(id) : null;
-
+  const [picture, setPicture] = useState({
+    picture: "",
+    pictureUrl: "",
+  });
   const [user, setUser] = useState({
     area: "",
     pricing: "₹",
 
-    address1: "",
-    address2: "",
+    address: "",
+    description: "",
     availability: true,
     imgUrl: [""],
   });
   const [image, setImage] = useState(null);
-  // useEffect(() => {
-  //   if (id) {
-  //     loadUser();
-  //   }
-  // }, [id]);
-
-  // const fileUpload = (e) => {
-  //   const file = e.target.files[0];
-  //   console.log("FileName", file);
-  //   const uploadTask = storageRef.ref("All_Files/").child(file.name).put(file);
-
-  //   uploadTask.on(
-  //     "state_changed",
-  //     (snapshot) => {
-  //       const progress =
-  //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-  //       console.log("Upload is " + progress + "% done");
-  //     },
-  //     (error) => {
-  //       // Handle unsuccessful uploads
-  //       console.log("error:-", error);
-  //     },
-  //     () => {
-  //       // const uniId = guidGenerator().toString();
-  //       // Handle successful uploads on complete
-  //       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-  //       uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-  //         console.log("File available at", downloadURL);
-  //         firestore
-  //           .collection("All_Files")
-  //           .doc(uid)
-  //           .set({
-  //             file_name: file.name.toString(),
-  //             id: uid,
-  //             download_url: downloadURL.toString(),
-  //           })
-  //           .then(() => {
-  //             console.log("Document successfully written!");
-  //           })
-  //           .catch((error) => {
-  //             console.error("Error writing document: ", error);
-  //           });
-  //       });
-  //     }
-  //   );
-  // };
-
-  // const loadUser = async () => {
-  //   try {
-  //     const result = await docRef.get();
-  //     if (result.exists) {
-  //       setUser(result.data());
-  //     } else {
-  //       console.log("No such document!");
-  //     }
-  //   } catch (error) {
-  //     console.log("Error getting document:", error);
-  //   }
-  // };
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  // const onImageChange = (e) => {
-  //   setImage({ ...image, [e.target.name]: e.target.value });
-  //   console.log(image);
-  // };
   const getPicture = (event) => {
     console.log("call");
     let reader = new FileReader();
@@ -104,11 +44,7 @@ const AddSpace = () => {
     reader.onloadend = () => {
       console.log(file);
       setImage(file);
-      // console.log(image.picture.name);
-      // this.setState({
-      //   picture: file,
-      //   pictureUrl: reader.result,
-      // });
+      setPicture({ picture: file, pictureUrl: reader.result });
     };
     reader.readAsDataURL(file);
   };
@@ -127,10 +63,6 @@ const AddSpace = () => {
         console.error("Error updating document: ", error);
       }
     } else {
-      // console.log(picture);
-      // add new user
-      // file = getPicture
-      // storageRef.ref(`images/${file.name}`).put(file);
       console.log(image);
       const uploadData = async () => {
         console.log("upload image");
@@ -176,7 +108,7 @@ const AddSpace = () => {
             <h1 className="text-2xl">Add Space</h1>
           </div>
           <form onSubmit={submitForm}>
-            <div className="flex flex-col w-64 md:w-full shadow p-2">
+            <div className="flex flex-col mx-auto bg-blue-50 md:w-full shadow p-2">
               <div className="flex flex-col md:flex-row justify-evenly my-2">
                 <div className="flex flex-col m-1 w-full">
                   <h1>Place</h1>
@@ -209,33 +141,41 @@ const AddSpace = () => {
                       getPicture(event);
                     }}
                   />
+                  {picture.picture !== "" && (
+                    <PreviewPicture
+                      picture={picture.picture}
+                      pictureUrl={picture.pictureUrl}
+                    />
+                  )}
                 </div>
               </div>
               <div className="flex flex-col md:flex-row justify-evenly my-2">
                 <div className="flex flex-col m-1 w-full">
-                  <h1>Address Line 1</h1>
+                  <h1>Address</h1>
 
                   <textarea
-                    placeholder="Enter Address Line 1"
-                    name="address1"
-                    value={user.address1}
+                    placeholder="Enter Address "
+                    name="address"
+                    value={user.address}
                     onChange={onInputChange}
                     rows="3"
-                    className=" w-56 md:w-64 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="w-56 md:w-64 xl:w-96 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
                 <div className="flex flex-col m-1 w-full">
-                  <h1>Address Line 2</h1>
+                  <h1>Description</h1>
 
-                  <Input
-                    placeholder="Enter Place Address Line 2"
-                    name="address2"
-                    value={user.address2}
+                  <textarea
+                    placeholder="Provide details"
+                    name="description"
+                    value={user.description}
                     onChange={onInputChange}
-                  />
+                    rows="3"
+                    className=" w-56 md:w-64 xl:w-96 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  ></textarea>
                 </div>
               </div>
-              <div>
+              <div className="mt-6 py-2">
                 <button
                   type="submit"
                   className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

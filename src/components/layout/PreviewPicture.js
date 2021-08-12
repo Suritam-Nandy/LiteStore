@@ -20,7 +20,7 @@ const PreviewPicture = (props) => {
       </div>
     );
   } else {
-    return <img className="img-fluid w-64 mb-2 mt-2" src={pictureUrl} />;
+    return <img className="img-fluid w-64 h-48 mb-2 mt-2" src={pictureUrl} />;
   }
 };
 
