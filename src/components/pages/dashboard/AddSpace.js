@@ -214,12 +214,15 @@ const AddSpace = () => {
               <div className="flex flex-col md:flex-row justify-evenly my-2">
                 <div className="flex flex-col m-1 w-full">
                   <h1>Address Line 1</h1>
-                  <Input
-                    placeholder="Enter Place Address Line 1"
+
+                  <textarea
+                    placeholder="Enter Address Line 1"
                     name="address1"
                     value={user.address1}
                     onChange={onInputChange}
-                  />
+                    rows="3"
+                    className=" w-56 md:w-64 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  ></textarea>
                 </div>
                 <div className="flex flex-col m-1 w-full">
                   <h1>Address Line 2</h1>
