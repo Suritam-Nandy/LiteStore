@@ -133,7 +133,7 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, p, a, table{
   font-family: "Raleway", sans-serif;
 }
 
@@ -612,7 +612,7 @@ td, th {
   height: calc(100vh - 0px);
   text-align: center;
   position: relative;
-  background: url("../design-bg.webp") top center;
+  background: url("../img/design-bg.webp") top center;
   background-size: cover;
 }
 
@@ -650,7 +650,7 @@ td, th {
     height: calc(100vh - 0px);
     text-align: center;
     position: relative;
-    background: url("../stock/com-m.webp") top center;
+    background: url("../img/stock/com-m.webp") top center;
     background-size: cover;
   }
 }
@@ -683,7 +683,7 @@ td, th {
   text-align: center;
   position: relative;
   background-color: #000;
-  background: url("../stock/stands.webp") top center;
+  background: url("../img/stock/stands.webp") top center;
   background-size: cover;
 }
 
@@ -693,7 +693,7 @@ td, th {
     height: calc(100vh - 0px);
     text-align: center;
     position: relative;
-    background: url("../stock/stands-m.webp") top center;
+    background: url("../img/stock/stands-m.webp") top center;
     background-size: cover;
   }
 }
@@ -856,7 +856,7 @@ section {
 # About
 --------------------------------------------------------------*/
 #community{
-  background: url("../stock/colorr.webp");
+  background: url("../img/stock/colorr.webp");
 }
 
 #community .btn-get-started {
@@ -982,7 +982,7 @@ section {
   height: calc(100vh - 0px);
   text-align: center;
   position: relative;  
-  background: url("../stock/com.webp") top center;
+  background: url("../img/stock/com.webp") top center;
   background-size: cover;
   color: #fff;
 }

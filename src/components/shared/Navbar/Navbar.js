@@ -12,9 +12,14 @@ const Navbar = () => {
         <nav id="navbar" className="navbar">
           <ul>
             <Link to="/community">
-              {" "}
-              <li className="nav-link scrollto" style={{ fontWeight: "bold" }}>
-                Community
+              <li>
+                <a
+                  className="nav-link scrollto"
+                  href="community.html"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Community
+                </a>
               </li>
             </Link>
             <li>
