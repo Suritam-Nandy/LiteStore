@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header id="header" className="fixed-top">
@@ -11,15 +11,17 @@ const Navbar = () => {
         </a>
         <nav id="navbar" className="navbar">
           <ul>
-            <li>
-              <a
-                className="nav-link scrollto"
-                href="community.html"
-                style={{ fontWeight: "bold" }}
-              >
-                Community
-              </a>
-            </li>
+            <Link to="/community">
+              <li>
+                <a
+                  className="nav-link scrollto"
+                  href="community.html"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Community
+                </a>
+              </li>
+            </Link>
             <li>
               <a className="nav-link scrollto" href="list-your-space.html">
                 List a space
