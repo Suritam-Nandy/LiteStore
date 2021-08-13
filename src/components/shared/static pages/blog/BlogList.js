@@ -40,7 +40,7 @@ const BlogList = () => {
                     <div className="col-sm-12 col-md-8 col-lg-8 col-xl-8">
                         <h5 className="card-title">The Future of Retail: More Than Just Space  - I</h5>
                         <p className="card-text">Looking beyond sales: read about the Cheetos museum and the laboratory-like pop-up serving free vitamin supplements to junk food lovers.</p>
-                        <Link to="blog-future-of-retail-1.html"><a href="blog-future-of-retail-1.html" className="btn">Read More</a></Link>
+                        <a href="blog-future-of-retail-1.html" className="btn">Read More</a>
                     </div>
                     </div>
                 </div>
