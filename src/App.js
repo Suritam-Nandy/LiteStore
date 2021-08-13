@@ -26,7 +26,7 @@ function App() {
         <BrowserRouter>
           {/* <PrivateRoute component={Navbar} /> */}
           <Switch>
-            <Route exact path="/" component={Dashboard} />
+            <PrivateRoute exact path="/" component={Dashboard} />
 
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
