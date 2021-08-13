@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <header id="header" className="fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
         {/* <h1 class="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
-        <a href className="logo">
-          <img src="assets/img/logo.webp" alt="" className="img-fluid" />
-        </a>
+        <Link to="/">
+          <a href className="logo">
+            <img src="assets/img/logo.webp" alt="" className="img-fluid" />
+          </a>
+        </Link>
         <nav id="navbar" className="navbar">
           <ul>
             <Link to="/community">
@@ -22,11 +25,13 @@ const Navbar = () => {
                 </a>
               </li>
             </Link>
-            <li>
-              <a className="nav-link scrollto" href="list-your-space.html">
-                List a space
-              </a>
-            </li>
+            <Link to="/listaspace">
+              <li>
+                <a className="nav-link scrollto" href="list-your-space.html">
+                  List a space
+                </a>
+              </li>
+            </Link>
             <li>
               <a className="nav-link scrollto" href="find-a-space.html">
                 Find a space
@@ -38,132 +43,134 @@ const Navbar = () => {
               </a>
               <ul>
                 {/* <li><a class="nav-link scrollto" href="faqs/faqs-general.html" style="font-weight: bold;">All</a></li> */}
-                <li>
-                  <a
-                    className="nav-link scrollto"
-                    style={{ fontWeight: "bold" }}
-                    href="faqs/faq-section.html"
-                  >
-                    All
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="nav-link scrollto"
-                    href="faqs/faqs-general.html"
-                  >
-                    General
-                  </a>
-                </li>
-                <li className="dropdown">
-                  <a href="#">
-                    <span>For Landowners</span>{" "}
-                    <i className="fas fa-chevron-right" />
-                  </a>
-                  <ul>
+                  <Link to="/listaspace">
                     <li>
                       <a
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-1"
+                        style={{ fontWeight: "bold" }}
+                        href="faqs/faq-section.html"
                       >
-                        General
+                        All
                       </a>
                     </li>
-                    <li>
-                      <a
-                        className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-2"
-                      >
-                        How does it work
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-3"
-                      >
-                        Legal Questions
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-4"
-                      >
-                        Payments
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li className="dropdown">
-                  <a href="#">
-                    <span>For Brands and Businesses</span>{" "}
-                    <i className="fas fa-chevron-right" />
-                  </a>
-                  <ul>
-                    <li>
-                      <a
-                        className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-5"
-                      >
-                        How it works
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-6"
-                      >
-                        Booking a Space
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-7"
-                      >
-                        Legal Questions
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-8"
-                      >
-                        Payments and Pricing
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a
-                    className="nav-link scrollto"
-                    href="faqs/faqs-litestore.html#lsservices"
-                  >
-                    LiteStore Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="nav-link scrollto"
-                    href="faqs/faqs-litestore.html#covid"
-                  >
-                    Covid-19 Questions
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="nav-link scrollto"
-                    href="faqs/faqs-litestore.html#designers"
-                  >
-                    For Designers
-                  </a>
-                </li>
-                {/* <ul>
-                        <li><a class="nav-link scrollto" href="#">General</a></li>
-                        <li><a class="nav-link scrollto" href="#">Payments</a></li>
-                        </ul>
-                    </li> */}
+                  </Link>
+                  <li>
+                    <a
+                      className="nav-link scrollto"
+                      href="faqs/faqs-general.html"
+                    >
+                      General
+                    </a>
+                  </li>
+                  <li className="dropdown">
+                    <a href="#">
+                      <span>For Landowners</span>{" "}
+                      <i className="fas fa-chevron-right" />
+                    </a>
+                    <ul>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-landowners.html#sec-1"
+                        >
+                          General
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-landowners.html#sec-2"
+                        >
+                          How does it work
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-landowners.html#sec-3"
+                        >
+                          Legal Questions
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-landowners.html#sec-4"
+                        >
+                          Payments
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="dropdown">
+                    <a href="#">
+                      <span>For Brands and Businesses</span>{" "}
+                      <i className="fas fa-chevron-right" />
+                    </a>
+                    <ul>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-brands.html#sec-5"
+                        >
+                          How it works
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-brands.html#sec-6"
+                        >
+                          Booking a Space
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-brands.html#sec-7"
+                        >
+                          Legal Questions
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="nav-link scrollto"
+                          href="faqs/faqs-for-brands.html#sec-8"
+                        >
+                          Payments and Pricing
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      className="nav-link scrollto"
+                      href="faqs/faqs-litestore.html#lsservices"
+                    >
+                      LiteStore Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="nav-link scrollto"
+                      href="faqs/faqs-litestore.html#covid"
+                    >
+                      Covid-19 Questions
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="nav-link scrollto"
+                      href="faqs/faqs-litestore.html#designers"
+                    >
+                      For Designers
+                    </a>
+                  </li>
+                  {/* <ul>
+                          <li><a class="nav-link scrollto" href="#">General</a></li>
+                          <li><a class="nav-link scrollto" href="#">Payments</a></li>
+                          </ul>
+                      </li> */}
               </ul>
             </li>
             <li className="dropdown">

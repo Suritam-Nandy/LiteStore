@@ -66,7 +66,7 @@ const Home = () => {
         <p>Try scrolling the rest of the page to see this option in action.</p>
         </div>
         </div> */}
-        {/*  About Video Section  */}
+        {/*  About Video Section
         <section id="about-video" className="about-video">
             <div className="container" data-aos="fade-up">
                 <h1>Introducing LiteStore</h1>
@@ -77,7 +77,7 @@ const Home = () => {
                     </div>
                 </div>
             </div> 
-        </section>{/* End About Video Section */}
+        </section> End About Video Section */}
         {/*  Services Section  */}
         <section id="services" className="services">
         <div className="container" data-aos="fade-up">
