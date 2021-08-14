@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from "react";
-import Avatar from "../../layout/Avatar";
 import Sidebar from "../../layout/Sidebar";
 
 import { Link } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import { useFirestore, useFirebase } from "react-redux-firebase";
 import { useFirestoreConnect } from "react-redux-firebase";
 import Loading from "../../layout/Loading";
-import { db } from "../../../store";
 
-const MySpaces = () => {
+const ListedSpaces = () => {
   const firestore = useFirestore();
-  const firebase = useFirebase();
   const { uid } = useSelector((state) => state.firebase.auth);
-  const allplaces = useSelector((state) => state.firestore.ordered.allplaces);
+  const users = useSelector((state) => state.firestore.ordered.places);
 
   useFirestoreConnect({
-    collection: "allplaces",
+    collection: `users/${uid}/places`,
+    storeAs: "places",
   });
-  if (!allplaces) {
+  if (!users) {
     return <Loading />;
   }
+  const deleteUser = async (id) => {
+    try {
+      await firestore.collection("users").doc(id).delete();
+    } catch (error) {
+      console.error("Error removing document: ", error);
+    }
+  };
+
   return (
     <div className="flex flex-no-wrap">
       <Sidebar />
@@ -71,7 +76,7 @@ const MySpaces = () => {
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200 ">
-                      {allplaces.map((place, index) => (
+                      {users.map((place, index) => (
                         <tr key={place.index}>
                           <td className="px-6 py-4 whitespace-nowrap h-32">
                             <div className="flex items-center">
@@ -96,8 +101,8 @@ const MySpaces = () => {
                               {place.area}
                             </div>
                             {/* <div className="text-sm text-gray-500">
-                                {place.name}
-                              </div> */}
+                              {place.name}
+                            </div> */}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {place.pricing}
@@ -120,4 +125,4 @@ const MySpaces = () => {
   );
 };
 
-export default MySpaces;
+export default ListedSpaces;

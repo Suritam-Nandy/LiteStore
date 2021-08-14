@@ -9,9 +9,10 @@ import { Provider } from "react-redux";
 import store, { rrfProps } from "./store";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import Login from "./components/pages/Login";
-import ListedSpaces from "./components/listedSpaces/listedspaces";
+// import ListedSpaces from "./components/listedSpaces/listedspaces";  <-- all places -->  #works fine
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import AddSpace from "./components/pages/dashboard/AddSpace";
+import ListedSpaces from "./components/pages/dashboard/ListedSpaces";
 import Payments from "./components/pages/dashboard/Payments";
 
 import PrivateRoute from "./components/routes/PrivateRoute";

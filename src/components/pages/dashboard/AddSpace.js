@@ -6,9 +6,20 @@ import Sidebar from "../../layout/Sidebar";
 
 import ImageField from "../../layout/ImageField";
 import PreviewPicture from "../../layout/PreviewPicture";
+import {
+  GiDoubleStreetLights,
+  GiWindow,
+  GiElectric,
+  GiHeatHaze,
+  GiWallLight,
+  GiSofa,
+} from "react-icons/gi";
+import { FaToilet } from "react-icons/fa";
+import { MdKitchen } from "react-icons/md";
+import { IoSnow } from "react-icons/io5";
 
 import { useFirestore, useFirebase } from "react-redux-firebase";
-import { BiImageAdd } from "react-icons/bi";
+import { BiImageAdd, BiHandicap, BiCctv } from "react-icons/bi";
 
 const AddSpace = () => {
   const firestore = useFirestore();
@@ -173,6 +184,71 @@ const AddSpace = () => {
                     rows="3"
                     className=" w-56 md:w-64 xl:w-96 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   ></textarea>
+                </div>
+              </div>
+
+              <div className="flex flex-col my-2">
+                <div className="m-1">
+                  <h1>Amenities</h1>
+                </div>
+
+                <div className="flex flex-col md:grid mx-10  md:grid-cols-2  m-1 w-full">
+                  <div className="flex flex-row my-1">
+                    <GiDoubleStreetLights className="w-12 h-8" />
+                    <span className="text-lg">Street Level</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <MdKitchen />
+                    <span>Kitchen</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <GiWindow />
+                    <span>Window Display</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <BiHandicap />
+                    <span>Handicap Accessible</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <GiElectric />
+                    <span>Electricity</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <IoSnow />
+                    <span>Air Conditioning</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <GiHeatHaze />
+                    <span>Heating</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <FaToilet />
+                    <span>Toilets</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <BiCctv />
+                    <span>Security System</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <GiWallLight />
+                    <span>Lighting</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <GiSofa />
+                    <span>Furniture</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <span>Garment Rack</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <span>Internet</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <span>Sound & Video Equipment</span>
+                  </div>
+                  <div className="flex flex-row my-1">
+                    <span>Whitebox / Minimal</span>
+                  </div>
                 </div>
               </div>
               <div className="mt-6 py-2">
