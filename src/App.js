@@ -14,7 +14,7 @@ import Dashboard from "./components/pages/dashboard/Dashboard";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
-import NavbarRedirect from "./components/shared/Navbar/NavbarRedirect";
+import NavbarRedirect from "./components/shared/Navbar/Route";
 
 function App() {
   return (
