@@ -23,7 +23,7 @@ const Sidebar = () => {
     { name: "Payments", notificationCount: 0, link: "payments" },
   ];
   const [open, setOpen] = useState(false);
-  console.log(open);
+  // console.log(open);
   return (
     <>
       {/* Sidebar starts */}

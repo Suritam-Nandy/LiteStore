@@ -108,7 +108,39 @@ const ListedSpaces = () => {
                             {place.pricing}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            Occupied
+                            <div class="flex justify-center items-center ">
+                              <div class="bg-gray-200 rounded-lg">
+                                <div class="inline-flex rounded-lg">
+                                  <input
+                                    type="radio"
+                                    name="room_type"
+                                    id="roomPrivate"
+                                    checked
+                                    hidden
+                                  />
+                                  <label
+                                    for="roomPrivate"
+                                    class="radio checked:bg-rose-600 text-center self-center py-2 px-4 rounded-lg cursor-pointer hover:opacity-75"
+                                  >
+                                    Vaccant
+                                  </label>
+                                </div>
+                                <div class="inline-flex rounded-lg">
+                                  <input
+                                    type="radio"
+                                    name="room_type"
+                                    id="roomPublic"
+                                    hidden
+                                  />
+                                  <label
+                                    for="roomPublic"
+                                    class="radio text-center self-center py-2 px-4 rounded-lg cursor-pointer hover:opacity-75"
+                                  >
+                                    Occupied
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
                           </td>
                         </tr>
                       ))}

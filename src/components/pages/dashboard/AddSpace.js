@@ -6,7 +6,10 @@ import Sidebar from "../../layout/Sidebar";
 
 import ImageField from "../../layout/ImageField";
 import PreviewPicture from "../../layout/PreviewPicture";
+import { ImConnection } from "react-icons/im";
+import { FiMinimize } from "react-icons/fi";
 import {
+  GiMusicSpell,
   GiDoubleStreetLights,
   GiWindow,
   GiElectric,
@@ -14,7 +17,7 @@ import {
   GiWallLight,
   GiSofa,
 } from "react-icons/gi";
-import { FaToilet } from "react-icons/fa";
+import { FaToilet, FaStackOverflow } from "react-icons/fa";
 import { MdKitchen } from "react-icons/md";
 import { IoSnow } from "react-icons/io5";
 
@@ -33,16 +36,43 @@ const AddSpace = () => {
     picture: "",
     pictureUrl: "",
   });
+  const [isChecked, setIsChecked] = useState(false);
   const [user, setUser] = useState({
     area: "",
     pricing: "₹",
+    priceDay: "₹",
+    priceWeek: "₹",
+    priceMonth: "₹",
 
     address: "",
     description: "",
     availability: true,
     imgUrl: [""],
+    streetLevel: false,
+    kitchen: false,
+    windowDisplay: false,
+    handicapAccessible: false,
+    electricity: false,
+    airConditioning: false,
+    heating: false,
+    toilets: false,
+    securitySystem: false,
+    furniture: false,
+    garmetRack: false,
+    internet: false,
+    soundVideo: false,
+    minimal: false,
   });
   const [image, setImage] = useState(null);
+
+  const handleClick = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.checked });
+    console.log([e.target.name]);
+    console.log([e.target.checked]);
+
+    console.log(user.streetLevel);
+  };
+  console.log(user.streetLevel);
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -59,6 +89,7 @@ const AddSpace = () => {
     };
     reader.readAsDataURL(file);
   };
+
   const submitForm = async (e) => {
     console.log("submitform");
     e.preventDefault();
@@ -132,13 +163,42 @@ const AddSpace = () => {
                 </div>
                 <div className="flex flex-col m-1 w-full">
                   <h1>Pricing</h1>
-
-                  <Input
-                    placeholder="Enter Pricing"
-                    name="pricing"
-                    value={user.pricing}
-                    onChange={onInputChange}
-                  />
+                  <div className="flex flex-row my-2">
+                    <input
+                      className=" w-40 md:w-56 xl:w-56 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      placeholder="Enter Pricing"
+                      name="priceDay"
+                      value={user.priceDay}
+                      onChange={onInputChange}
+                    />
+                    <span className="bg-gray-400 text-gray-900 w-28 mx-auto text-center ml-2 py-2 px-4 rounded focus:outline-none ">
+                      per day
+                    </span>
+                  </div>
+                  <div className="flex flex-row my-2">
+                    <input
+                      className=" w-40 md:w-56 xl:w-56 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      placeholder="Enter Pricing"
+                      name="priceWeek"
+                      value={user.priceWeek}
+                      onChange={onInputChange}
+                    />
+                    <span className="bg-gray-400 text-gray-900 w-28 mx-auto text-center ml-2 py-2 px-4 rounded focus:outline-none ">
+                      per week
+                    </span>
+                  </div>
+                  <div className="flex flex-row my-2">
+                    <input
+                      className=" w-40 md:w-56 xl:w-56 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      placeholder="Enter Pricing"
+                      name="priceMonth"
+                      value={user.priceMonth}
+                      onChange={onInputChange}
+                    />
+                    <span className="bg-gray-400 text-gray-900 w-28 mx-auto text-center ml-2 py-2 px-4 rounded focus:outline-none ">
+                      per month
+                    </span>
+                  </div>
                 </div>
               </div>
               <div className="flex flex-row justify-between my-2">
@@ -193,61 +253,157 @@ const AddSpace = () => {
                 </div>
 
                 <div className="flex flex-col md:grid mx-10  md:grid-cols-2  m-1 w-full">
-                  <div className="flex flex-row my-1">
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="streetLevel"
+                    />
                     <GiDoubleStreetLights className="w-12 h-8" />
-                    <span className="text-lg">Street Level</span>
+                    <span className="text-lg mt-0.5">Street Level</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <MdKitchen />
-                    <span>Kitchen</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="kitchen"
+                    />
+                    <MdKitchen className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Kitchen</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <GiWindow />
-                    <span>Window Display</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="windowDisplay"
+                    />
+                    <GiWindow className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Window Display</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <BiHandicap />
-                    <span>Handicap Accessible</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="handicapAccessible"
+                    />
+                    <BiHandicap className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Handicap Accessible</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <GiElectric />
-                    <span>Electricity</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="electricity"
+                    />
+                    <GiElectric className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Electricity</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <IoSnow />
-                    <span>Air Conditioning</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="airConditioning"
+                    />
+                    <IoSnow className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Air Conditioning</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <GiHeatHaze />
-                    <span>Heating</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="heating"
+                    />
+                    <GiHeatHaze className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Heating</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <FaToilet />
-                    <span>Toilets</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="toilets"
+                    />
+                    <FaToilet className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Toilets</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <BiCctv />
-                    <span>Security System</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="securitySystem"
+                    />
+                    <BiCctv className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Security System</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <GiWallLight />
-                    <span>Lighting</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="lighting"
+                    />
+                    <GiWallLight className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Lighting</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <GiSofa />
-                    <span>Furniture</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 checked:text-gray-800 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="furniture"
+                    />
+                    <GiSofa className="w-12 h-8 checked:text-gray-800" />
+                    <span className="text-lg mt-0.5">Furniture</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <span>Garment Rack</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="garmetRack"
+                    />
+                    <FaStackOverflow className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Garment Rack</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <span>Internet</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="internet"
+                    />
+                    <ImConnection className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Internet</span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <span>Sound & Video Equipment</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="soundVideo"
+                    />
+                    <GiMusicSpell className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">
+                      Sound & Video Equipment
+                    </span>
                   </div>
-                  <div className="flex flex-row my-1">
-                    <span>Whitebox / Minimal</span>
+                  <div className="flex flex-row my-0.5 p-1 text-gray-600 hover:text-gray-800">
+                    <input
+                      type="checkbox"
+                      className="text-gray-800 mt-2 h-5 w-5"
+                      onClick={handleClick}
+                      name="minimal"
+                    />
+                    <FiMinimize className="w-12 h-8" />
+                    <span className="text-lg mt-0.5">Whitebox / Minimal</span>
                   </div>
                 </div>
               </div>
