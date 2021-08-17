@@ -128,7 +128,7 @@ const ListedSpaces = () => {
                               ></label>
                             </div>
                             <label for="toggle" class="text-xs text-gray-700">
-                              {place.id}
+                              Occupied
                             </label>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
