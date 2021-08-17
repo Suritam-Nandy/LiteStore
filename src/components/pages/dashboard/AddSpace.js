@@ -434,7 +434,7 @@ const AddSpace = () => {
                   type="submit"
                   className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
-                  {id ? "Update User" : "Add place"}
+                  {id ? "Update Place" : "Add Place"}
                 </button>
               </div>
             </div>
