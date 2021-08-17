@@ -128,11 +128,16 @@ const ListedSpaces = () => {
                               ></label>
                             </div>
                             <label for="toggle" class="text-xs text-gray-700">
-                              Occupied
+                              {place.id}
                             </label>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            Edit
+                            <Link
+                              to={`/addspace/${place.id}`}
+                              className="btn btn-primary btn-profile"
+                            >
+                              Edit
+                            </Link>
                           </td>
                         </tr>
                       ))}

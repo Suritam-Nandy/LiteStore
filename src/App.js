@@ -32,6 +32,8 @@ function App() {
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
             <PrivateRoute exact path="/userForm/:id?" component={UserForm} />
+            <PrivateRoute exact path="/addspace/:id?" component={AddSpace} />
+
             <PrivateRoute exact path="/addspace" component={AddSpace} />
 
             <PrivateRoute exact path="/listedspaces" component={ListedSpaces} />
@@ -39,7 +41,7 @@ function App() {
 
             <Route exact path="/allspaces" component={ListedSpaces} />
             <Route exact path="/login" component={Login} />
-            <Route component={NotFound} />
+            {/* <Route component={NotFound} /> */}
           </Switch>
         </BrowserRouter>
       </ReactReduxFirebaseProvider>

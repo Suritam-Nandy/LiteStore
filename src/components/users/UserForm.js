@@ -15,7 +15,9 @@ const UserForm = () => {
   const uid = firebase.auth().currentUser.uid;
   let history = useHistory();
   const { id } = useParams();
-  const docRef = id ? firestore.collection("users").doc(id) : null;
+  const docRef = id
+    ? firestore.collection("users").doc(uid).collection("places").doc(id)
+    : null;
 
   const [user, setUser] = useState({
     area: "",
@@ -27,11 +29,11 @@ const UserForm = () => {
     imgUrl: [""],
   });
   const [image, setImage] = useState(null);
-  // useEffect(() => {
-  //   if (id) {
-  //     loadUser();
-  //   }
-  // }, [id]);
+  useEffect(() => {
+    if (id) {
+      loadUser();
+    }
+  }, [id]);
 
   // const fileUpload = (e) => {
   //   const file = e.target.files[0];
@@ -74,18 +76,18 @@ const UserForm = () => {
   //   );
   // };
 
-  // const loadUser = async () => {
-  //   try {
-  //     const result = await docRef.get();
-  //     if (result.exists) {
-  //       setUser(result.data());
-  //     } else {
-  //       console.log("No such document!");
-  //     }
-  //   } catch (error) {
-  //     console.log("Error getting document:", error);
-  //   }
-  // };
+  const loadUser = async () => {
+    try {
+      const result = await docRef.get();
+      if (result.exists) {
+        setUser(result.data());
+      } else {
+        console.log("No such document!");
+      }
+    } catch (error) {
+      console.log("Error getting document:", error);
+    }
+  };
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });

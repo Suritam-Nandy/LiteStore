@@ -31,7 +31,11 @@ const AddSpace = () => {
   const uid = firebase.auth().currentUser.uid;
   let history = useHistory();
   const { id } = useParams();
-  const docRef = id ? firestore.collection("users").doc(id) : null;
+  console.log(id);
+
+  const docRef = id
+    ? firestore.collection("users").doc(uid).collection("places").doc(id)
+    : null;
   const [picture, setPicture] = useState({
     picture: "",
     pictureUrl: "",
@@ -48,7 +52,7 @@ const AddSpace = () => {
     description: "",
     availability: true,
     imgUrl: [""],
-    streetLevel: false,
+    streetLevel: "",
     kitchen: false,
     windowDisplay: false,
     handicapAccessible: false,
@@ -65,15 +69,32 @@ const AddSpace = () => {
   });
   const [image, setImage] = useState(null);
 
+  useEffect(() => {
+    if (id) {
+      loadPlace();
+    }
+  }, [id]);
+
   const handleClick = (e) => {
     setUser({ ...user, [e.target.name]: e.target.checked });
-    console.log([e.target.name]);
-    console.log([e.target.checked]);
+    // console.log([e.target.name]);
+    // console.log([e.target.checked]);
 
-    console.log(user.streetLevel);
+    // console.log(user.streetLevel);
   };
-  console.log(user.streetLevel);
-
+  // console.log(user.streetLevel);
+  const loadPlace = async () => {
+    try {
+      const result = await docRef.get();
+      if (result.exists) {
+        setUser(result.data());
+      } else {
+        console.log("No such document!");
+      }
+    } catch (error) {
+      console.log("Error getting document:", error);
+    }
+  };
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
