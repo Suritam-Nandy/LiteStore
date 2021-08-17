@@ -349,6 +349,7 @@ const AddSpace = () => {
                       className="text-gray-800 mt-2 h-5 w-5"
                       onClick={handleClick}
                       name="lighting"
+                      hidden
                     />
                     <GiWallLight className="w-12 h-8" />
                     <span className="text-lg mt-0.5">Lighting</span>

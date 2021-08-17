@@ -7,6 +7,7 @@ import { useFirebase } from "react-redux-firebase";
 const Sidebar = () => {
   const firebase = useFirebase();
   const uid = firebase.auth().currentUser.uid;
+  const name = firebase.auth().currentUser.displayName;
 
   const sidebarList = [
     {
@@ -35,7 +36,7 @@ const Sidebar = () => {
       >
         <div className="px-8 ">
           <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
-            <h1 className="text-4xl text-white">Name</h1>
+            <h1 className="text-4xl text-white">{name}</h1>
             <span className="text-sm">{uid}</span>
           </div>
           <ul className="mt-12">

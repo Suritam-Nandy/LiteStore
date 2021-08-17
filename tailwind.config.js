@@ -38,6 +38,7 @@ module.exports = {
       backgroundColor: ["checked"],
       borderColor: ["checked"],
       textColor: ["checked"],
+      inset: ["checked"],
     },
   },
   plugins: [],

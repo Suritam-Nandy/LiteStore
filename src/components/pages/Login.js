@@ -1,17 +1,41 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import React, { useState } from "react";
 import Input from "../layout/Input";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-
+import { FcGoogle } from "react-icons/fc";
+import { AiFillFacebook } from "react-icons/ai";
 const Login = () => {
   let history = useHistory();
   const firebase = useFirebase();
+  const auth = useSelector((state) => state.firebase.auth);
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+
+  const signInWithGoogle = () => {
+    firebase
+      .login({
+        provider: "google",
+        type: "popup",
+      })
+      .then(() => {
+        history.push("/");
+      });
+  };
+  const signInWithFacebook = () => {
+    firebase
+      .login({
+        provider: "facebook",
+        type: "popup",
+      })
+      .then(() => {
+        history.push("/");
+      });
+  };
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -39,24 +63,22 @@ const Login = () => {
                   <button
                     className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                     type="button"
+                    onClick={() => {
+                      signInWithGoogle();
+                    }}
                   >
-                    <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      // src={require("assets/img/github.svg").default}
-                    />
-                    Github
+                    <FcGoogle className="mr-1" size={20} />
+                    Google
                   </button>
                   <button
                     className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                     type="button"
+                    onClick={() => {
+                      signInWithFacebook();
+                    }}
                   >
-                    <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      // src={require("assets/img/google.svg").default}
-                    />
-                    Google
+                    <AiFillFacebook className=" mr-1" size={20} />
+                    Facebook
                   </button>
                 </div>
                 <hr className="mt-6 border-b-1 border-blueGray-300" />
