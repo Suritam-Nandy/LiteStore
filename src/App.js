@@ -1,7 +1,10 @@
 import React from "react";
 // import "./styles/App.scss";
+
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Navbar from "./components/layout/Navbar";
+import Navbar from "./components/shared/Navbar/Navbar";
+import Sidebar from "./components/layout/Sidebar";
+
 import Users from "./components/users/Users";
 import User from "./components/users/User";
 import UserForm from "./components/users/UserForm";
@@ -28,6 +31,9 @@ function App() {
       <ReactReduxFirebaseProvider {...rrfProps}>
         <BrowserRouter>
           {/* <PrivateRoute component={Navbar} /> */}
+          {/* <PrivateRoute component={Sidebar} /> */}
+
+          <Navbar />
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
 

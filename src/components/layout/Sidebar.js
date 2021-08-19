@@ -32,7 +32,7 @@ const Sidebar = () => {
       <div
         className={`${
           open ? "sm:flex" : "hidden"
-        }  w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
+        }  w-64 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
       >
         <div className="px-8 ">
           <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { BsChevronDown, BsChevronRight, BsList } from "react-icons/bs";
 import { FaPhoneAlt } from "react-icons/fa";
 
@@ -14,6 +16,10 @@ const Navbar = () => {
 
         <nav id="navbar" className="navbar font-raleway font-light">
           <ul>
+            <Link to="/" className="dropdown-item">
+              <li className="pl-6 mr-4"> Dashboard</li>
+            </Link>
+
             <li className="pl-6 mr-4">
               <a
                 className="nav-link scrollto py-2 px-3"
@@ -31,14 +37,16 @@ const Navbar = () => {
                 List a space
               </a>
             </li>
-            <li className="-ml-5 mr-6">
-              <a
-                className="nav-link scrollto py-2 px-3"
-                href="find-a-space.html"
-              >
-                Find a space
-              </a>
-            </li>
+            <Link to="/allspaces" className="dropdown-item">
+              <li className="-ml-5 mr-6">
+                <a
+                  className="nav-link scrollto py-2 px-3"
+                  href="find-a-space.html"
+                >
+                  Find a space
+                </a>
+              </li>
+            </Link>
 
             <li className="dropdown -ml-5 mr-6">
               <a className="nav-link scrollto py-2 px-3" href="/">

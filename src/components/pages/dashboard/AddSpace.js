@@ -166,7 +166,7 @@ const AddSpace = () => {
     <>
       <div className="flex flex-no-wrap">
         <Sidebar />
-        <div className="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6">
+        <div className="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6  mt-16">
           <div className="my-2">
             <h1 className="text-2xl">Add Space</h1>
           </div>
