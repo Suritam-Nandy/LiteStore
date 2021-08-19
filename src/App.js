@@ -16,7 +16,7 @@ import Dashboard from "./components/pages/dashboard/Dashboard";
 import AddSpace from "./components/pages/dashboard/AddSpace";
 import ListedSpaces from "./components/pages/dashboard/ListedSpaces";
 import Payments from "./components/pages/dashboard/Payments";
-
+import AllSpaces from "./components/pages/AllSpaces";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
@@ -41,7 +41,7 @@ function App() {
             <PrivateRoute exact path="/listedspaces" component={ListedSpaces} />
             <PrivateRoute exact path="/payments" component={Payments} />
 
-            <Route exact path="/allspaces" component={ListedSpaces} />
+            <Route exact path="/allspaces" component={AllSpaces} />
             <Route exact path="/signup" component={Signup} />
 
             <Route exact path="/login" component={Login} />
