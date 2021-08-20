@@ -1,9 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import { RiDashboardLine } from "react-icons/ri";
 import { FiMenu } from "react-icons/fi";
+import { useFirebase, useFirestoreConnect } from "react-redux-firebase";
 
 const Sidebar = () => {
+  const firebase = useFirebase();
+
+  const uid = firebase.auth().currentUser.uid;
+  // useFirestoreConnect({
+  //   collection: `users/${uid}/user`,
+  //   storeAs: "user",
+  // });
+  // const user = useSelector((state) => state.firestore.ordered.user);
+
+  const name = firebase.auth().currentUser.displayName;
+  // ? firebase.auth().currentUser.displayName
+  // : user.displayName;
+
   const sidebarList = [
     {
       name: "Home",
@@ -14,11 +30,12 @@ const Sidebar = () => {
     { name: "Profile", notificationCount: 2, link: "" },
     { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
     { name: "Interested Customers", notificationCount: 0, link: "" },
+    { name: "Add Space", notificationCount: 0, link: "addspace" },
     { name: "Calendar", notificationCount: 0, link: "" },
-    { name: "Payments", notificationCount: 0, link: "" },
+    { name: "Payments", notificationCount: 0, link: "payments" },
   ];
   const [open, setOpen] = useState(false);
-  console.log(open);
+  // console.log(open);
   return (
     <>
       {/* Sidebar starts */}
@@ -26,11 +43,12 @@ const Sidebar = () => {
       <div
         className={`${
           open ? "sm:flex" : "hidden"
-        }  w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex`}
+        }  w-64 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
       >
-        <div className="px-8">
-          <div className="h-16 w-full flex items-center">
-            <h1 className="text-4xl text-white">Name</h1>
+        <div className="px-8 ">
+          <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
+            <h1 className="text-4xl text-white">{name}</h1>
+            <span className="text-sm">{uid}</span>
           </div>
           <ul className="mt-12">
             {sidebarList.map((item, index) => {
@@ -50,6 +68,18 @@ const Sidebar = () => {
                 </Link>
               );
             })}
+            <li className="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
+              <div className="flex items-center">
+                <Link to="/login">
+                  <span
+                    onClick={() => firebase.logout()}
+                    className="text-sm  ml-2"
+                  >
+                    Logout
+                  </span>
+                </Link>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

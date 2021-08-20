@@ -11,7 +11,7 @@ const Input = (props) => {
   return (
     <input
       type={type}
-      className="form-control"
+      className="form-control w-56 md:w-64 xl:w-96 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       placeholder={placeholder}
       name={name}
       value={value}

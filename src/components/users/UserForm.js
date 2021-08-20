@@ -15,10 +15,13 @@ const UserForm = () => {
   const uid = firebase.auth().currentUser.uid;
   let history = useHistory();
   const { id } = useParams();
-  const docRef = id ? firestore.collection("users").doc(id) : null;
+  const docRef = id
+    ? firestore.collection("users").doc(uid).collection("places").doc(id)
+    : null;
 
   const [user, setUser] = useState({
-    name: "",
+    area: "",
+    pricing: "₹",
 
     address1: "",
     address2: "",
@@ -26,11 +29,11 @@ const UserForm = () => {
     imgUrl: [""],
   });
   const [image, setImage] = useState(null);
-  // useEffect(() => {
-  //   if (id) {
-  //     loadUser();
-  //   }
-  // }, [id]);
+  useEffect(() => {
+    if (id) {
+      loadUser();
+    }
+  }, [id]);
 
   // const fileUpload = (e) => {
   //   const file = e.target.files[0];
@@ -73,18 +76,18 @@ const UserForm = () => {
   //   );
   // };
 
-  // const loadUser = async () => {
-  //   try {
-  //     const result = await docRef.get();
-  //     if (result.exists) {
-  //       setUser(result.data());
-  //     } else {
-  //       console.log("No such document!");
-  //     }
-  //   } catch (error) {
-  //     console.log("Error getting document:", error);
-  //   }
-  // };
+  const loadUser = async () => {
+    try {
+      const result = await docRef.get();
+      if (result.exists) {
+        setUser(result.data());
+      } else {
+        console.log("No such document!");
+      }
+    } catch (error) {
+      console.log("Error getting document:", error);
+    }
+  };
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -175,8 +178,8 @@ const UserForm = () => {
                   <div className="col-md-6">
                     <Input
                       placeholder="Enter PLace Name"
-                      name="name"
-                      value={user.name}
+                      name="area"
+                      value={user.area}
                       onChange={onInputChange}
                     />
                   </div>
@@ -220,6 +223,15 @@ const UserForm = () => {
                 <div className="form-row form-group">
                   <div className="col-md-6">
                     <Input
+                      placeholder="Enter Pricing"
+                      name="pricing"
+                      value={user.pricing}
+                      onChange={onInputChange}
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <Input
                       placeholder="Enter Place Address Line 1"
                       name="address1"
                       value={user.address1}
@@ -237,7 +249,7 @@ const UserForm = () => {
                 </div>
 
                 <button type="submit" className="btn btn-primary">
-                  {id ? "Update User" : "Add User"}
+                  {id ? "Update User" : "Add place"}
                 </button>
               </form>
             </div>

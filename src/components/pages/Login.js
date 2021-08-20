@@ -1,17 +1,41 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import React, { useState } from "react";
 import Input from "../layout/Input";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-
+import { FcGoogle } from "react-icons/fc";
+import { AiFillFacebook } from "react-icons/ai";
 const Login = () => {
   let history = useHistory();
   const firebase = useFirebase();
+  const auth = useSelector((state) => state.firebase.auth);
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+
+  const signInWithGoogle = () => {
+    firebase
+      .login({
+        provider: "google",
+        type: "popup",
+      })
+      .then(() => {
+        history.push("/");
+      });
+  };
+  const signInWithFacebook = () => {
+    firebase
+      .login({
+        provider: "facebook",
+        type: "popup",
+      })
+      .then(() => {
+        history.push("/");
+      });
+  };
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -26,9 +50,12 @@ const Login = () => {
   return (
     <>
       <div className="container mx-auto px-4 h-full">
-        <div className="flex content-center items-center justify-center h-full">
-          <div className="w-full lg:w-4/12 px-4">
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
+        <Link to="/allspaces" className="dropdown-item">
+          Listed Spaces
+        </Link>
+        <div className="flex content-center items-center justify-center min-h-100 h-screen">
+          <div className="w-full lg:w-4/12 px-4 items-center ">
+            <div className="relative container flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
               <div className="rounded-t mb-0 px-6 py-6">
                 <div className="text-center mb-3">
                   <h6 className="text-blueGray-500 text-sm font-bold">
@@ -39,24 +66,22 @@ const Login = () => {
                   <button
                     className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                     type="button"
+                    onClick={() => {
+                      signInWithGoogle();
+                    }}
                   >
-                    <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      // src={require("assets/img/github.svg").default}
-                    />
-                    Github
+                    <FcGoogle className="mr-1" size={20} />
+                    Google
                   </button>
                   <button
                     className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                     type="button"
+                    onClick={() => {
+                      signInWithFacebook();
+                    }}
                   >
-                    <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      // src={require("assets/img/google.svg").default}
-                    />
-                    Google
+                    <AiFillFacebook className=" mr-1" size={20} />
+                    Facebook
                   </button>
                 </div>
                 <hr className="mt-6 border-b-1 border-blueGray-300" />
@@ -96,18 +121,24 @@ const Login = () => {
                       onChange={onInputChange}
                     />
                   </div>
-                  <button className="btn btn-primary btn-block">
+                  <button className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Login to dashboard
                   </button>
                 </form>
+                <div className="text-blueGray-400 text-center mb-3 font-bold">
+                  <small>Don't have an account</small>
+                  <label className="text-blueGray-500 hover:text-blueGray-600">
+                    {" "}
+                    <Link to="/signup" className="dropdown-item">
+                      SignUP
+                    </Link>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Link to="/allspaces" className="dropdown-item">
-        Listed Spaces
-      </Link>
     </>
   );
 };

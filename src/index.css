@@ -40,7 +40,15 @@
 <div id="banner">
   <div id="cloud-scroll"></div>
 </div> */
-
+.toggle-checkbox:checked {
+  @apply: right-0 border-red-500;
+  right: 0;
+  border-color: #ef4444;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-red-500;
+  background-color: #ef4444;
+}
 .news-single {
   padding-top: 0%;
   margin: 0% 0%;
@@ -638,7 +646,6 @@ th {
   left: 0;
   right: 0;
 }
-
 
 #head-c {
   width: 100%;

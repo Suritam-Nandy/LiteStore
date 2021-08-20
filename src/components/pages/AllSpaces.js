@@ -1,126 +1,24 @@
 import React, { useState, useEffect } from "react";
-import Avatar from "../layout/Avatar";
 import Sidebar from "../layout/Sidebar";
 
 import { Link } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import { useFirestore, useFirebase } from "react-redux-firebase";
 import { useFirestoreConnect } from "react-redux-firebase";
 import Loading from "../layout/Loading";
-import { LoadSpaces } from "./LoadSpaces";
-import { db } from "../../store";
 
-const ListedSpaces = () => {
-  const firestore = useFirestore();
-  const firebase = useFirebase();
-  const { uid } = useSelector((state) => state.firebase.auth);
-  const allplaces = useSelector((state) => state.firestore.ordered.allplaces);
+const AllSpaces = () => {
+  const users = useSelector((state) => state.firestore.ordered.places);
 
   useFirestoreConnect({
-    collection: "allplaces",
+    collection: `allplaces`,
+    storeAs: "places",
   });
-  if (!allplaces) {
+  if (!users) {
     return <Loading />;
   }
-
-  // useEffect(() => {
-
-  // }, []);
-
-  // useFirestoreConnect([
-  //   { collection: "users", orderBy: ["createdAt", "desc"] },
-  // ]);
-
-  // const users = firebase.firestore().collection("users");
-
-  // useEffect(() => {
-  //   getUsers();
-  // }, []);
-  // console.log(users);
-
-  // const getUsers = async () => {
-  //   try {
-  //     const arr = [
-  //       "Mb6V4kEnp0aDLoyrdhQ85uzReUv1",
-  //       "eXhlysyYruQDBt1NhNFNcVUDa2H2",
-  //     ];
-  //     // LoadSpaces(arr)
-  //     for (let i = 0; i < arr.length; i++) {
-  //       await db
-  //         .collection("users")
-  //         .doc(arr[i])
-  //         .collection("places")
-  //         .get()
-  //         .then((snap) => {
-  //           snap.forEach((doc) => {
-  //             console.log(doc.data());
-  //             users.push(doc.data());
-
-  //             console.log(users);
-  //           });
-  //         });
-  //     }
-  //   } catch (error) {
-  //     console.log("Error getting document:", error);
-  //   }
-
-  //   return users;
-  // };
-
-  // const getUsers = async () => {
-  //   try {
-  //     const collection = {};
-  //     const docRef = firestore.collection("users");
-  //     const result = await docRef.get();
-  //     if (result.exists) {
-  //       result.forEach((doc) => {
-  //         collection[doc.id] = doc.data();
-  //       });
-  //       console.log(collection);
-
-  //       return collection;
-  //     } else {
-  //       console.log("No such document!");
-  //     }
-  //   } catch (error) {
-  //     console.log("Error getting document:", error);
-  //   }
-  // };
-  // const arr = ["eXhlysyYruQDBt1NhNFNcVUDa2H2", "Mb6V4kEnp0aDLoyrdhQ85uzReUv1"];
-  // for (let i = 0; i < arr.length; i++) {
-  //   <LoadSpaces id={arr[i]} />;
-  // }
-  // useFirestoreConnect([
-  //   {
-  //     collection: `users/${arr[i]}/places`,
-  //     storeAs: "users",
-  //   },
-  // ]);
-
-  // const users = useSelector(
-  //   ({ firestore: { data } }) => data.users && data.users[id]
-  // );
-
-  // const users = useSelector(
-  //   ({ firestore: { data } }) => data.users && data.users[id]
-  // );
-  // const users = useSelector((state) => state.firestore.ordered.users);
-  // if (!users) {
-  //   return <Loading />;
-  // }
-
-  const deleteUser = async (id) => {
-    try {
-      await firestore.collection("users").doc(id).delete();
-    } catch (error) {
-      console.error("Error removing document: ", error);
-    }
-  };
-
   return (
     <div className="flex flex-no-wrap">
-      <Sidebar />
       <div className="container mx-auto py-10 h-full md:w-4/5 w-11/12 px-6">
         <div className="my-20">
           <h1 className="text-2xl">Listed Spaces</h1>
@@ -164,10 +62,16 @@ const ListedSpaces = () => {
                         >
                           Status
                         </th>
+                        <th
+                          scope="col"
+                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                        >
+                          Status
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200 ">
-                      {allplaces.map((place, index) => (
+                      {users.map((place, index) => (
                         <tr key={place.index}>
                           <td className="px-6 py-4 whitespace-nowrap h-32">
                             <div className="flex items-center">
@@ -192,14 +96,36 @@ const ListedSpaces = () => {
                               {place.area}
                             </div>
                             {/* <div className="text-sm text-gray-500">
-                              {place.name}
-                            </div> */}
+                                {place.name}
+                              </div> */}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {place.pricing}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            Occupied
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                              <input
+                                type="checkbox"
+                                name="toggle"
+                                id="toggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                              />
+                              <label
+                                for="toggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full  bg-gray-400 cursor-pointer"
+                              ></label>
+                            </div>
+                            <label for="toggle" class="text-xs text-gray-700">
+                              Occupied
+                            </label>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <Link
+                              to={`/addspace/${place.id}`}
+                              className="btn btn-primary btn-profile"
+                            >
+                              Edit
+                            </Link>
                           </td>
                         </tr>
                       ))}
@@ -216,4 +142,4 @@ const ListedSpaces = () => {
   );
 };
 
-export default ListedSpaces;
+export default AllSpaces;
