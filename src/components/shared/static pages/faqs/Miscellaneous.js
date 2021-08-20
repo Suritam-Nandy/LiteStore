@@ -13,7 +13,7 @@ const Miscellaneous = () => {
           </div>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-3"
@@ -49,7 +49,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-4"
@@ -66,12 +66,12 @@ const Miscellaneous = () => {
               >
                 <p>
                   All LiteStore services are listed on the website and our
-                  essentials can be booked on our site when you book the space.{" "}
+                  essentials can be booked on our site when you book the space.
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-5"
@@ -96,7 +96,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-6"
@@ -112,14 +112,14 @@ const Miscellaneous = () => {
                 data-bs-parent=".faq-list"
               >
                 <p>
-                  Please reach out to us at{" "}
+                  Please reach out to us at
                   <span style={{ color: "#7e7ca6" }}>support@litestore.in</span>
                   . Our team will get in touch with you.
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-7"
@@ -138,13 +138,13 @@ const Miscellaneous = () => {
                 <p>
                   We are always on the lookout for partners who can help us
                   create the best stores for our clients. Please reach out to us
-                  at{" "}
+                  at
                   <span style={{ color: "#7e7ca6" }}>support@litestore.in</span>
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-10"
@@ -170,7 +170,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-11"
@@ -193,7 +193,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-12"
@@ -221,7 +221,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-13"
@@ -251,7 +251,7 @@ const Miscellaneous = () => {
           </div>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-14"
@@ -284,13 +284,13 @@ const Miscellaneous = () => {
           </div>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-15"
                 className="collapsed"
               >
-                What’s the LiteStore DesignHub 2021?{" "}
+                What’s the LiteStore DesignHub 2021?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -310,7 +310,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-16"
@@ -336,13 +336,13 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-17"
                 className="collapsed"
               >
-                Who owns the design/concept I submit on LiteStore.in?{" "}
+                Who owns the design/concept I submit on LiteStore.in?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -361,7 +361,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-18"
@@ -387,7 +387,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-19"
@@ -416,7 +416,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-20"
@@ -439,7 +439,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-21"
@@ -468,7 +468,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-23"
@@ -491,7 +491,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-24"
@@ -515,7 +515,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-25"
@@ -539,7 +539,7 @@ const Miscellaneous = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-26"

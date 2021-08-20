@@ -20,7 +20,7 @@ const FaqsGeneral = () => {
           <div className="faq-list">
             <ul>
               <li data-aos="fade-up">
-                <i className="far fa-question-circle icon-help" />{" "}
+                <i className="far fa-question-circle icon-help" />
                 <a
                   data-bs-toggle="collapse"
                   className="collapse"
@@ -44,7 +44,7 @@ const FaqsGeneral = () => {
                 </div>
               </li>
               <li data-aos="fade-up" data-aos-delay={100}>
-                <i className="far fa-question-circle icon-help" />{" "}
+                <i className="far fa-question-circle icon-help" />
                 <a
                   data-bs-toggle="collapse"
                   data-bs-target="#faq-list-9"
@@ -68,7 +68,7 @@ const FaqsGeneral = () => {
                 </div>
               </li>
               <li data-aos="fade-up" data-aos-delay={200}>
-                <i className="far fa-question-circle icon-help" />{" "}
+                <i className="far fa-question-circle icon-help" />
                 <a
                   data-bs-toggle="collapse"
                   data-bs-target="#faq-list-1"
@@ -98,13 +98,13 @@ const FaqsGeneral = () => {
                 </div>
               </li>
               <li data-aos="fade-up" data-aos-delay={200}>
-                <i className="far fa-question-circle icon-help" />{" "}
+                <i className="far fa-question-circle icon-help" />
                 <a
                   data-bs-toggle="collapse"
                   data-bs-target="#faq-list-2"
                   className="collapsed"
                 >
-                  Does the ‘short term retail’ market model work?{" "}
+                  Does the ‘short term retail’ market model work?
                   <i className="fas fa-chevron-down icon-show" />
                   <i className="fas fa-chevron-up icon-close" />
                 </a>
@@ -126,7 +126,7 @@ const FaqsGeneral = () => {
                     competing to get customers’ attention. In this market,
                     short-term retail with its low investment, hassle-free and
                     creative model is poised to be the game-changer in marketing
-                    and retail.{" "}
+                    and retail.
                   </p>
                 </div>
               </li>

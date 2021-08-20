@@ -42,7 +42,7 @@ const BlogOne = () => {
                     fontFamily: '"Source Serif Pro", serif',
                   }}
                 >
-                  ‘Physical Retail Isn’t dead. Boring Retail Is’{" "}
+                  ‘Physical Retail Isn’t dead. Boring Retail Is’
                 </p>
                 <p className="post-intro" style={{ paddingTop: "10px" }}>
                   Why would anyone enter a retail store in 2021? The digital
@@ -82,13 +82,13 @@ const BlogOne = () => {
                 </p>
                 <p style={{ fontWeight: 600 }}>I. More than just sales</p>
                 <p>
-                  In a popular{" "}
+                  In a popular
                   <a
                     href="https://floorplate.com/radio/doug-stephens/"
                     target="_blank"
                   >
                     podcast
-                  </a>{" "}
+                  </a>
                   covering the trends in the retail industry, an interesting
                   idea was put forward. One of the speakers quipped ‘Retail is
                   the New Media and Online is the New Store’. It effectively
@@ -108,15 +108,15 @@ const BlogOne = () => {
                   this, is to understand the economics going behind erecting
                   billboard ads or even creating sensational advertisements on
                   social media. No one is thinking in real terms of how much the
-                  brand earned directly in sales when the{" "}
+                  brand earned directly in sales when the
                   <a
                     href="https://www.thebetterindia.com/71904/amul-girl-golden-jubilee/"
                     target="_blank"
                   >
                     Amul Girl
-                  </a>{" "}
+                  </a>
                   makes a witty remark on a billboard ad or when Rahul Dravid
-                  displays his anger issues in the{" "}
+                  displays his anger issues in the
                   <a
                     href="https://www.youtube.com/watch?v=Im8-ymK-T_Y"
                     target="_blank"
@@ -131,20 +131,20 @@ const BlogOne = () => {
                 <p style={{ paddingTop: "10px" }}>
                   The key to the future of retail also lies in adopting a
                   strategy which focuses on experience, reach and innovation.
-                  Let us consider a stark example of this trend in the{" "}
+                  Let us consider a stark example of this trend in the
                   <a
                     href="https://floorplate.com/radio/doug-stephens/"
                     target="_blank"
                   >
                     Cheetos campaign
-                  </a>{" "}
+                  </a>
                   in 2017. They ran a contest in which participants had to
                   submit the wackiest Cheetos shapes they found in their bag of
                   chips. The top prize winner took home a whopping $ 50,000. To
                   display more than 100,000 entries, they opened a pop-up store
                   in New York. Remember, no sales took place in the store.
                   However, Cheetos recorded its strongest sales week ever, when
-                  the campaign led to{" "}
+                  the campaign led to
                   <a
                     href="https://www.prweek.com/article/1438231/instagram-trend-sparks-idea-cheetos-museum"
                     target="_blank"
@@ -162,7 +162,7 @@ const BlogOne = () => {
                     style={{ width: "50%", paddingBottom: "20px" }}
                     alt="image"
                     className="img-fluid"
-                  />{" "}
+                  />
                   <br />
                   <a
                     style={{ color: "#000" }}
@@ -184,13 +184,13 @@ const BlogOne = () => {
                   this time the store is situated in the busy street of Harajuku
                   in Tokyo. Dohtonbori is a famous organic health food chain in
                   Japan and in the year 2016, they opened up a temporary
-                  storefront at Harajuku which was{" "}
+                  storefront at Harajuku which was
                   <a
                     href="https://floorplate.com/radio/doug-stephens/"
                     target="_blank"
                   >
                     quite bizarre!
-                  </a>{" "}
+                  </a>
                   The pop-up store had a neon red cross glowed behind the
                   counter while two women in white lab coats showed customers
                   scientific-charts and the pop-up had jars of pills stored
@@ -218,7 +218,7 @@ const BlogOne = () => {
                   with a tag-line: “The healthy ingredients in Dohtonbori’s
                   healthy okonomiyaki have all the nutrients you need". Similar
                   to the Cheetos concept, nothing was sold at the pop-up store
-                  but the traffic at Dohtonbori increased by{" "}
+                  but the traffic at Dohtonbori increased by
                   <a
                     href="https://www.socialtables.com/blog/event-planning/pop-up-examples/"
                     target="_blank"
@@ -236,7 +236,7 @@ const BlogOne = () => {
                     style={{ width: "50%", paddingBottom: "20px" }}
                     alt="image"
                     className="img-fluid"
-                  />{" "}
+                  />
                   <br />
                   <a
                     style={{ color: "#000" }}

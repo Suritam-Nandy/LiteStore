@@ -17,13 +17,13 @@ const Landowners = () => {
           </h2>
           <ul>
             <li data-aos="fade-up">
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 className="collapse"
                 data-bs-target="#faq-list-8"
               >
-                Why should I list my space on LiteStore.in?{" "}
+                Why should I list my space on LiteStore.in?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -44,7 +44,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={100}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-9"
@@ -68,7 +68,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={200}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-1"
@@ -89,12 +89,12 @@ const Landowners = () => {
                   retain the right to market it via your existing leasing
                   channels. At LiteStore, we provide you an extra avenue to
                   discover many brands &amp; retailers and generate more
-                  revenues. No exclusivity is required.{" "}
+                  revenues. No exclusivity is required.
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={300}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-2"
@@ -129,7 +129,7 @@ const Landowners = () => {
           </h2>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-3"
@@ -153,7 +153,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-4"
@@ -173,7 +173,7 @@ const Landowners = () => {
                   <br />
                   Step 1: Open LiteStore.in
                   <br />
-                  Step 2: Click on{" "}
+                  Step 2: Click on
                   <span
                     style={{ color: "#7e7ca6" }}
                     href="../list-your-space.html"
@@ -190,7 +190,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-5"
@@ -218,19 +218,19 @@ const Landowners = () => {
                   <br />
                 </p>
                 <p style={{ paddingTop: "10px" }}>
-                  {" "}
+                  
                   Get in touch with our team to know more.
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-6"
                 className="collapsed"
               >
-                Can a prospective Brand visit my space before booking it?{" "}
+                Can a prospective Brand visit my space before booking it?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -242,12 +242,12 @@ const Landowners = () => {
                 <p>
                   Yes. The Brand can request for either a virtual tour or a
                   physical tour of the space. Our team will ensure that we
-                  facilitate the visit at your convenient time.{" "}
+                  facilitate the visit at your convenient time.
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-7"
@@ -270,7 +270,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-10"
@@ -294,7 +294,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-11"
@@ -318,7 +318,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-12"
@@ -352,7 +352,7 @@ const Landowners = () => {
           </h2>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-13"
@@ -376,7 +376,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-14"
@@ -403,7 +403,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-15"
@@ -433,13 +433,13 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-16"
                 className="collapsed"
               >
-                How will the agreement be entered into?{" "}
+                How will the agreement be entered into?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -480,13 +480,13 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-17"
                 className="collapsed"
               >
-                What happens if the Brand causes damage to my retail space?{" "}
+                What happens if the Brand causes damage to my retail space?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -507,7 +507,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-18"
@@ -533,18 +533,18 @@ const Landowners = () => {
                 </p>
                 <p style={{ paddingTop: "10px" }}>
                   LiteStore will assist the Landowner in ensuring that Brands
-                  check out of the space on time and recovering the penalty fee.{" "}
+                  check out of the space on time and recovering the penalty fee.
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-19"
                 className="collapsed"
               >
-                Can the Brand sub-license the space to other brands?{" "}
+                Can the Brand sub-license the space to other brands?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -569,7 +569,7 @@ const Landowners = () => {
           </h2>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-20"
@@ -599,13 +599,13 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-21"
                 className="collapsed"
               >
-                Can I change the amount I have entered for my space?{" "}
+                Can I change the amount I have entered for my space?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -621,14 +621,14 @@ const Landowners = () => {
                   you are not allowed to change the amount.
                 </p>
                 <p style={{ paddingTop: "10px" }}>
-                  {" "}
+                  
                   However, this is not applicable for extended bookings made on
                   our platform.
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-22"
@@ -652,21 +652,21 @@ const Landowners = () => {
                   after the booking has been confirmed.
                 </p>
                 <p style={{ paddingTop: "10px" }}>
-                  {" "}
+                  
                   Consult our pricing strategy team to fix the market value by
-                  reaching out to us at{" "}
+                  reaching out to us at
                   <span style={{ color: "#7e7ca6" }}>support@litestore.in</span>
                 </p>
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-23"
                 className="collapsed"
               >
-                How will I receive my payment?{" "}
+                How will I receive my payment?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -686,7 +686,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-24"
@@ -708,7 +708,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-25"
@@ -735,7 +735,7 @@ const Landowners = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-26"

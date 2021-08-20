@@ -19,13 +19,13 @@ const Brands = () => {
           </h2>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-3"
                 className="collapsed"
               >
-                Should the space be used for retail only?{" "}
+                Should the space be used for retail only?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -50,7 +50,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-4"
@@ -77,7 +77,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-5"
@@ -109,7 +109,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-6"
@@ -131,7 +131,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-7"
@@ -158,7 +158,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-10"
@@ -184,7 +184,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-11"
@@ -207,7 +207,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-12"
@@ -227,7 +227,7 @@ const Brands = () => {
                   the space in the condition that it is shown in the listing.
                   For most spaces landlords are happy for you to redecorate as
                   long as the space is returned to its original condition at the
-                  end of your booking.{" "}
+                  end of your booking.
                 </p>
                 <p style={{ paddingTop: "10px" }}>
                   If there is anything you are unsure about in regards to the
@@ -237,7 +237,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-13"
@@ -267,13 +267,13 @@ const Brands = () => {
           </h2>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-14"
                 className="collapsed"
               >
-                How do I book my space on LiteStore.in?{" "}
+                How do I book my space on LiteStore.in?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -283,17 +283,17 @@ const Brands = () => {
                 data-bs-parent=".faq-list"
               >
                 <p>
-                  Step 1:{" "}
+                  Step 1:
                   <span style={{ color: "#7e7ca6" }}> Find a space</span> that
-                  matches your budget, location and audience.{" "}
+                  matches your budget, location and audience.
                 </p>
                 <p style={{ paddingTop: "10px" }}>
                   Step 2: Type in your preferred dates in the calendar feature
                   and make an enquiry by submitting your proposal to the
-                  landlord.{" "}
+                  landlord.
                 </p>
                 <p style={{ paddingTop: "10px" }}>
-                  {" "}
+                  
                   Step 3: When the Landowner approves, you will receive a
                   confirmation and can make the payment to successfully complete
                   your booking.
@@ -301,7 +301,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-15"
@@ -322,16 +322,16 @@ const Brands = () => {
                   day of the booking.
                 </p>
                 <p style={{ paddingTop: "10px" }}>
-                  Example - if you book a space on LiteStore.in from{" "}
+                  Example - if you book a space on LiteStore.in from
                   <span style={{ fontWeight: "bold" }}>
                     14th May to 20th May.
-                  </span>{" "}
-                  You will get access to the space only at{" "}
+                  </span>
+                  You will get access to the space only at
                   <span style={{ fontWeight: "bold" }}>
                     09:00 am on 14th May
-                  </span>{" "}
+                  </span>
                   to set it up and you must ensure that the space is returned in
-                  the same state at{" "}
+                  the same state at
                   <span style={{ fontWeight: "bold" }}>
                     11:00 PM on 20th May.
                   </span>
@@ -343,7 +343,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-16"
@@ -371,7 +371,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-17"
@@ -394,7 +394,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-18"
@@ -419,7 +419,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-19"
@@ -439,13 +439,13 @@ const Brands = () => {
                   to the space and return of the space will be on the same day.
                 </p>
                 <p style={{ paddingTop: "10px" }}>
-                  Example - If you book a space on LiteStore on{" "}
+                  Example - If you book a space on LiteStore on
                   <span style={{ fontWeight: "bold" }}>12th January.</span> You
-                  will get access to the space only at{" "}
+                  will get access to the space only at
                   <span style={{ fontWeight: "bold" }}>
                     09:00 am on 12th January
-                  </span>{" "}
-                  and you must vacate the space by{" "}
+                  </span>
+                  and you must vacate the space by
                   <span style={{ fontWeight: "bold" }}>
                     11:00 pm on 12th January.
                   </span>
@@ -457,13 +457,13 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-20"
                 className="collapsed"
               >
-                How far in advance can I book?{" "}
+                How far in advance can I book?
                 <i className="fas fa-chevron-down icon-show" />
                 <i className="fas fa-chevron-up icon-close" />
               </a>
@@ -479,7 +479,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-29"
@@ -503,7 +503,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-22"
@@ -552,7 +552,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-28"
@@ -588,7 +588,7 @@ const Brands = () => {
           </h2>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-30"
@@ -604,7 +604,7 @@ const Brands = () => {
                 data-bs-parent=".faq-list"
               >
                 <p>
-                  <span style={{ fontWeight: "bold" }}>For Listed Spaces:</span>{" "}
+                  <span style={{ fontWeight: "bold" }}>For Listed Spaces:</span>
                   You will enter into an agreement with each Landowner at the
                   time you make a booking and the Usage Terms are agreed to by
                   the Landowner. The Landowner and the Brand will be bound by
@@ -614,7 +614,7 @@ const Brands = () => {
                 <p style={{ paddingTop: "10px" }}>
                   <span style={{ fontWeight: "bold" }}>
                     For Flagship Spaces:
-                  </span>{" "}
+                  </span>
                   You will enter into an agreement directly with LiteStore at
                   the time you agree to our Terms of Use/License Terms. Every
                   time you complete a booking and Usage Terms are agreed upon,
@@ -623,7 +623,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-23"
@@ -655,7 +655,7 @@ const Brands = () => {
           </h2>
           <ul>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-24"
@@ -677,7 +677,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-25"
@@ -703,7 +703,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-26"
@@ -731,7 +731,7 @@ const Brands = () => {
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay={400}>
-              <i className="far fa-question-circle icon-help" />{" "}
+              <i className="far fa-question-circle icon-help" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#faq-list-27"

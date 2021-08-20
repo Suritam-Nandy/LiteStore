@@ -134,7 +134,7 @@ const FaqsList = () => {
                 </div>
                 <h4>
                   <Link to="/" href="faqs-litestore.html#lsservices">
-                    {" "}
+                    
                     LiteStore Services
                   </Link>
                 </h4>

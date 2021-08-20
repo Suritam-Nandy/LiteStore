@@ -14,7 +14,7 @@ import Dashboard from "./components/pages/dashboard/Dashboard";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
-import NavbarRedirect from "./components/shared/Navbar/Route";
+import routes from "./components/shared/routes";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter>
           {/* <PrivateRoute component={Navbar} /> */}
           <Switch>
-            <Route exact path="/" component={NavbarRedirect} />
+            <Route exact path="/" component={routes} />
 
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />

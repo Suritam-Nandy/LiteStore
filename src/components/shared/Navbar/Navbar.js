@@ -183,7 +183,7 @@ const Navbar = () => {
                     className="nav-link scrollto"
                     data-bs-toggle="modal"
                     data-bs-target="#loginmod"
-                    href="blank.html"
+                    href=""
                   >
                     Sign In
                   </Link>
