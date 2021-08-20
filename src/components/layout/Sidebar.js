@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import { RiDashboardLine } from "react-icons/ri";
 import { FiMenu } from "react-icons/fi";
-import { useFirebase } from "react-redux-firebase";
+import { useFirebase, useFirestoreConnect } from "react-redux-firebase";
 
 const Sidebar = () => {
   const firebase = useFirebase();
+
   const uid = firebase.auth().currentUser.uid;
+  // useFirestoreConnect({
+  //   collection: `users/${uid}/user`,
+  //   storeAs: "user",
+  // });
+  // const user = useSelector((state) => state.firestore.ordered.user);
+
   const name = firebase.auth().currentUser.displayName;
+  // ? firebase.auth().currentUser.displayName
+  // : user.displayName;
 
   const sidebarList = [
     {

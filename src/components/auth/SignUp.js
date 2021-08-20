@@ -50,11 +50,14 @@ const Signup = () => {
       .auth()
       .createUserWithEmailAndPassword(user.email, user.password)
       .then((resp) => {
-        return firestore.collection("users").doc(resp.user.uid).set({
-          displayName: user.username,
-          email: user.email,
-          password: user.password,
-        });
+        return firestore
+          .collection("users")
+          .doc(resp.user.uid)
+          .collection("user")
+          .add({
+            ...user,
+            createdAt: firestore.FieldValue.serverTimestamp(),
+          });
       });
     const some = await firebase.login(user);
     console.log(some);
