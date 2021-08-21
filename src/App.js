@@ -23,7 +23,6 @@ import AllSpaces from "./components/pages/AllSpaces";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
-
 import routes from "./components/shared/routes";
 
 function App() {
@@ -34,7 +33,7 @@ function App() {
           {/* <PrivateRoute component={Navbar} /> */}
           {/* <PrivateRoute component={Sidebar} /> */}
 
-          <Navbar />
+          {/* <Navbar /> */}
           <Switch>
             <Route exact path="/" component={routes} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />

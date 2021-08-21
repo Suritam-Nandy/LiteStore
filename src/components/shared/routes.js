@@ -19,6 +19,7 @@ import Services from "./static pages/Services";
 import Blog from "./static pages/blog/BlogList";
 import BlogOne from "./static pages/blog/BlogOne";
 import BlogTwo from "./static pages/blog/BlogTwo";
+import allSpaces from "../pages/AllSpaces"
 
 const routes = () => {
   return (
@@ -42,6 +43,7 @@ const routes = () => {
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/the-future-of-retail-1" component={BlogOne} />
         <Route exact path="/the-future-of-retail-2" component={BlogTwo} />
+        <Route exact path="/allspaces" component={allSpaces} />
 
         <Home />
       </Switch>
