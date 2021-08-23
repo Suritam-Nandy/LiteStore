@@ -23,7 +23,7 @@ import AllSpaces from "./components/pages/AllSpaces";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 
-import routes from "./components/shared/routes";
+import test from "./components/shared/smol pages/ListSpace";
 
 function App() {
   return (
@@ -33,9 +33,8 @@ function App() {
           {/* <PrivateRoute component={Navbar} /> */}
           {/* <PrivateRoute component={Sidebar} /> */}
 
-          {/* <Navbar /> */}
+          <Navbar />
           <Switch>
-            <Route exact path="/" component={routes} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
             <PrivateRoute exact path="/users" component={Users} />

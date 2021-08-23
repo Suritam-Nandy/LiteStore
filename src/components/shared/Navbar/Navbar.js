@@ -1,221 +1,226 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { BsChevronDown, BsChevronRight, BsList } from "react-icons/bs";
+import { FaPhoneAlt } from "react-icons/fa";
+
 const Navbar = () => {
   return (
-    <header id="header" className="fixed-top">
-      <div className="container d-flex align-items-center justify-content-between">
-        {/* <h1 class="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
+    <header id="header" className="fixed max-w-full w-full">
+      <div className="container flex items-center justify-between xl:justify-around">
+        {/* <h1 className="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
-        <Link to="/">
-          <a href className="logo">
-            <img src="assets/img/logo.webp" alt="" className="img-fluid" />
-          </a>
-        </Link>
-        <nav id="navbar" className="navbar">
+        <a href="/" className="logo">
+          <img src="/logo.webp" alt="" className="w-full h-auto"></img>
+        </a>
+
+        <nav id="navbar" className="navbar font-raleway font-light">
           <ul>
-            <Link to="/community">
-              <li>
+            <Link to="/" className="dropdown-item">
+              <li className="pl-6 mr-4"> Dashboard</li>
+            </Link>
+
+            <li className="pl-6 mr-4">
+              <a
+                className="nav-link scrollto py-2 px-3"
+                href="community.html"
+                style={{ "font-weight": "bold " }}
+              >
+                Community
+              </a>
+            </li>
+            <li className="-ml-5 mr-6">
+              <a
+                className="nav-link scrollto py-2 px-3"
+                href="list-your-space.html"
+              >
+                List a space
+              </a>
+            </li>
+            <Link to="/allspaces" className="dropdown-item">
+              <li className="-ml-5 mr-6">
                 <a
-                  className="nav-link scrollto"
-                  href="community.html"
-                  style={{ fontWeight: "bold" }}
+                  className="nav-link scrollto py-2 px-3"
+                  href="find-a-space.html"
                 >
-                  Community
-                </a>
-              </li>
-            </Link>
-            <Link to="/listaspace">
-              <li>
-                <a className="nav-link scrollto" href="list-your-space.html">
-                  List a space
-                </a>
-              </li>
-            </Link>
-            <Link to="/allspaces">
-              <li>
-                <a className="nav-link scrollto" href="list-your-space.html">
                   Find a space
                 </a>
               </li>
             </Link>
 
-            <li className="dropdown">
-              <a className="nav-link scrollto" href="#">
-                <span>FAQs</span> <i className="fas fa-chevron-down" />
+            <li className="dropdown -ml-5 mr-6">
+              <a className="nav-link scrollto py-2 px-3" href="/">
+                <span>FAQs</span>
+                <BsChevronDown className="ml-1" />
               </a>
               <ul>
-                {/* <li><a class="nav-link scrollto" href="faqs/faqs-general.html" style="font-weight: bold;">All</a></li> */}
-                <Link
-                  to="/faqs"
-                  className="nav-link scrollto"
-                  style={{ fontWeight: "bold" }}
-                >
-                  <li>All</li>
-                </Link>
+                {/* <li><a className="nav-link scrollto" href="faqs/faqs-general.html" style="font-weight: bold;">All</a></li> */}
                 <li>
-                  <Link to="/faqs/general" className="nav-link scrollto">
+                  <a
+                    className="nav-link scrollto"
+                    style={{ "font-weight": "bold" }}
+                    href="faqs/faq-section.html"
+                  >
+                    All
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="nav-link scrollto"
+                    href="faqs/faqs-general.html"
+                  >
                     General
-                  </Link>
+                  </a>
                 </li>
                 <li className="dropdown">
-                  <Link to="/faqs" href="#">
-                    <span>For Landowners</span>
-                    <i className="fas fa-chevron-right" />
-                  </Link>
+                  <a href="/">
+                    <span>For Landowners</span>{" "}
+                    <BsChevronRight className="ml-1" />
+                  </a>
                   <ul>
                     <li>
-                      <Link
-                        to="/faqs/landowners/general"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-landowners.html#sec-1"
                       >
                         General
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        to="/faqs/landowners/how-it-works"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-landowners.html#sec-2"
                       >
                         How does it work
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        to="/faqs/landowners/legal-questions"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-landowners.html#sec-3"
                       >
                         Legal Questions
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        to="/faqs/landowners/payments"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-landowners.html#sec-4"
                       >
                         Payments
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </li>
                 <li className="dropdown">
-                  <Link to="/faqs" href="#">
-                    <span>For Brands and Businesses</span>
-                    <i className="fas fa-chevron-right" />
-                  </Link>
+                  <a href="/">
+                    <span>For Brands and Businesses</span>{" "}
+                    <BsChevronRight className="ml-1" />
+                  </a>
                   <ul>
                     <li>
-                      <Link
-                        to="/faqs/brands/how-it-works"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-brands.html#sec-5"
                       >
                         How it works
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        to="/faqs/brands/booking-a-space"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-brands.html#sec-6"
                       >
                         Booking a Space
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        to="/faqs/brands/legal-questions"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-brands.html#sec-7"
                       >
                         Legal Questions
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link
-                        to="/faqs/brands/payments"
+                      <a
                         className="nav-link scrollto"
                         href="faqs/faqs-for-brands.html#sec-8"
                       >
                         Payments and Pricing
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link
-                    to="/faqs/litestore"
+                  <a
                     className="nav-link scrollto"
                     href="faqs/faqs-litestore.html#lsservices"
                   >
                     LiteStore Services
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to="/faqs/litestore"
+                  <a
                     className="nav-link scrollto"
                     href="faqs/faqs-litestore.html#covid"
                   >
                     Covid-19 Questions
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to="/faqs/litestore"
+                  <a
                     className="nav-link scrollto"
                     href="faqs/faqs-litestore.html#designers"
                   >
                     For Designers
-                  </Link>
+                  </a>
                 </li>
+                {/* <ul>
+                        <li><a className="nav-link scrollto" href="#">General</a></li>
+                        <li><a className="nav-link scrollto" href="#">Payments</a></li>
+                        </ul>
+                    </li>  */}
               </ul>
             </li>
-            <li className="dropdown">
-              <a className="nav-link scrollto" href="#">
-                <span>Account</span> <i className="fas fa-chevron-down" />
+            <li className="dropdown -ml-5 mr-6">
+              <a className="nav-link scrollto py-2 px-3" href="/">
+                <span>Account</span> <BsChevronDown className="ml-1" />
               </a>
+
               <ul>
-                <li>
-                  <Link
-                    to=""
-                    className="nav-link scrollto"
+                <li className="">
+                  <a
+                    className="nav-link scrollto py-2 px-3"
                     data-bs-toggle="modal"
                     data-bs-target="#loginmod"
-                    href=""
+                    href="blank.html"
                   >
                     Sign In
-                  </Link>
+                  </a>
                 </li>
-                <li>
-                  <Link to="" className="nav-link scrollto" href="signup.html">
+                <li className="">
+                  <a className="nav-link scrollto py-2 px-3" href="signup.html">
                     Sign Up
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </li>
-            <li>
+            <li className="-ml-5 mr-6">
               <a
-                className="nav-link scrollto phone-sty"
+                className="nav-link scrollto phone-sty py-2 px-4"
                 href="tel:+91-6363294498"
               >
-                <i
-                  className="fas fa-phone-alt fa-4x"
-                  style={{ padding: "10px 10px 10px 0px" }}
-                />
+                <FaPhoneAlt className="mr-3" />
                 6363294498
               </a>
             </li>
           </ul>
-          <i className="fas fa-list mobile-nav-toggle" />
+          <BsList className="bi bi-list mobile-nav-toggle" />
         </nav>
-        {/* .navbar */}
       </div>
     </header>
   );
 };
+
 export default Navbar;
