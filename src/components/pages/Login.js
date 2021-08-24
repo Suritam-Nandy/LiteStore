@@ -23,7 +23,7 @@ const Login = () => {
         type: "popup",
       })
       .then(() => {
-        history.push("/dashboard");
+        history.push("/");
       });
   };
   const signInWithFacebook = () => {
@@ -33,7 +33,7 @@ const Login = () => {
         type: "popup",
       })
       .then(() => {
-        history.push("/dashboard");
+        history.push("/");
       });
   };
 
@@ -45,7 +45,7 @@ const Login = () => {
     e.preventDefault();
     const some = await firebase.login(user);
     console.log(some);
-    history.replace("/dashboard");
+    history.replace("/");
   };
   return (
     <>

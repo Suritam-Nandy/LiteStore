@@ -18,6 +18,8 @@ import Signup from "./components/auth/SignUp";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import AddSpace from "./components/pages/dashboard/AddSpace";
 import ListedSpaces from "./components/pages/dashboard/ListedSpaces";
+import Profile from "./components/pages/dashboard/Profile";
+
 import Payments from "./components/pages/dashboard/Payments";
 import AllSpaces from "./components/pages/AllSpaces";
 import PrivateRoute from "./components/routes/PrivateRoute";
@@ -32,7 +34,6 @@ function App() {
         <BrowserRouter>
           {/* <PrivateRoute component={Navbar} /> */}
           {/* <PrivateRoute component={Sidebar} /> */}
-
           <Navbar />
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
@@ -45,6 +46,8 @@ function App() {
             <PrivateRoute exact path="/addspace" component={AddSpace} />
 
             <PrivateRoute exact path="/listedspaces" component={ListedSpaces} />
+            <PrivateRoute exact path="/profile" component={Profile} />
+
             <PrivateRoute exact path="/payments" component={Payments} />
 
             <Route exact path="/allspaces" component={AllSpaces} />
