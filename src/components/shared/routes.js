@@ -2,6 +2,27 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from './tools/ScrollToTop';
 
+// import Navbar from "../shared/Navbar/Navbar";
+import Sidebar from "../layout/Sidebar";
+
+import Users from "../users/Users";
+import User from "../users/User";
+import UserForm from "../users/UserForm";
+import { Provider } from "react-redux";
+import store, { rrfProps } from "../../store";
+import { ReactReduxFirebaseProvider } from "react-redux-firebase";
+import Login from "../pages/Login";
+import Signup from "../auth/SignUp";
+
+// import ListedSpaces from "../listedSpaces/listedspaces";  <-- all places -->  #works fine
+import dashboard from "../pages/dashboard/Dashboard";
+import AddSpace from "../pages/dashboard/AddSpace";
+import ListedSpaces from "../pages/dashboard/ListedSpaces";
+import Payments from "../pages/dashboard/Payments";
+import AllSpaces from "../pages/AllSpaces";
+import PrivateRoute from "../routes/PrivateRoute";
+import NotFound from "../pages/NotFound";
+
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import Home from "./static pages/Home";
@@ -19,7 +40,8 @@ import Services from "./static pages/Services";
 import Blog from "./static pages/blog/BlogList";
 import BlogOne from "./static pages/blog/BlogOne";
 import BlogTwo from "./static pages/blog/BlogTwo";
-import allSpaces from "../pages/AllSpaces"
+import allSpaces from "../pages/AllSpaces";
+// import dashboard from "../pages/dashboard/Dashboard";
 
 const routes = () => {
   return (
@@ -44,6 +66,7 @@ const routes = () => {
         <Route exact path="/the-future-of-retail-1" component={BlogOne} />
         <Route exact path="/the-future-of-retail-2" component={BlogTwo} />
         <Route exact path="/allspaces" component={allSpaces} />
+        <Route exact path="/dashboard" component={dashboard} />
 
         <Home />
       </Switch>

@@ -36,7 +36,7 @@ function App() {
           {/* <Navbar /> */}
           <Switch>
             <Route exact path="/" component={routes} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
 
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />

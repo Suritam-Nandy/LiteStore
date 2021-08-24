@@ -14,6 +14,17 @@ const Navbar = () => {
         </Link>
         <nav id="navbar" className="navbar">
           <ul>
+            <Link to="/dashboard">
+              <li>
+                <a
+                  className="nav-link scrollto"
+                  href="community.html"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Dashboard
+                </a>
+              </li>
+            </Link>
             <Link to="/community">
               <li>
                 <a
