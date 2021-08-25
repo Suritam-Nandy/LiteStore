@@ -22,9 +22,6 @@ import Payments from "./components/pages/dashboard/Payments";
 import AllSpaces from "./components/pages/AllSpaces";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
-
-// import routes from "./components/shared/routes";
-
 import ScrollToTop from "./components/shared/tools/ScrollToTop";
 
 import Navbar from "./components/shared/Navbar/Navbar";
