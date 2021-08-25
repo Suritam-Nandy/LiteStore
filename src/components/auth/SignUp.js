@@ -38,7 +38,7 @@ const Signup = () => {
             createdAt: firestore.FieldValue.serverTimestamp(),
           });
       });
-    history.push("/");
+    history.push("/dashboard");
   };
   const signInWithFacebook = () => {
     firebase
@@ -59,7 +59,7 @@ const Signup = () => {
             createdAt: firestore.FieldValue.serverTimestamp(),
           });
       });
-    history.push("/");
+    history.push("/dashboard");
   };
 
   const onInputChange = (e) => {
@@ -86,7 +86,7 @@ const Signup = () => {
       });
     const some = await firebase.login(user);
     console.log(some);
-    history.replace("/");
+    history.replace("/dashboard");
   };
   return (
     <>
