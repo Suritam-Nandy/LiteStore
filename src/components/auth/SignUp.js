@@ -14,7 +14,7 @@ const Signup = () => {
 
   const auth = useSelector((state) => state.firebase.auth);
   const [user, setUser] = useState({
-    username: "",
+    displayName: "",
     email: "",
     password: "",
   });
@@ -25,9 +25,20 @@ const Signup = () => {
         provider: "google",
         type: "popup",
       })
-      .then(() => {
-        history.push("/");
+      .then((resp) => {
+        return firestore
+          .collection("users")
+          .doc("LandOwner")
+          .collection(resp.user.uid)
+          .doc("details")
+
+          .set({
+            displayName: user.displayName,
+            email: user.email,
+            createdAt: firestore.FieldValue.serverTimestamp(),
+          });
       });
+    history.push("/dashboard");
   };
   const signInWithFacebook = () => {
     firebase
@@ -35,9 +46,20 @@ const Signup = () => {
         provider: "facebook",
         type: "popup",
       })
-      .then(() => {
-        history.push("/");
+      .then((resp) => {
+        return firestore
+          .collection("users")
+          .doc("LandOwner")
+          .collection(resp.user.uid)
+          .doc("details")
+
+          .set({
+            displayName: user.displayName,
+            email: user.email,
+            createdAt: firestore.FieldValue.serverTimestamp(),
+          });
       });
+    history.push("/dashboard");
   };
 
   const onInputChange = (e) => {
@@ -52,16 +74,19 @@ const Signup = () => {
       .then((resp) => {
         return firestore
           .collection("users")
-          .doc(resp.user.uid)
-          .collection("user")
-          .add({
-            ...user,
+          .doc("LandOwner")
+          .collection(resp.user.uid)
+          .doc("details")
+
+          .set({
+            displayName: user.displayName,
+            email: user.email,
             createdAt: firestore.FieldValue.serverTimestamp(),
           });
       });
     const some = await firebase.login(user);
     console.log(some);
-    history.replace("/");
+    history.replace("/dashboard");
   };
   return (
     <>
@@ -85,10 +110,10 @@ const Signup = () => {
                       Username
                     </label>
                     <Input
-                      name="username"
+                      name="displayName"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Enter Your Username"
-                      value={user.username}
+                      value={user.displayName}
                       onChange={onInputChange}
                     />
                   </div>

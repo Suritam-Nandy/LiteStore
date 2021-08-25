@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
     <div>
-    <Helmet>
+      {/* <Helmet>
       <title>Home | LiteStore</title>
-    </Helmet>
+    </Helmet> */}
       {/*  Head Section  */}
       <section id="head" className="d-flex align-items-center">
         <div
@@ -294,7 +294,11 @@ const Home = () => {
             <h3 style={{ color: "#000" }}>
               Driving growth for small businesses and entrepreneurs
             </h3>
-            <Link to="/community" href="community.html" className="btn-get-started scrollto">
+            <Link
+              to="/community"
+              href="community.html"
+              className="btn-get-started scrollto"
+            >
               Know More
             </Link>
           </div>
