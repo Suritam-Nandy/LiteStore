@@ -9,16 +9,17 @@ import { useFirebase, useFirestoreConnect } from "react-redux-firebase";
 const Sidebar = () => {
   const firebase = useFirebase();
 
-  const uid = firebase.auth().currentUser.uid;
+  // const uid = firebase.auth().currentUser.uid;
   // useFirestoreConnect({
-  //   collection: `users/${uid}/user`,
+  //   collection: `users/LandOwner/${uid}`,
+  //   doc: "details",
   //   storeAs: "user",
   // });
-  // const user = useSelector((state) => state.firestore.ordered.user);
+  // const user = useSelector((state) => state.firestore.data.user);
 
-  const name = firebase.auth().currentUser.displayName;
-  // ? firebase.auth().currentUser.displayName
-  // : user.displayName;
+  // const name = firebase.auth().currentUser.displayName
+  //   ? firebase.auth().currentUser.displayName
+  //   : user.displayName;
 
   const sidebarList = [
     {
@@ -27,8 +28,9 @@ const Sidebar = () => {
       notificationCount: 0,
       link: "",
     },
-    { name: "Profile", notificationCount: 2, link: "" },
+    { name: "Profile", notificationCount: 2, link: "profile" },
     { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
+
     { name: "Interested Customers", notificationCount: 0, link: "" },
     { name: "Add Space", notificationCount: 0, link: "addspace" },
     { name: "Calendar", notificationCount: 0, link: "" },
@@ -47,8 +49,8 @@ const Sidebar = () => {
       >
         <div className="px-8 ">
           <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
-            <h1 className="text-4xl text-white">{name}</h1>
-            <span className="text-sm">{uid}</span>
+            <h1 className="text-4xl text-white">{}</h1>
+            <span className="text-sm">uid</span>
           </div>
           <ul className="mt-12">
             {sidebarList.map((item, index) => {
