@@ -84,6 +84,9 @@ function App() {
             <Route exact path="/the-future-of-retail-2" component={BlogTwo} />
             <Route exact path="/allspaces" component={AllSpaces} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/" component={routes} />
+            {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
+
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
             <PrivateRoute exact path="/userForm/:id?" component={UserForm} />
