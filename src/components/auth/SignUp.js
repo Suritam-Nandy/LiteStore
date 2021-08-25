@@ -25,9 +25,20 @@ const Signup = () => {
         provider: "google",
         type: "popup",
       })
-      .then(() => {
-        history.push("/");
+      .then((resp) => {
+        return firestore
+          .collection("users")
+          .doc("LandOwner")
+          .collection(resp.user.uid)
+          .doc("details")
+
+          .set({
+            displayName: user.displayName,
+            email: user.email,
+            createdAt: firestore.FieldValue.serverTimestamp(),
+          });
       });
+    history.push("/");
   };
   const signInWithFacebook = () => {
     firebase
@@ -35,9 +46,20 @@ const Signup = () => {
         provider: "facebook",
         type: "popup",
       })
-      .then(() => {
-        history.push("/");
+      .then((resp) => {
+        return firestore
+          .collection("users")
+          .doc("LandOwner")
+          .collection(resp.user.uid)
+          .doc("details")
+
+          .set({
+            displayName: user.displayName,
+            email: user.email,
+            createdAt: firestore.FieldValue.serverTimestamp(),
+          });
       });
+    history.push("/");
   };
 
   const onInputChange = (e) => {
