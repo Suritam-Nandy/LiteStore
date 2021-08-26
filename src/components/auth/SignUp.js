@@ -80,7 +80,7 @@ const Signup = (props) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const submitForm = async (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
     firebase
       .auth()
@@ -96,11 +96,14 @@ const Signup = (props) => {
             role: role,
 
             createdAt: firestore.FieldValue.serverTimestamp(),
+          })
+          .then(() => {
+            firebase.login(user);
           });
       });
-    const some = await firebase.login(user);
-    console.log(some);
-    history.push("/dashboard");
+    // const some = await firebase.login(user);
+    // console.log(some);
+    history.replace("/dashboard");
   };
   return (
     <>
@@ -177,7 +180,7 @@ const Signup = (props) => {
                     />
                   </div>
                   <button className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    Login to dashboard
+                    Sign up
                   </button>
                 </form>
                 <hr className="mt-6 border-b-1 border-blueGray-300" />

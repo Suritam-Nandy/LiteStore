@@ -125,14 +125,26 @@ const Login = () => {
                     Login to dashboard
                   </button>
                 </form>
-                <div className="text-blueGray-400 text-center mb-3 font-bold">
+                <div className="text-blueGray-400 flex flex-col text-center mb-3 font-bold mt-3">
                   <small>Don't have an account</small>
                   <label className="text-blueGray-500  ">
                     <Link
-                      to="/signup"
+                      to={{
+                        pathname: "/signup",
+                        role: "LandOwner",
+                      }}
                       className="dropdown-item text-blueGray-500 hover:text-blueGray-600 font-bold"
                     >
-                      SignUP
+                      SignUP as Land Owner
+                    </Link>
+                    <Link
+                      to={{
+                        pathname: "/signup",
+                        role: "Brand",
+                      }}
+                      className="dropdown-item text-blueGray-500 hover:text-blueGray-600 font-bold"
+                    >
+                      SignUP as Brand
                     </Link>
                   </label>
                 </div>

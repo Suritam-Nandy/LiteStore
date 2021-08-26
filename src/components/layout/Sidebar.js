@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -7,21 +7,22 @@ import { FiMenu } from "react-icons/fi";
 import { useFirebase, useFirestoreConnect } from "react-redux-firebase";
 
 const Sidebar = () => {
-  var role = window.localStorage.getItem("role");
   const firebase = useFirebase();
+  const user = useSelector((state) => state.firestore.data.user);
 
-  // const uid = firebase.auth().currentUser.uid;
-  // useFirestoreConnect({
-  //   collection: `users/LandOwner/${uid}`,
-  //   doc: "details",
-  //   storeAs: "user",
-  // });
-  // const user = useSelector((state) => state.firestore.data.user);
-
-  // const name = firebase.auth().currentUser.displayName
-  //   ? firebase.auth().currentUser.displayName
-  //   : user.displayName;
-
+  const uid = firebase.auth().currentUser.uid;
+  useFirestoreConnect({
+    collection: `users/`,
+    doc: `${uid}`,
+    storeAs: "user",
+  });
+  if (user) {
+    var role = user.role;
+    var name = firebase.auth().currentUser.displayName
+      ? firebase.auth().currentUser.displayName
+      : user.displayName;
+  }
+  console.log(name);
   const sidebarList = [
     {
       name: "Home",
@@ -37,6 +38,11 @@ const Sidebar = () => {
     { name: "Calendar", notificationCount: 0, link: "" },
     { name: "Payments", notificationCount: 0, link: "payments" },
   ];
+
+  if (role === "Brand") {
+    sidebarList[2].name = "My Spaces";
+  }
+
   const [open, setOpen] = useState(false);
   // console.log(open);
   return (
