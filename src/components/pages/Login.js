@@ -23,7 +23,7 @@ const Login = () => {
         type: "popup",
       })
       .then(() => {
-        history.push("/");
+        history.push("/dashboard");
       });
   };
   const signInWithFacebook = () => {
@@ -33,7 +33,7 @@ const Login = () => {
         type: "popup",
       })
       .then(() => {
-        history.push("/");
+        history.push("/dashboard");
       });
   };
 
@@ -45,7 +45,7 @@ const Login = () => {
     e.preventDefault();
     const some = await firebase.login(user);
     console.log(some);
-    history.replace("/");
+    history.replace("/dashboard");
   };
   return (
     <>
@@ -127,9 +127,11 @@ const Login = () => {
                 </form>
                 <div className="text-blueGray-400 text-center mb-3 font-bold">
                   <small>Don't have an account</small>
-                  <label className="text-blueGray-500 hover:text-blueGray-600">
-                    {" "}
-                    <Link to="/signup" className="dropdown-item">
+                  <label className="text-blueGray-500  ">
+                    <Link
+                      to="/signup"
+                      className="dropdown-item text-blueGray-500 hover:text-blueGray-600 font-bold"
+                    >
                       SignUP
                     </Link>
                   </label>

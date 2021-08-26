@@ -193,18 +193,34 @@ const Navbar = () => {
               <ul>
                 <li>
                   <Link
-                    to=""
-                    className="nav-link scrollto"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginmod"
-                    href=""
+                    to="/login"
+                    // className="nav-link scrollto"
+                    // data-bs-toggle="modal"
+                    // data-bs-target="#loginmod"
                   >
                     Sign In
                   </Link>
                 </li>
                 <li>
-                  <Link to="" className="nav-link scrollto" href="signup.html">
-                    Sign Up
+                  <Link
+                    to={{
+                      pathname: "/signup",
+                      role: "LandOwner",
+                    }}
+                    className="nav-link scrollto"
+                  >
+                    Land Owner Sign Up
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={{
+                      pathname: "/signup",
+                      role: "Brand",
+                    }}
+                    className="nav-link scrollto"
+                  >
+                    Brand Sign Up
                   </Link>
                 </li>
               </ul>

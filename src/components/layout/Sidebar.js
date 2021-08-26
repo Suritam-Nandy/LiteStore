@@ -7,6 +7,7 @@ import { FiMenu } from "react-icons/fi";
 import { useFirebase, useFirestoreConnect } from "react-redux-firebase";
 
 const Sidebar = () => {
+  var role = window.localStorage.getItem("role");
   const firebase = useFirebase();
 
   // const uid = firebase.auth().currentUser.uid;
@@ -49,7 +50,7 @@ const Sidebar = () => {
       >
         <div className="px-8 ">
           <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
-            <h1 className="text-4xl text-white">{}</h1>
+            <h1 className="text-4xl text-white">{role}</h1>
             <span className="text-sm">uid</span>
           </div>
           <ul className="mt-12">

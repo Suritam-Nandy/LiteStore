@@ -15,6 +15,8 @@ import Login from "./components/pages/Login";
 import Signup from "./components/auth/SignUp";
 
 // import ListedSpaces from "./components/listedSpaces/listedspaces";  <-- all places -->  #works fine
+import BrandDashboard from "./components/pages/BrandDashboard/BrandDashboards";
+
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import AddSpace from "./components/pages/dashboard/AddSpace";
 import ListedSpaces from "./components/pages/dashboard/ListedSpaces";
@@ -80,6 +82,11 @@ function App() {
             <Route exact path="/the-future-of-retail-1" component={BlogOne} />
             <Route exact path="/the-future-of-retail-2" component={BlogTwo} />
             <Route exact path="/allspaces" component={AllSpaces} />
+            <PrivateRoute
+              exact
+              path="/branddashboard"
+              component={BrandDashboard}
+            />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
