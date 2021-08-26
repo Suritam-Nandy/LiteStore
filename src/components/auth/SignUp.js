@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 const Signup = (props) => {
-  const [docRole, setDocRole] = useState("");
+  // const [docRole, setDocRole] = useState("");
   var role = props.location.role
     ? props.location.role
     : window.localStorage.getItem("role");
@@ -16,22 +16,12 @@ const Signup = (props) => {
   // Save data to localStorage
   window.localStorage.setItem("role", role);
 
-  // Get saved data from localStorage
-
-  // useEffect(() => {
-  //   setDocRole(JSON.parse(window.localStorage.getItem("docRole")));
-  // }, []);
   console.log(role);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem("docRole", docRole);
-  // }, [docRole]);
-
   let history = useHistory();
   const firebase = useFirebase();
   const firestore = useFirestore();
 
-  const auth = useSelector((state) => state.firebase.auth);
+  // const auth = useSelector((state) => state.firebase.auth);
   const [user, setUser] = useState({
     displayName: "",
     email: "",
