@@ -6,17 +6,97 @@ import { useSelector } from "react-redux";
 import { useFirestore, useFirebase } from "react-redux-firebase";
 import { useFirestoreConnect } from "react-redux-firebase";
 import Loading from "../layout/Loading";
+import { useHistory } from "react-router-dom";
 
 const AllSpaces = () => {
-  const users = useSelector((state) => state.firestore.ordered.places);
+  let history = useHistory();
 
+  const firestore = useFirestore();
+  const emptyObj = {};
+  const places = useSelector((state) => state.firestore.ordered.places);
+  const { uid } = useSelector((state) => state.firebase.auth);
+  const [space, setSpace] = useState(null);
+  useEffect(() => {
+    console.log(space);
+    if (space) bookSpace();
+  }, [space]);
   useFirestoreConnect({
     collection: `allplaces`,
     storeAs: "places",
   });
-  if (!users) {
+  if (!places) {
     return <Loading />;
   }
+
+  const loadSpace = (idSpace) => {
+    // try {
+    //   const docRef = firestore.collection("allplaces").doc(idSpace);
+    //   docRef.get().then((result) => {
+    //     const some = result.data();
+    //     console.log(some);
+    //     if (result.exists) {
+    //       setSpace({ some: "some" });
+    //       console.log(space);
+    //     } else {
+    //       console.log("No such document!");
+    //     }
+    //   });
+    // } catch (error) {
+    //   console.log("Error getting document:", error);
+    // }
+    const docRef = firestore.collection("allplaces").doc(idSpace);
+    docRef.get().then((result) => {
+      const some = result.data();
+      console.log(some);
+      setSpace(some);
+      console.log(space);
+
+      // bookSpace();
+    });
+  };
+
+  console.log(space);
+  // useEffect(() => {
+  //   console.log(space);
+  // }, [space]);
+
+  const bookSpace = () => {
+    // const docRef = firestore.collection("allplaces").doc(idSpace);
+    // docRef.get().then((doc) => {
+    //   console.log(doc.data());
+    //   const sme = doc.data();
+    //   console.log(sme);
+    //   setSpace({ ...space, sme });
+    //   console.log(space);
+    // });
+
+    console.log(space);
+    // const some =  loadSpace(idSpace);
+    firestore
+      .collection("users")
+      .doc(uid)
+      .collection("places")
+
+      .add({
+        ...space,
+        createdAt: firestore.FieldValue.serverTimestamp(),
+      });
+    history.replace("/myspaces");
+    // firestore
+    // .collection("users")
+    // .doc(uid)
+    // .collection("places")
+
+    // .add({
+    //   ...space,
+    //   createdAt: firestore.FieldValue.serverTimestamp(),
+    //   imgUrl: url,
+    // })
+  };
+  // if (space) {
+  //   bookSpace();
+  // }
+
   return (
     <div className="flex flex-no-wrap">
       <div className="container mx-auto py-10 h-full md:w-4/5 w-11/12 px-6">
@@ -71,7 +151,7 @@ const AllSpaces = () => {
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200 ">
-                      {users.map((place, index) => (
+                      {places.map((place, index) => (
                         <tr key={place.index}>
                           <td className="px-6 py-4 whitespace-nowrap h-32">
                             <div className="flex items-center">
@@ -120,12 +200,16 @@ const AllSpaces = () => {
                             </label>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            <Link
-                              to={`/addspace/${place.id}`}
+                            <label
+                              // to={`/addspace/${place.id}`}
+                              // to="/myspaces"
                               className="btn btn-primary btn-profile"
+                              onClick={() => {
+                                loadSpace(place.id);
+                              }}
                             >
-                              Edit
-                            </Link>
+                              Book
+                            </label>
                           </td>
                         </tr>
                       ))}

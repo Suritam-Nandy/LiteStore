@@ -20,6 +20,8 @@ import BrandDashboard from "./components/pages/BrandDashboard/BrandDashboards";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import AddSpace from "./components/pages/dashboard/AddSpace";
 import ListedSpaces from "./components/pages/dashboard/ListedSpaces";
+import MySpaces from "./components/pages/dashboard/MySpaces";
+
 import Payments from "./components/pages/dashboard/Payments";
 import AllSpaces from "./components/pages/AllSpaces";
 import PrivateRoute from "./components/routes/PrivateRoute";
@@ -82,11 +84,6 @@ function App() {
             <Route exact path="/the-future-of-retail-1" component={BlogOne} />
             <Route exact path="/the-future-of-retail-2" component={BlogTwo} />
             <Route exact path="/allspaces" component={AllSpaces} />
-            <PrivateRoute
-              exact
-              path="/branddashboard"
-              component={BrandDashboard}
-            />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
@@ -94,6 +91,7 @@ function App() {
             <PrivateRoute exact path="/addspace/:id?" component={AddSpace} />
             <PrivateRoute exact path="/addspace" component={AddSpace} />
             <PrivateRoute exact path="/listedspaces" component={ListedSpaces} />
+            <PrivateRoute exact path="/myspaces" component={MySpaces} />
             <PrivateRoute exact path="/payments" component={Payments} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
