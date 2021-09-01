@@ -1,22 +1,33 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import React, { useState } from "react";
-import Input from "../layout/Input";
+import React, { useState, useEffect } from "react";
+import Input from "../components/layout/Input";
 import { useFirebase, useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
-const Signup = () => {
+const Signup = (props) => {
   let history = useHistory();
   const firebase = useFirebase();
   const firestore = useFirestore();
+  // const [docRole, setDocRole] = useState("");
+  var role = props.location.role
+    ? props.location.role
+    : window.localStorage.getItem("role");
 
-  const auth = useSelector((state) => state.firebase.auth);
+  // Save data to localStorage
+  window.localStorage.setItem("role", role);
+
+  console.log(role);
+  firebase.updateProfile({ role: role });
+
+  // const auth = useSelector((state) => state.firebase.auth);
   const [user, setUser] = useState({
     displayName: "",
     email: "",
     password: "",
+    role: role,
   });
 
   const signInWithGoogle = () => {
@@ -28,13 +39,10 @@ const Signup = () => {
       .then((resp) => {
         return firestore
           .collection("users")
-          .doc("LandOwner")
-          .collection(resp.user.uid)
-          .doc("details")
+          .doc(resp.user.uid)
 
-          .set({
-            displayName: user.displayName,
-            email: user.email,
+          .update({
+            role: role,
             createdAt: firestore.FieldValue.serverTimestamp(),
           });
       });
@@ -49,13 +57,10 @@ const Signup = () => {
       .then((resp) => {
         return firestore
           .collection("users")
-          .doc("LandOwner")
-          .collection(resp.user.uid)
-          .doc("details")
+          .doc(resp.user.uid)
 
-          .set({
-            displayName: user.displayName,
-            email: user.email,
+          .update({
+            role: role,
             createdAt: firestore.FieldValue.serverTimestamp(),
           });
       });
@@ -66,7 +71,7 @@ const Signup = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const submitForm = async (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
     firebase
       .auth()
@@ -74,18 +79,21 @@ const Signup = () => {
       .then((resp) => {
         return firestore
           .collection("users")
-          .doc("LandOwner")
-          .collection(resp.user.uid)
-          .doc("details")
+          .doc(resp.user.uid)
 
           .set({
             displayName: user.displayName,
             email: user.email,
+            role: role,
+
             createdAt: firestore.FieldValue.serverTimestamp(),
+          })
+          .then(() => {
+            firebase.login(user);
           });
       });
-    const some = await firebase.login(user);
-    console.log(some);
+    // const some = await firebase.login(user);
+    // console.log(some);
     history.replace("/dashboard");
   };
   return (
@@ -163,7 +171,7 @@ const Signup = () => {
                     />
                   </div>
                   <button className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    Login to dashboard
+                    Sign up
                   </button>
                 </form>
                 <hr className="mt-6 border-b-1 border-blueGray-300" />

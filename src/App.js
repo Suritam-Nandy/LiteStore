@@ -11,20 +11,23 @@ import UserForm from "./components/users/UserForm";
 import { Provider } from "react-redux";
 import store, { rrfProps } from "./store";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
-import Login from "./components/pages/Login";
-import Signup from "./components/auth/SignUp";
+import Login from "./auth/Login";
+import Signup from "./auth/SignUp";
 
 // import ListedSpaces from "./components/listedSpaces/listedspaces";  <-- all places -->  #works fine
+import BrandDashboard from "./components/pages/BrandDashboard/BrandDashboards";
+
 import Dashboard from "./components/pages/dashboard/Dashboard";
 import AddSpace from "./components/pages/dashboard/AddSpace";
 import ListedSpaces from "./components/pages/dashboard/ListedSpaces";
+import MySpaces from "./components/pages/dashboard/MySpaces";
+
 import Payments from "./components/pages/dashboard/Payments";
 import AllSpaces from "./components/pages/AllSpaces";
-import PrivateRoute from "./components/routes/PrivateRoute";
+import Space from "./components/pages/Space";
+
+import PrivateRoute from "./routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
-
-// import routes from "./components/shared/routes";
-
 import ScrollToTop from "./components/shared/tools/ScrollToTop";
 
 import Navbar from "./components/shared/Navbar/Navbar";
@@ -83,6 +86,7 @@ function App() {
             <Route exact path="/the-future-of-retail-1" component={BlogOne} />
             <Route exact path="/the-future-of-retail-2" component={BlogTwo} />
             <Route exact path="/allspaces" component={AllSpaces} />
+            <Route exact path="/place/:id" component={Space} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
@@ -90,6 +94,7 @@ function App() {
             <PrivateRoute exact path="/addspace/:id?" component={AddSpace} />
             <PrivateRoute exact path="/addspace" component={AddSpace} />
             <PrivateRoute exact path="/listedspaces" component={ListedSpaces} />
+            <PrivateRoute exact path="/myspaces" component={MySpaces} />
             <PrivateRoute exact path="/payments" component={Payments} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />

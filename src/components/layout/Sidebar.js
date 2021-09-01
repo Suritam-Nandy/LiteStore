@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -8,19 +8,21 @@ import { useFirebase, useFirestoreConnect } from "react-redux-firebase";
 
 const Sidebar = () => {
   const firebase = useFirebase();
+  const user = useSelector((state) => state.firestore.data.user);
 
-  // const uid = firebase.auth().currentUser.uid;
-  // useFirestoreConnect({
-  //   collection: `users/LandOwner/${uid}`,
-  //   doc: "details",
-  //   storeAs: "user",
-  // });
-  // const user = useSelector((state) => state.firestore.data.user);
-
-  // const name = firebase.auth().currentUser.displayName
-  //   ? firebase.auth().currentUser.displayName
-  //   : user.displayName;
-
+  const uid = firebase.auth().currentUser.uid;
+  useFirestoreConnect({
+    collection: `users/`,
+    doc: `${uid}`,
+    storeAs: "user",
+  });
+  if (user) {
+    var role = user.role;
+    var name = firebase.auth().currentUser.displayName
+      ? firebase.auth().currentUser.displayName
+      : user.displayName;
+  }
+  console.log(name);
   const sidebarList = [
     {
       name: "Home",
@@ -28,14 +30,22 @@ const Sidebar = () => {
       notificationCount: 0,
       link: "",
     },
-    { name: "Profile", notificationCount: 2, link: "profile" },
+    { name: "Profile", notificationCount: 2, link: "dashboard" },
     { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
 
     { name: "Interested Customers", notificationCount: 0, link: "" },
     { name: "Add Space", notificationCount: 0, link: "addspace" },
-    { name: "Calendar", notificationCount: 0, link: "" },
+    { name: "Calendar", notificationCount: 0, link: "dashboard" },
     { name: "Payments", notificationCount: 0, link: "payments" },
   ];
+
+  if (role === "Brand") {
+    sidebarList[2].name = "My Spaces";
+    sidebarList[2].link = "myspaces";
+    sidebarList[4].name = "Store";
+    sidebarList[4].link = "dashboard";
+  }
+
   const [open, setOpen] = useState(false);
   // console.log(open);
   return (
@@ -49,7 +59,7 @@ const Sidebar = () => {
       >
         <div className="px-8 ">
           <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
-            <h1 className="text-4xl text-white">{}</h1>
+            <h1 className="text-4xl text-white">{role}</h1>
             <span className="text-sm">uid</span>
           </div>
           <ul className="mt-12">

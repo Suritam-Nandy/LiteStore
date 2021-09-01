@@ -8,7 +8,7 @@ import { useFirestore, useFirebase } from "react-redux-firebase";
 import { useFirestoreConnect } from "react-redux-firebase";
 import Loading from "../../layout/Loading";
 
-const ListedSpaces = () => {
+const MYSpaces = () => {
   const firestore = useFirestore();
   const { uid } = useSelector((state) => state.firebase.auth);
   const places = useSelector((state) => state.firestore.ordered.places);
@@ -156,4 +156,4 @@ const ListedSpaces = () => {
   );
 };
 
-export default ListedSpaces;
+export default MYSpaces;

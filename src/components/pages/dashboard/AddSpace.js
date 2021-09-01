@@ -160,7 +160,7 @@ const AddSpace = () => {
         console.log("places completed");
       });
     }
-    history.push("/");
+    history.push("/dashboard");
   };
   return (
     <>
