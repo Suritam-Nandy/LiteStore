@@ -10,9 +10,8 @@ import { useHistory } from "react-router-dom";
 
 const AllSpaces = () => {
   let history = useHistory();
-
+  const role = useSelector((state) => state.firebase.profile.role);
   const firestore = useFirestore();
-  const emptyObj = {};
   const places = useSelector((state) => state.firestore.ordered.places);
   const { uid } = useSelector((state) => state.firebase.auth);
   const [space, setSpace] = useState(null);
@@ -27,7 +26,7 @@ const AllSpaces = () => {
   if (!places) {
     return <Loading />;
   }
-
+  console.log(role);
   const loadSpace = (idSpace) => {
     // try {
     //   const docRef = firestore.collection("allplaces").doc(idSpace);
@@ -142,12 +141,14 @@ const AllSpaces = () => {
                         >
                           Status
                         </th>
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                        >
-                          Status
-                        </th>
+                        {role !== "LandOwner" && (
+                          <th
+                            scope="col"
+                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                          >
+                            Status
+                          </th>
+                        )}
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200 ">
@@ -172,9 +173,15 @@ const AllSpaces = () => {
                             </div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm font-medium text-gray-900">
-                              {place.area}
-                            </div>
+                            <Link
+                              to={`/place/${place.id}`}
+                              className="btn btn-primary btn-profile"
+                            >
+                              <div className="text-sm font-medium text-gray-900">
+                                {place.area}
+                              </div>
+                            </Link>
+
                             {/* <div className="text-sm text-gray-500">
                                 {place.name}
                               </div> */}
@@ -199,18 +206,20 @@ const AllSpaces = () => {
                               Occupied
                             </label>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            <label
-                              // to={`/addspace/${place.id}`}
-                              // to="/myspaces"
-                              className="btn btn-primary btn-profile"
-                              onClick={() => {
-                                loadSpace(place.id);
-                              }}
-                            >
-                              Book
-                            </label>
-                          </td>
+                          {role !== "LandOwner" && (
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                              <label
+                                // to={`/addspace/${place.id}`}
+                                // to="/myspaces"
+                                className="btn btn-primary btn-profile"
+                                onClick={() => {
+                                  loadSpace(place.id);
+                                }}
+                              >
+                                Book
+                              </label>
+                            </td>
+                          )}
                         </tr>
                       ))}
                     </tbody>

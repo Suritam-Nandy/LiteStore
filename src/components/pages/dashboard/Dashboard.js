@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../../layout/Sidebar";
-import PrivateRoute from "../../routes/PrivateRoute";
+import PrivateRoute from "../../../routes/PrivateRoute";
 
 const Dashboard = () => {
   const dashboardList = [

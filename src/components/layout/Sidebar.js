@@ -30,17 +30,20 @@ const Sidebar = () => {
       notificationCount: 0,
       link: "",
     },
-    { name: "Profile", notificationCount: 2, link: "profile" },
+    { name: "Profile", notificationCount: 2, link: "dashboard" },
     { name: "Listed Spaces", notificationCount: 0, link: "listedspaces" },
 
     { name: "Interested Customers", notificationCount: 0, link: "" },
     { name: "Add Space", notificationCount: 0, link: "addspace" },
-    { name: "Calendar", notificationCount: 0, link: "" },
+    { name: "Calendar", notificationCount: 0, link: "dashboard" },
     { name: "Payments", notificationCount: 0, link: "payments" },
   ];
 
   if (role === "Brand") {
     sidebarList[2].name = "My Spaces";
+    sidebarList[2].link = "myspaces";
+    sidebarList[4].name = "Store";
+    sidebarList[4].link = "dashboard";
   }
 
   const [open, setOpen] = useState(false);

@@ -11,13 +11,13 @@ import Loading from "../../layout/Loading";
 const ListedSpaces = () => {
   const firestore = useFirestore();
   const { uid } = useSelector((state) => state.firebase.auth);
-  const users = useSelector((state) => state.firestore.ordered.places);
+  const places = useSelector((state) => state.firestore.ordered.places);
 
   useFirestoreConnect({
     collection: `users/${uid}/places`,
     storeAs: "places",
   });
-  if (!users) {
+  if (!places) {
     return <Loading />;
   }
   const deleteUser = async (id) => {
@@ -84,7 +84,7 @@ const ListedSpaces = () => {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200 ">
-                        {users.map((place, index) => (
+                        {places.map((place, index) => (
                           <tr key={place.index}>
                             <td className="px-6 py-4 whitespace-nowrap h-32">
                               <div className="flex items-center">

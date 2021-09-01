@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import React, { useState } from "react";
-import Input from "../layout/Input";
+import Input from "../components/layout/Input";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";

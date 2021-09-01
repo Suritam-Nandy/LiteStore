@@ -11,8 +11,8 @@ import UserForm from "./components/users/UserForm";
 import { Provider } from "react-redux";
 import store, { rrfProps } from "./store";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
-import Login from "./components/pages/Login";
-import Signup from "./components/auth/SignUp";
+import Login from "./auth/Login";
+import Signup from "./auth/SignUp";
 
 // import ListedSpaces from "./components/listedSpaces/listedspaces";  <-- all places -->  #works fine
 import BrandDashboard from "./components/pages/BrandDashboard/BrandDashboards";
@@ -24,7 +24,9 @@ import MySpaces from "./components/pages/dashboard/MySpaces";
 
 import Payments from "./components/pages/dashboard/Payments";
 import AllSpaces from "./components/pages/AllSpaces";
-import PrivateRoute from "./components/routes/PrivateRoute";
+import Space from "./components/pages/Space";
+
+import PrivateRoute from "./routes/PrivateRoute";
 import NotFound from "./components/pages/NotFound";
 import ScrollToTop from "./components/shared/tools/ScrollToTop";
 
@@ -84,6 +86,7 @@ function App() {
             <Route exact path="/the-future-of-retail-1" component={BlogOne} />
             <Route exact path="/the-future-of-retail-2" component={BlogTwo} />
             <Route exact path="/allspaces" component={AllSpaces} />
+            <Route exact path="/place/:id" component={Space} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/users" component={Users} />
             <PrivateRoute exact path="/user/:id" component={User} />
