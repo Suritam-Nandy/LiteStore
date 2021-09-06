@@ -18,14 +18,94 @@ import { MdKitchen } from "react-icons/md";
 import { IoSnow } from "react-icons/io5";
 
 import { BiImageAdd, BiHandicap, BiCctv } from "react-icons/bi";
+
 const Space = () => {
   const firestore = useFirestore();
   const { id } = useParams();
   const [space, setSpace] = useState(null);
-
+  const [Amenities, setAmenities] = useState([]);
   useEffect(() => {
     loadSpace();
-  }, []);
+    if (space) {
+      setAmenities([
+        {
+          name: "streetLevel",
+          availability: space.streetLevel,
+          icon: <GiDoubleStreetLights className="w-12 h-8" />,
+        },
+        {
+          name: "kitchen",
+          availability: space.kitchen,
+          icon: <MdKitchen className="w-12 h-8" />,
+        },
+        {
+          name: "windowDisplay",
+          availability: space.windowDisplay,
+          icon: <GiWindow className="w-12 h-8" />,
+        },
+        {
+          name: "handicapAccessible",
+          availability: space.handicapAccessible,
+          icon: <BiHandicap className="w-12 h-8" />,
+        },
+        {
+          name: "electricity",
+          availability: space.electricity,
+          icon: <GiElectric className="w-12 h-8" />,
+        },
+        {
+          name: "airConditioning",
+          availability: space.airConditioning,
+          icon: <IoSnow className="w-12 h-8" />,
+        },
+        {
+          name: "heating",
+          availability: space.heating,
+          icon: <GiHeatHaze className="w-12 h-8" />,
+        },
+        {
+          name: "toilets",
+          availability: space.toilets,
+          icon: <FaToilet className="w-12 h-8" />,
+        },
+        {
+          name: "securitySystem",
+          availability: space.securitySystem,
+          icon: <BiCctv className="w-12 h-8" />,
+        },
+        {
+          name: "lighting",
+          availability: space.securitySystem,
+          icon: <GiWallLight className="w-12 h-8" />,
+        },
+        {
+          name: "furniture",
+          availability: space.furniture,
+          icon: <GiSofa className="w-12 h-8" />,
+        },
+        {
+          name: "garmetRack",
+          availability: space.garmetRack,
+          icon: <FaStackOverflow className="w-12 h-8" />,
+        },
+        {
+          name: "internet",
+          availability: space.internet,
+          icon: <ImConnection className="w-12 h-8" />,
+        },
+        {
+          name: "soundVideo",
+          availability: space.soundVideo,
+          icon: <GiMusicSpell className="w-12 h-8" />,
+        },
+        {
+          name: "minimal",
+          availability: space.minimal,
+          icon: <FiMinimize className="w-12 h-8" />,
+        },
+      ]);
+    }
+  }, [space]);
   const loadSpace = async () => {
     try {
       const docRef = firestore.collection("allplaces").doc(id);
@@ -40,83 +120,6 @@ const Space = () => {
     }
   };
 
-  const Amenities = [
-    {
-      name: "streetLevel",
-      availability: space.streetLevel,
-      icon: <GiDoubleStreetLights />,
-    },
-    {
-      name: "kitchen",
-      availability: space.kitchen,
-      icon: <MdKitchen />,
-    },
-    {
-      name: "windowDisplay",
-      availability: space.windowDisplay,
-      icon: <GiWindow />,
-    },
-    {
-      name: "handicapAccessible",
-      availability: space.handicapAccessible,
-      icon: <BiHandicap className="w-12 h-8" />,
-    },
-    {
-      name: "electricity",
-      availability: space.electricity,
-      icon: <GiElectric />,
-    },
-    {
-      name: "airConditioning",
-      availability: space.airConditioning,
-      icon: <IoSnow />,
-    },
-    {
-      name: "heating",
-      availability: space.heating,
-      icon: <GiHeatHaze />,
-    },
-    {
-      name: "toilets",
-      availability: space.toilets,
-      icon: <FaToilet />,
-    },
-    {
-      name: "securitySystem",
-      availability: space.securitySystem,
-      icon: <BiCctv />,
-    },
-    {
-      name: "lighting",
-      availability: space.securitySystem,
-      icon: <GiWallLight />,
-    },
-    {
-      name: "furniture",
-      availability: space.furniture,
-      icon: <GiSofa />,
-    },
-    {
-      name: "garmetRack",
-      availability: space.garmetRack,
-      icon: <FaStackOverflow />,
-    },
-    {
-      name: "internet",
-      availability: space.internet,
-      icon: <ImConnection />,
-    },
-    {
-      name: "soundVideo",
-      availability: space.soundVideo,
-      icon: <GiMusicSpell />,
-    },
-    {
-      name: "minimal",
-      availability: space.minimal,
-      icon: <FiMinimize />,
-    },
-  ];
   if (space == null) {
     return <Loading />;
   }
@@ -179,6 +182,7 @@ const Space = () => {
                 </div>
                 <div className="flex flex-col md:grid mx-10  md:grid-cols-2  m-1 w-full">
                   {Amenities.map((amenity) => {
+                    console.log(amenity);
                     return (
                       <>
                         {amenity.availability && (
