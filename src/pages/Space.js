@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import Avatar from "../layout/Avatar";
 import { useFirestore } from "react-redux-firebase";
-import Loading from "../layout/Loading";
+import Loading from "../components/layout/Loading";
 import { ImConnection } from "react-icons/im";
 import { FiMinimize } from "react-icons/fi";
 import {

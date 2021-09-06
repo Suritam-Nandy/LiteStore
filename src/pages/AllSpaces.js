@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from "../layout/Sidebar";
+import Sidebar from "../components/layout/Sidebar";
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useFirestore, useFirebase } from "react-redux-firebase";
 import { useFirestoreConnect } from "react-redux-firebase";
-import Loading from "../layout/Loading";
+import Loading from "../components/layout/Loading";
 import { useHistory } from "react-router-dom";
 
 const AllSpaces = () => {
