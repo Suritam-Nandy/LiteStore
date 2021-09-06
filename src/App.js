@@ -15,19 +15,19 @@ import Login from "./auth/Login";
 import Signup from "./auth/SignUp";
 
 // import ListedSpaces from "./components/listedSpaces/listedspaces";  <-- all places -->  #works fine
-import BrandDashboard from "./components/pages/BrandDashboard/BrandDashboards";
+// import BrandDashboard from "./components/pages/BrandDashboard/BrandDashboards";
 
-import Dashboard from "./components/pages/dashboard/Dashboard";
-import AddSpace from "./components/pages/dashboard/AddSpace";
-import ListedSpaces from "./components/pages/dashboard/ListedSpaces";
-import MySpaces from "./components/pages/dashboard/MySpaces";
+import Dashboard from "./pages/dashboard/Dashboard";
+import AddSpace from "./pages/dashboard/AddSpace";
+import ListedSpaces from "./pages/dashboard/ListedSpaces";
+import MySpaces from "./pages/dashboard/MySpaces";
 
-import Payments from "./components/pages/dashboard/Payments";
-import AllSpaces from "./components/pages/AllSpaces";
-import Space from "./components/pages/Space";
+import Payments from "./pages/dashboard/Payments";
+import AllSpaces from "./pages/AllSpaces";
+import Space from "./pages/Space";
 
 import PrivateRoute from "./routes/PrivateRoute";
-import NotFound from "./components/pages/NotFound";
+import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/shared/tools/ScrollToTop";
 
 import Navbar from "./components/shared/Navbar/Navbar";
