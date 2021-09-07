@@ -16,14 +16,28 @@ import {
 import { FaToilet, FaStackOverflow } from "react-icons/fa";
 import { MdKitchen } from "react-icons/md";
 import { IoSnow } from "react-icons/io5";
-
 import { BiImageAdd, BiHandicap, BiCctv } from "react-icons/bi";
+import { addDays } from "date-fns";
+import { DateRange } from "react-date-range";
+import { format } from "date-fns";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
 
 const Space = () => {
   const firestore = useFirestore();
   const { id } = useParams();
   const [space, setSpace] = useState(null);
   const [Amenities, setAmenities] = useState([]);
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const [calendarState, setCalendarState] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+
   useEffect(() => {
     loadSpace();
     if (space) {
@@ -123,7 +137,27 @@ const Space = () => {
   if (space == null) {
     return <Loading />;
   }
-  console.log(space.area);
+  var today = new Date();
+  var lastWeek = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate() - 7
+  );
+  var lastDate = new Date(
+    today.getFullYear() + 1,
+    today.getMonth(),
+    today.getDate()
+  );
+  const startdate = calendarState[0].startDate.toISOString();
+  const enddate = calendarState[0].endDate.toISOString();
+
+  const formattedStartDate = format(new Date(startdate), "dd MMMM yyyy");
+  const formattedEndDate = format(new Date(enddate), "dd MMMM yyyy");
+  const range = `${formattedEndDate} - ${formattedStartDate}`;
+
+  // console.log(range);
+
+  // console.log(calendarState[0].endDate.getDate());
   return (
     <>
       <div className="w-full mx-auto mt-10">
@@ -182,7 +216,6 @@ const Space = () => {
                 </div>
                 <div className="flex flex-col md:grid mx-10  md:grid-cols-2  m-1 w-full">
                   {Amenities.map((amenity) => {
-                    console.log(amenity);
                     return (
                       <>
                         {amenity.availability && (
@@ -197,6 +230,44 @@ const Space = () => {
                     );
                   })}
                 </div>
+                <div className="m-1">
+                  <h1>Calendar</h1>
+                </div>
+                <div className="flex flex-col md:grid mx-10  md:grid-cols-2  m-1 w-full">
+                  {/* <DateRangePicker
+                    onChange={(item) => setCalendarState([item.selection])}
+                    showSelectionPreview={true}
+                    moveRangeOnFirstSelection={false}
+                    months={2}
+                    ranges={calendarState}
+                    direction="horizontal"
+                  /> */}
+                  <DateRange
+                    editableDateInputs={true}
+                    onChange={(item) => setCalendarState([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={calendarState}
+                  />
+                </div>
+                {formattedEndDate !== formattedStartDate && (
+                  <div>
+                    <div>
+                      <p className="text-lg">
+                        start date:{" "}
+                        <label className="text-sm">{formattedStartDate}</label>
+                      </p>
+                    </div>
+                    <p className="text-lg">
+                      start date:{" "}
+                      <label className="text-sm">{formattedEndDate}</label>
+                    </p>
+                    <div>
+                      <p className="text-lg">
+                        range: <label className="text-sm">{range}</label>
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             {/* ); */}
