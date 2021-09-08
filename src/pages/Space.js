@@ -258,7 +258,7 @@ const Space = () => {
                       </p>
                     </div>
                     <p className="text-lg">
-                      start date:{" "}
+                      end date:{" "}
                       <label className="text-sm">{formattedEndDate}</label>
                     </p>
                     <div>
