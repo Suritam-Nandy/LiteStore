@@ -20,6 +20,7 @@ const Login = () => {
     firebase
       .login({
         provider: "google",
+        type: "popup",
       })
       .then(() => {
         history.push("/dashboard");
