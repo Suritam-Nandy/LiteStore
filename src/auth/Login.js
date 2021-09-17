@@ -135,7 +135,7 @@ const Login = () => {
                       }}
                       className="dropdown-item text-blueGray-500 hover:text-blueGray-600 font-bold"
                     >
-                      SignUP as Land Owner
+                      SignUp as Land Owner
                     </Link>
                     <Link
                       to={{
@@ -144,7 +144,7 @@ const Login = () => {
                       }}
                       className="dropdown-item text-blueGray-500 hover:text-blueGray-600 font-bold"
                     >
-                      SignUP as Brand
+                      SignUp as Brand
                     </Link>
                   </label>
                 </div>

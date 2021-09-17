@@ -20,7 +20,7 @@ const Signup = (props) => {
   window.localStorage.setItem("role", role);
 
   console.log(role);
-  firebase.updateProfile({ role: role });
+  // firebase.updateProfile({ role: role });
 
   // const auth = useSelector((state) => state.firebase.auth);
   const [user, setUser] = useState({
@@ -37,14 +37,10 @@ const Signup = (props) => {
         type: "popup",
       })
       .then((resp) => {
-        return firestore
-          .collection("users")
-          .doc(resp.user.uid)
-
-          .update({
-            role: role,
-            createdAt: firestore.FieldValue.serverTimestamp(),
-          });
+        return firestore.collection("users").doc(resp.user.uid).update({
+          role: role,
+          createdAt: firestore.FieldValue.serverTimestamp(),
+        });
       });
     history.push("/dashboard");
   };

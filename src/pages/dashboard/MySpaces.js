@@ -20,6 +20,7 @@ const MYSpaces = () => {
   if (!places) {
     return <Loading />;
   }
+
   const deleteUser = async (id) => {
     try {
       await firestore.collection("users").doc(id).delete();
@@ -34,7 +35,7 @@ const MYSpaces = () => {
         <Sidebar />
         <div className="container mx-auto py-10 h-full md:w-4/5 w-11/12 px-6  ">
           <div className="my-20">
-            <h1 className="text-2xl">Listed Spaces</h1>
+            <h1 className="text-2xl">Booked Spaces</h1>
           </div>
           {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
           <div className="w-full h-full overflow-x-hidden ">
@@ -73,13 +74,7 @@ const MYSpaces = () => {
                             scope="col"
                             className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                           >
-                            Status
-                          </th>
-                          <th
-                            scope="col"
-                            className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                          >
-                            Status
+                            Dates
                           </th>
                         </tr>
                       </thead>
@@ -116,29 +111,9 @@ const MYSpaces = () => {
                               {place.pricing}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                <input
-                                  type="checkbox"
-                                  name="toggle"
-                                  id="toggle"
-                                  class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                                />
-                                <label
-                                  for="toggle"
-                                  class="toggle-label block overflow-hidden h-6 rounded-full  bg-gray-400 cursor-pointer"
-                                ></label>
+                              <div className="text-sm font-medium text-gray-900">
+                                {place.range}
                               </div>
-                              <label for="toggle" class="text-xs text-gray-700">
-                                Occupied
-                              </label>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              <Link
-                                to={`/addspace/${place.id}`}
-                                className="btn btn-primary btn-profile"
-                              >
-                                Edit
-                              </Link>
                             </td>
                           </tr>
                         ))}

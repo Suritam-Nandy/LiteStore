@@ -150,18 +150,23 @@ const AddSpace = () => {
             ...user,
             createdAt: firestore.FieldValue.serverTimestamp(),
             imgUrl: url,
+          })
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+            firestore
+              .collection("allplaces")
+              .doc(docRef.id)
+              .set({
+                ...user,
+                createdAt: firestore.FieldValue.serverTimestamp(),
+                imgUrl: url,
+              });
           });
-        console.log("userplaces completed");
 
-        firestore.collection("allplaces").add({
-          ...user,
-          createdAt: firestore.FieldValue.serverTimestamp(),
-          imgUrl: url,
-        });
         console.log("places completed");
+        history.push("/dashboard");
       });
     }
-    history.push("/dashboard");
   };
   return (
     <>

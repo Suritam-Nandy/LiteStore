@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { useFirestore } from "react-redux-firebase";
 import Loading from "../components/layout/Loading";
 import { ImConnection } from "react-icons/im";
@@ -16,22 +17,124 @@ import {
 import { FaToilet, FaStackOverflow } from "react-icons/fa";
 import { MdKitchen } from "react-icons/md";
 import { IoSnow } from "react-icons/io5";
-
 import { BiImageAdd, BiHandicap, BiCctv } from "react-icons/bi";
+import { addDays } from "date-fns";
+import { DateRange } from "react-date-range";
+import { format } from "date-fns";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+
 const Space = () => {
   const firestore = useFirestore();
+  const role = useSelector((state) => state.firebase.profile.role);
+  const { uid } = useSelector((state) => state.firebase.auth);
+  let history = useHistory();
+
   const { id } = useParams();
   const [space, setSpace] = useState(null);
+  const [Amenities, setAmenities] = useState([]);
+  const [dbDates, setdbDates] = useState([]);
+  const [brandBookedDates, setBrandBookDates] = useState([]);
+
+  const [dd, setdd] = useState([]);
+
+  const [calendarState, setCalendarState] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
 
   useEffect(() => {
     loadSpace();
-  }, []);
+    if (space) {
+      setAmenities([
+        {
+          name: "streetLevel",
+          availability: space.streetLevel,
+          icon: <GiDoubleStreetLights className="w-12 h-8" />,
+        },
+        {
+          name: "kitchen",
+          availability: space.kitchen,
+          icon: <MdKitchen className="w-12 h-8" />,
+        },
+        {
+          name: "windowDisplay",
+          availability: space.windowDisplay,
+          icon: <GiWindow className="w-12 h-8" />,
+        },
+        {
+          name: "handicapAccessible",
+          availability: space.handicapAccessible,
+          icon: <BiHandicap className="w-12 h-8" />,
+        },
+        {
+          name: "electricity",
+          availability: space.electricity,
+          icon: <GiElectric className="w-12 h-8" />,
+        },
+        {
+          name: "airConditioning",
+          availability: space.airConditioning,
+          icon: <IoSnow className="w-12 h-8" />,
+        },
+        {
+          name: "heating",
+          availability: space.heating,
+          icon: <GiHeatHaze className="w-12 h-8" />,
+        },
+        {
+          name: "toilets",
+          availability: space.toilets,
+          icon: <FaToilet className="w-12 h-8" />,
+        },
+        {
+          name: "securitySystem",
+          availability: space.securitySystem,
+          icon: <BiCctv className="w-12 h-8" />,
+        },
+        {
+          name: "lighting",
+          availability: space.securitySystem,
+          icon: <GiWallLight className="w-12 h-8" />,
+        },
+        {
+          name: "furniture",
+          availability: space.furniture,
+          icon: <GiSofa className="w-12 h-8" />,
+        },
+        {
+          name: "garmetRack",
+          availability: space.garmetRack,
+          icon: <FaStackOverflow className="w-12 h-8" />,
+        },
+        {
+          name: "internet",
+          availability: space.internet,
+          icon: <ImConnection className="w-12 h-8" />,
+        },
+        {
+          name: "soundVideo",
+          availability: space.soundVideo,
+          icon: <GiMusicSpell className="w-12 h-8" />,
+        },
+        {
+          name: "minimal",
+          availability: space.minimal,
+          icon: <FiMinimize className="w-12 h-8" />,
+        },
+      ]);
+    }
+  }, [space]);
   const loadSpace = async () => {
     try {
       const docRef = firestore.collection("allplaces").doc(id);
       const result = await docRef.get();
       if (result.exists) {
         setSpace(result.data());
+        setdd(...[restrictedDates]);
       } else {
         console.log("No such document!");
       }
@@ -40,87 +143,88 @@ const Space = () => {
     }
   };
 
-  const Amenities = [
-    {
-      name: "streetLevel",
-      availability: space.streetLevel,
-      icon: <GiDoubleStreetLights />,
-    },
-    {
-      name: "kitchen",
-      availability: space.kitchen,
-      icon: <MdKitchen />,
-    },
-    {
-      name: "windowDisplay",
-      availability: space.windowDisplay,
-      icon: <GiWindow />,
-    },
-    {
-      name: "handicapAccessible",
-      availability: space.handicapAccessible,
-      icon: <BiHandicap className="w-12 h-8" />,
-    },
-    {
-      name: "electricity",
-      availability: space.electricity,
-      icon: <GiElectric />,
-    },
-    {
-      name: "airConditioning",
-      availability: space.airConditioning,
-      icon: <IoSnow />,
-    },
-    {
-      name: "heating",
-      availability: space.heating,
-      icon: <GiHeatHaze />,
-    },
-    {
-      name: "toilets",
-      availability: space.toilets,
-      icon: <FaToilet />,
-    },
-    {
-      name: "securitySystem",
-      availability: space.securitySystem,
-      icon: <BiCctv />,
-    },
-    {
-      name: "lighting",
-      availability: space.securitySystem,
-      icon: <GiWallLight />,
-    },
-    {
-      name: "furniture",
-      availability: space.furniture,
-      icon: <GiSofa />,
-    },
-    {
-      name: "garmetRack",
-      availability: space.garmetRack,
-      icon: <FaStackOverflow />,
-    },
-    {
-      name: "internet",
-      availability: space.internet,
-      icon: <ImConnection />,
-    },
-    {
-      name: "soundVideo",
-      availability: space.soundVideo,
-      icon: <GiMusicSpell />,
-    },
-    {
-      name: "minimal",
-      availability: space.minimal,
-      icon: <FiMinimize />,
-    },
-  ];
   if (space == null) {
     return <Loading />;
   }
-  console.log(space.area);
+
+  const startdate = calendarState[0].startDate.toISOString();
+  const enddate = calendarState[0].endDate.toISOString();
+
+  const formattedStartDate = format(new Date(startdate), "dd MMMM yyyy");
+  const formattedEndDate = format(new Date(enddate), "dd MMMM yyyy");
+  const rangeText = `${formattedEndDate} - ${formattedStartDate}`;
+  const selectDates = () => {
+    const selectedd = [...dd, ...dates];
+    setdbDates(selectedd);
+    const brandbookdd = [...dates];
+    setBrandBookDates(brandbookdd);
+    console.log(selectedd);
+  };
+
+  const d1 = calendarState[0].startDate,
+    d2 = calendarState[0].endDate,
+    diff = (d2 - d1) / 864e5,
+    dates = Array.from({ length: diff + 1 }, (_, i) => {
+      const date = new Date();
+      date.setDate(d1.getDate() + i);
+
+      return date;
+    });
+  // if (dates) setdd(...dates);
+
+  // console.log(space.bookedDates);
+  let restrictedDates = [];
+  if (space.bookedDates) {
+    restrictedDates = space.bookedDates.map((x) => x.toDate());
+  }
+  // console.log(restrictedDates);
+  // console.log();
+
+  const bookSpace = () => {
+    // const docRef = firestore.collection("allplaces").doc(idSpace);
+    // docRef.get().then((doc) => {
+    //   console.log(doc.data());
+    //   const sme = doc.data();
+    //   console.log(sme);
+    //   setSpace({ ...space, sme });
+    //   console.log(space);
+    // });
+
+    console.log(dates);
+    // const some =  loadSpace(idSpace);
+    // console.log(dates);
+    firestore
+      .collection("users")
+      .doc(uid)
+      .collection("places")
+
+      .add({
+        ...space,
+        brandBookedDates: brandBookedDates,
+        range: rangeText,
+        createdAt: firestore.FieldValue.serverTimestamp(),
+      });
+    firestore.collection("allplaces").doc(id).update({
+      bookedDates: dbDates,
+    });
+    history.replace("/myspaces");
+    // firestore
+    // .collection("users")
+    // .doc(uid)
+    // .collection("places")
+
+    // .add({
+    //   ...space,
+    //   createdAt: firestore.FieldValue.serverTimestamp(),
+    //   imgUrl: url,
+    // })
+  };
+
+  // console.log(space);
+  // useEffect(() => {
+  //   console.log(space);
+  // }, [space]);
+
   return (
     <>
       <div className="w-full mx-auto mt-10">
@@ -193,7 +297,70 @@ const Space = () => {
                     );
                   })}
                 </div>
+                <div className="m-1">
+                  <h1>Calendar</h1>
+                </div>
+                <div className="flex flex-col md:grid mx-10  md:grid-cols-2  m-1 w-full">
+                  {/* <DateRangePicker
+                    onChange={(item) => setCalendarState([item.selection])}
+                    showSelectionPreview={true}
+                    moveRangeOnFirstSelection={false}
+                    months={2}
+                    ranges={calendarState}
+                    direction="horizontal"
+                  /> */}
+                  <DateRange
+                    editableDateInputs={true}
+                    onChange={(item) => setCalendarState([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={calendarState}
+                    disabledDates={restrictedDates}
+                  />
+                </div>
+                {formattedStartDate !== null && role === "Brand" && (
+                  <div>
+                    <div>
+                      <p className="text-lg">
+                        start date:{" "}
+                        <label className="text-sm">{formattedStartDate}</label>
+                      </p>
+                    </div>
+                    <p className="text-lg">
+                      end date:{" "}
+                      <label className="text-sm">{formattedEndDate}</label>
+                    </p>
+                    <div>
+                      <p className="text-lg">
+                        range: <label className="text-sm">{rangeText}</label>
+                      </p>
+                    </div>
+                    <div className="mt-6 py-2">
+                      <button
+                        className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="button"
+                        onClick={() => {
+                          selectDates();
+                        }}
+                      >
+                        Confirm
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
+              {role === "Brand" && (
+                <div className="mt-6 py-2">
+                  <button
+                    className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button"
+                    onClick={() => {
+                      bookSpace();
+                    }}
+                  >
+                    Book Space
+                  </button>
+                </div>
+              )}
             </div>
             {/* ); */}
             {/* })} */}
