@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { useFirestore } from "react-redux-firebase";
 import Loading from "../components/layout/Loading";
 import { ImConnection } from "react-icons/im";
@@ -25,11 +26,18 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 
 const Space = () => {
   const firestore = useFirestore();
+  const role = useSelector((state) => state.firebase.profile.role);
+  const { uid } = useSelector((state) => state.firebase.auth);
+  let history = useHistory();
+
   const { id } = useParams();
   const [space, setSpace] = useState(null);
   const [Amenities, setAmenities] = useState([]);
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [dbDates, setdbDates] = useState([]);
+  const [brandBookedDates, setBrandBookDates] = useState([]);
+
+  const [dd, setdd] = useState([]);
+
   const [calendarState, setCalendarState] = useState([
     {
       startDate: new Date(),
@@ -126,6 +134,7 @@ const Space = () => {
       const result = await docRef.get();
       if (result.exists) {
         setSpace(result.data());
+        setdd(...[restrictedDates]);
       } else {
         console.log("No such document!");
       }
@@ -137,27 +146,84 @@ const Space = () => {
   if (space == null) {
     return <Loading />;
   }
-  var today = new Date();
-  var lastWeek = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() - 7
-  );
-  var lastDate = new Date(
-    today.getFullYear() + 1,
-    today.getMonth(),
-    today.getDate()
-  );
+
   const startdate = calendarState[0].startDate.toISOString();
   const enddate = calendarState[0].endDate.toISOString();
 
   const formattedStartDate = format(new Date(startdate), "dd MMMM yyyy");
   const formattedEndDate = format(new Date(enddate), "dd MMMM yyyy");
-  const range = `${formattedEndDate} - ${formattedStartDate}`;
+  const rangeText = `${formattedEndDate} - ${formattedStartDate}`;
+  const selectDates = () => {
+    const selectedd = [...dd, ...dates];
+    setdbDates(selectedd);
+    const brandbookdd = [...dates];
+    setBrandBookDates(brandbookdd);
+    console.log(selectedd);
+  };
 
-  // console.log(range);
+  const d1 = calendarState[0].startDate,
+    d2 = calendarState[0].endDate,
+    diff = (d2 - d1) / 864e5,
+    dates = Array.from({ length: diff + 1 }, (_, i) => {
+      const date = new Date();
+      date.setDate(d1.getDate() + i);
 
-  // console.log(calendarState[0].endDate.getDate());
+      return date;
+    });
+  // if (dates) setdd(...dates);
+
+  // console.log(space.bookedDates);
+  let restrictedDates = [];
+  if (space.bookedDates) {
+    restrictedDates = space.bookedDates.map((x) => x.toDate());
+  }
+  // console.log(restrictedDates);
+  // console.log();
+
+  const bookSpace = () => {
+    // const docRef = firestore.collection("allplaces").doc(idSpace);
+    // docRef.get().then((doc) => {
+    //   console.log(doc.data());
+    //   const sme = doc.data();
+    //   console.log(sme);
+    //   setSpace({ ...space, sme });
+    //   console.log(space);
+    // });
+
+    console.log(dates);
+    // const some =  loadSpace(idSpace);
+    // console.log(dates);
+    firestore
+      .collection("users")
+      .doc(uid)
+      .collection("places")
+
+      .add({
+        ...space,
+        brandBookedDates: brandBookedDates,
+        createdAt: firestore.FieldValue.serverTimestamp(),
+      });
+    firestore.collection("allplaces").doc(id).update({
+      bookedDates: dbDates,
+    });
+    history.replace("/myspaces");
+    // firestore
+    // .collection("users")
+    // .doc(uid)
+    // .collection("places")
+
+    // .add({
+    //   ...space,
+    //   createdAt: firestore.FieldValue.serverTimestamp(),
+    //   imgUrl: url,
+    // })
+  };
+
+  // console.log(space);
+  // useEffect(() => {
+  //   console.log(space);
+  // }, [space]);
+
   return (
     <>
       <div className="w-full mx-auto mt-10">
@@ -247,9 +313,10 @@ const Space = () => {
                     onChange={(item) => setCalendarState([item.selection])}
                     moveRangeOnFirstSelection={false}
                     ranges={calendarState}
+                    disabledDates={restrictedDates}
                   />
                 </div>
-                {formattedEndDate !== formattedStartDate && (
+                {formattedStartDate !== null && role === "Brand" && (
                   <div>
                     <div>
                       <p className="text-lg">
@@ -263,12 +330,36 @@ const Space = () => {
                     </p>
                     <div>
                       <p className="text-lg">
-                        range: <label className="text-sm">{range}</label>
+                        range: <label className="text-sm">{rangeText}</label>
                       </p>
+                    </div>
+                    <div className="mt-6 py-2">
+                      <button
+                        className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="button"
+                        onClick={() => {
+                          selectDates();
+                        }}
+                      >
+                        Confirm
+                      </button>
                     </div>
                   </div>
                 )}
               </div>
+              {role === "Brand" && (
+                <div className="mt-6 py-2">
+                  <button
+                    className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button"
+                    onClick={() => {
+                      bookSpace();
+                    }}
+                  >
+                    Book Space
+                  </button>
+                </div>
+              )}
             </div>
             {/* ); */}
             {/* })} */}
