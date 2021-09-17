@@ -201,6 +201,7 @@ const Space = () => {
       .add({
         ...space,
         brandBookedDates: brandBookedDates,
+        range: rangeText,
         createdAt: firestore.FieldValue.serverTimestamp(),
       });
     firestore.collection("allplaces").doc(id).update({
