@@ -21,7 +21,6 @@ const FaqsGeneral = () => {
             <ul>
               <li data-aos="fade-up">
                 <i className="far fa-question-circle icon-help" />
-                <a
                   data-bs-toggle="collapse"
                   className="collapse"
                   data-bs-target="#faq-list-8"
@@ -29,7 +28,6 @@ const FaqsGeneral = () => {
                   What does LiteStore do?
                   <i className="fas fa-chevron-down icon-show" />
                   <i className="fas fa-chevron-up icon-close" />
-                </a>
                 <div
                   id="faq-list-8"
                   className="collapse show"
@@ -45,7 +43,6 @@ const FaqsGeneral = () => {
               </li>
               <li data-aos="fade-up" data-aos-delay={100}>
                 <i className="far fa-question-circle icon-help" />
-                <a
                   data-bs-toggle="collapse"
                   data-bs-target="#faq-list-9"
                   className="collapsed"
@@ -53,7 +50,6 @@ const FaqsGeneral = () => {
                   How does LiteStore work?
                   <i className="fas fa-chevron-down icon-show" />
                   <i className="fas fa-chevron-up icon-close" />
-                </a>
                 <div
                   id="faq-list-9"
                   className="collapse"
@@ -69,7 +65,6 @@ const FaqsGeneral = () => {
               </li>
               <li data-aos="fade-up" data-aos-delay={200}>
                 <i className="far fa-question-circle icon-help" />
-                <a
                   data-bs-toggle="collapse"
                   data-bs-target="#faq-list-1"
                   className="collapsed"
@@ -77,7 +72,6 @@ const FaqsGeneral = () => {
                   Who can use stores listed on our platform?
                   <i className="fas fa-chevron-down icon-show" />
                   <i className="fas fa-chevron-up icon-close" />
-                </a>
                 <div
                   id="faq-list-1"
                   className="collapse"
@@ -99,7 +93,6 @@ const FaqsGeneral = () => {
               </li>
               <li data-aos="fade-up" data-aos-delay={200}>
                 <i className="far fa-question-circle icon-help" />
-                <a
                   data-bs-toggle="collapse"
                   data-bs-target="#faq-list-2"
                   className="collapsed"
@@ -107,7 +100,6 @@ const FaqsGeneral = () => {
                   Does the ‘short term retail’ market model work?
                   <i className="fas fa-chevron-down icon-show" />
                   <i className="fas fa-chevron-up icon-close" />
-                </a>
                 <div
                   id="faq-list-2"
                   className="collapse"

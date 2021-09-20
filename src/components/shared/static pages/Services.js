@@ -18,29 +18,21 @@ const Services = () => {
         <section id="tabs" className="tabs" style={{textAlign: 'left'}}>
         <div className="container" data-aos="fade-up">
             <ul className="nav nav-tabs row d-flex">
-            <li className="nav-item col-3">
-                <a className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-1">
+            <li className="nav-item col-3"> className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-1">
                 <i className="icon fas fa-store fa-4x" />
                 <h3 className="feature-title">Store design</h3>
-                </a>
             </li>
-            <li className="nav-item col-3">
-                <a className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+            <li className="nav-item col-3"> className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
                 <i className="icon fas fa-tools fa-4x" />
                 <h3 className="feature-title">Tech Services</h3>
-                </a>
             </li>
-            <li className="nav-item col-3">
-                <a className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+            <li className="nav-item col-3"> className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
                 <i className="icon fas fa-book-reader fa-4x" />
                 <h3 className="feature-title">Signage</h3>
-                </a>
             </li>
-            <li className="nav-item col-3">
-                <a className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+            <li className="nav-item col-3"> className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
                 <i className="icon fas fa-rocket fa-4x" />
                 <h3 className="feature-title">Soft furnishing</h3>
-                </a>
             </li>
             </ul>
             <div className="tab-content" style={{margin: '5% 10% 3%'}}>

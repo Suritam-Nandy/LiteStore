@@ -97,16 +97,13 @@ const Footer = () => {
         <div
           className="social-links text-center text-md-right pt-3 pt-md-0"
           style={{ textAlign: "end" }}
-        >
-          <a  className="instagram">
+          className="instagram">
             <i className="fab fa-instagram" />
-          </a>
-          <a
+          </a
             href="https://www.linkedin.com/company/litestore/"
             className="linkedin"
           >
             <i className="fab fa-linkedin-in" />
-          </a>
         </div>
       </div>
     </footer>

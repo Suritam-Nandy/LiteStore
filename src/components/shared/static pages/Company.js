@@ -84,13 +84,10 @@ const Company = () => {
       {/*  Clients Section  */}
       <section id="clients" className="clients" style={{backgroundColor: '#fff'}}>
         <div className="container">
-          <h1 style={{paddingBottom: '20px'}}>Press Release</h1>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:6828933053780520960/">
+          <h1 style={{paddingBottom: '20px'}}>Press Release</h1 href="https://www.linkedin.com/feed/update/urn:li:activity:6828933053780520960/">
             <img src="assets/img/trusted-by/brigade-reap-logo-share.jpg" style={{width: '18%'}} alt="brigade-reap" />
-          </a>
-          <a href="http://bwdisrupt.businessworld.in/article/Brigade-REAP-partners-with-Habitat-for-Humanity-adds-new-track-in-Cohort-10/03-08-2021-399174/">
+          </a href="http://bwdisrupt.businessworld.in/article/Brigade-REAP-partners-with-Habitat-for-Humanity-adds-new-track-in-Cohort-10/03-08-2021-399174/">
             <img src="assets/img/trusted-by/bw.png" style={{width: '38%'}} alt="bwdisrupt" />
-          </a>
           <h3 className="content-style">Welcome to LiteStore.</h3>
         </div>
       </section>{/* End Clients Section */}

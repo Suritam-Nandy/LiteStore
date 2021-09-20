@@ -23,10 +23,8 @@ const Home = () => {
               <br />
               Long term Bookings
             </strong>
-          </h2>
-          <a className="btn-get-started scrollto">
+          </h2 className="btn-get-started scrollto">
             Get Started
-          </a>
         </div>
       </section>
       {/* End head */}
@@ -308,8 +306,7 @@ const Home = () => {
         <div class="container">
             <div class="section-title" style="text-align: center;">
                 <h2 style="color: #fff;">LiteStore Design Hub</h2>
-                <h3 style="color: #fff;">Driving growth for small businesses and entrepreneurs</h3>
-                <a href="community.html" class="btn-get-started scrollto">Get Started</a>
+                <h3 style="color: #fff;">Driving growth for small businesses and entrepreneurs</h3> href="community.html" class="btn-get-started scrollto">Get Started</a>
             </div>
         </div>
         </section> */}
