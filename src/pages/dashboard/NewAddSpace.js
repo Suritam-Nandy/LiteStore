@@ -40,8 +40,6 @@ const AddSpace = () => {
     picture: "",
     pictureUrl: "",
   });
-  const [imagesUrl, setImagesUrl] = useState();
-
   const [isChecked, setIsChecked] = useState(false);
   const [user, setUser] = useState({
     area: "",
@@ -113,15 +111,7 @@ const AddSpace = () => {
     };
     reader.readAsDataURL(file);
   };
-  const getImagesUrl = () => {
-    console.log("upload image");
 
-    storage.ref(`images/${image.name}`).put(image);
-    const url = storage.ref("images").child(image.name).getDownloadURL();
-    console.log(url);
-    setImagesUrl(url);
-    console.log(imagesUrl);
-  };
   const submitForm = async (e) => {
     console.log("submitform");
     e.preventDefault();
@@ -178,9 +168,10 @@ const AddSpace = () => {
       });
     }
   };
-  return (
-    <>
-      <div className="flex flex-no-wrap">
+const NewAddSpace = () => {
+    return (
+        <>
+             <div className="flex flex-no-wrap">
         <Sidebar />
         <div className="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6  mt-16">
           <div className="my-2">
@@ -250,23 +241,10 @@ const AddSpace = () => {
                     }}
                   />
                   {picture.picture !== "" && (
-                    <>
-                      <PreviewPicture
-                        picture={picture.picture}
-                        pictureUrl={picture.pictureUrl}
-                      />
-                      <div className="mt-6 py-2">
-                        <button
-                          className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                          type="button"
-                          onClick={() => {
-                            getImagesUrl();
-                          }}
-                        >
-                          Upload Photos
-                        </button>
-                      </div>
-                    </>
+                    <PreviewPicture
+                      picture={picture.picture}
+                      pictureUrl={picture.pictureUrl}
+                    />
                   )}
                 </div>
               </div>
@@ -472,8 +450,8 @@ const AddSpace = () => {
           {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
         </div>
       </div>
-    </>
-  );
-};
+        </>
+    )
+}
 
-export default AddSpace;
+export default NewAddSpace
