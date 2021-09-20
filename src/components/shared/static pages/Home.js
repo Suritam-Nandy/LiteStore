@@ -24,7 +24,7 @@ const Home = () => {
               Long term Bookings
             </strong>
           </h2>
-          <a href="find-a-space.html" className="btn-get-started scrollto">
+          <a className="btn-get-started scrollto">
             Get Started
           </a>
         </div>
@@ -141,7 +141,7 @@ const Home = () => {
                   <i className="fas fa-asterisk" />
                 </div>
                 <h4>
-                  <a href="">Risk free booking</a>
+                  <a >Risk free booking</a>
                 </h4>
                 <p>
                   Streamlined contracts &amp; due diligence <br />
@@ -172,7 +172,7 @@ const Home = () => {
                   <i className="fas fa-rupee-sign" />
                 </div>
                 <h4>
-                  <a href="">Unprecedented Prices</a>
+                  <a >Unprecedented Prices</a>
                 </h4>
                 <p>
                   We eliminate expensive lease payments,
@@ -203,7 +203,7 @@ const Home = () => {
                   <i className="fas fa-concierge-bell" />
                 </div>
                 <h4>
-                  <a href="">LiteStore Services</a>
+                  <a >LiteStore Services</a>
                 </h4>
                 <p>
                   We provide PoS systems, staffing &amp;
@@ -236,7 +236,7 @@ const Home = () => {
                   <i className="fas fa-bolt" />
                 </div>
                 <h4>
-                  <a href="">
+                  <a >
                     Build unique retail
                     <br /> experiences
                   </a>
@@ -268,7 +268,7 @@ const Home = () => {
                   <i className="fas fa-bomb" />
                 </div>
                 <h4>
-                  <a href="">Launch with a bang!</a>
+                  <a >Launch with a bang!</a>
                 </h4>
                 <p>
                   Test new markets, products, strategies
@@ -296,7 +296,6 @@ const Home = () => {
             </h3>
             <Link
               to="/community"
-              href="community.html"
               className="btn-get-started scrollto"
             >
               Know More

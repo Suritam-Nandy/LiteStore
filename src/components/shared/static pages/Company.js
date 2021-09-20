@@ -35,13 +35,13 @@ const Company = () => {
                 <div className="member-img">
                   <img src="assets/img/team/image2.webp" className="img-fluid" alt="" />
                   <div className="social">
-                    <a href=""><i className="fab fa-twitter" /></a>
-                    <a href=""><i className="fab fa-facebook" /></a>
-                    <a href=""><i className="fab fa-instagram" /></a>
+                    <a ><i className="fab fa-twitter" /></a>
+                    <a ><i className="fab fa-facebook" /></a>
+                    <a ><i className="fab fa-instagram" /></a>
                   </div>
                 </div>
                 <div className="member-info">
-                  <h4>Puneet Dinesh <a href=""><i className="fab fa-linkedin" /></a></h4>
+                  <h4>Puneet Dinesh <a ><i className="fab fa-linkedin" /></a></h4>
                   <span>Head of Operations</span>
                 </div>
               </div>
@@ -51,13 +51,13 @@ const Company = () => {
                 <div className="member-img">
                   <img src="assets/img/team/image3.webp" className="img-fluid" alt="" />
                   <div className="social">
-                    <a href=""><i className="fab fa-twitter" /></a>
-                    <a href=""><i className="fab fa-facebook" /></a>
-                    <a href=""><i className="fab fa-instagram" /></a>
+                    <a ><i className="fab fa-twitter" /></a>
+                    <a ><i className="fab fa-facebook" /></a>
+                    <a ><i className="fab fa-instagram" /></a>
                   </div>
                 </div>
                 <div className="member-info">
-                  <h4>Pranav Agarwal <a href=""><i className="fab fa-linkedin" /></a></h4>
+                  <h4>Pranav Agarwal <a ><i className="fab fa-linkedin" /></a></h4>
                   <span>Head of Product</span>
                 </div>
               </div>
@@ -67,13 +67,13 @@ const Company = () => {
                 <div className="member-img">
                   <img src="assets/img/team/image1.jpg" className="img-fluid" alt="" />
                   <div className="social">
-                    <a href=""><i className="fab fa-twitter" /></a>
-                    <a href=""><i className="fab fa-facebook" /></a>
-                    <a href=""><i className="fab fa-instagram" /></a>
+                    <a ><i className="fab fa-twitter" /></a>
+                    <a ><i className="fab fa-facebook" /></a>
+                    <a ><i className="fab fa-instagram" /></a>
                   </div>
                 </div>
                 <div className="member-info">
-                  <h4>Tarun Sundaram <a href=""><i className="fab fa-linkedin" /></a></h4>
+                  <h4>Tarun Sundaram <a ><i className="fab fa-linkedin" /></a></h4>
                   <span>Head of Strategy</span>
                 </div>
               </div>

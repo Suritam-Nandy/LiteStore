@@ -21,7 +21,7 @@ const BlogList = () => {
               >
                 <ol className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link to="/" href="">
+                    <Link to="/" >
                       Home
                     </Link>
                   </li>
@@ -61,7 +61,6 @@ const BlogList = () => {
                 </p>
                 <Link
                   to="/the-future-of-retail-1"
-                  href="blog-future-of-retail-1.html"
                   className="btn"
                 >
                   Read More
@@ -95,7 +94,6 @@ const BlogList = () => {
                 </p>
                 <Link
                   to="the-future-of-retail-2"
-                  href="blog-future-of-retail-2.html"
                   className="btn btn-primary"
                 >
                   Read More

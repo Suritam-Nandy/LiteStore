@@ -5,10 +5,10 @@ const Navbar = () => {
   return (
     <header id="header" className="fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
-        {/* <h1 class="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
+        {/* <h1 class="logo"><a style="font-weight: 500;">LiteStore</a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
         <Link to="/">
-          <a href className="logo">
+          <a className="logo">
             <img src="assets/img/logo.webp" alt="" className="img-fluid" />
           </a>
         </Link>
@@ -18,7 +18,6 @@ const Navbar = () => {
               <li>
                 <a
                   className="nav-link scrollto"
-                  href="community.html"
                   style={{ fontWeight: "bold" }}
                 >
                   Dashboard
@@ -29,7 +28,6 @@ const Navbar = () => {
               <li>
                 <a
                   className="nav-link scrollto"
-                  href="community.html"
                   style={{ fontWeight: "bold" }}
                 >
                   Community
@@ -38,25 +36,25 @@ const Navbar = () => {
             </Link>
             <Link to="/listaspace">
               <li>
-                <a className="nav-link scrollto" href="list-your-space.html">
+                <a className="nav-link scrollto">
                   List a space
                 </a>
               </li>
             </Link>
             <Link to="/allspaces">
               <li>
-                <a className="nav-link scrollto" href="list-your-space.html">
+                <a className="nav-link scrollto">
                   Find a space
                 </a>
               </li>
             </Link>
 
             <li className="dropdown">
-              <a className="nav-link scrollto" href="#">
+              <a className="nav-link scrollto">
                 <span>FAQs</span> <i className="fas fa-chevron-down" />
               </a>
               <ul>
-                {/* <li><a class="nav-link scrollto" href="faqs/faqs-general.html" style="font-weight: bold;">All</a></li> */}
+                {/* <li><a class="nav-link scrollto" style="font-weight: bold;">All</a></li> */}
                 <Link
                   to="/faqs"
                   className="nav-link scrollto"
@@ -70,7 +68,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="dropdown">
-                  <Link to="/faqs" href="#">
+                  <Link to="/faqs">
                     <span>For Landowners</span>
                     <i className="fas fa-chevron-right" />
                   </Link>
@@ -79,7 +77,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/landowners/general"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-1"
                       >
                         General
                       </Link>
@@ -88,7 +85,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/landowners/how-it-works"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-2"
                       >
                         How does it work
                       </Link>
@@ -97,7 +93,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/landowners/legal-questions"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-3"
                       >
                         Legal Questions
                       </Link>
@@ -106,7 +101,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/landowners/payments"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-landowners.html#sec-4"
                       >
                         Payments
                       </Link>
@@ -114,7 +108,7 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li className="dropdown">
-                  <Link to="/faqs" href="#">
+                  <Link to="/faqs">
                     <span>For Brands and Businesses</span>
                     <i className="fas fa-chevron-right" />
                   </Link>
@@ -123,7 +117,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/brands/how-it-works"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-5"
                       >
                         How it works
                       </Link>
@@ -132,7 +125,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/brands/booking-a-space"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-6"
                       >
                         Booking a Space
                       </Link>
@@ -141,7 +133,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/brands/legal-questions"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-7"
                       >
                         Legal Questions
                       </Link>
@@ -150,7 +141,6 @@ const Navbar = () => {
                       <Link
                         to="/faqs/brands/payments"
                         className="nav-link scrollto"
-                        href="faqs/faqs-for-brands.html#sec-8"
                       >
                         Payments and Pricing
                       </Link>
@@ -161,7 +151,6 @@ const Navbar = () => {
                   <Link
                     to="/faqs/litestore"
                     className="nav-link scrollto"
-                    href="faqs/faqs-litestore.html#lsservices"
                   >
                     LiteStore Services
                   </Link>
@@ -170,7 +159,6 @@ const Navbar = () => {
                   <Link
                     to="/faqs/litestore"
                     className="nav-link scrollto"
-                    href="faqs/faqs-litestore.html#covid"
                   >
                     Covid-19 Questions
                   </Link>
@@ -179,7 +167,6 @@ const Navbar = () => {
                   <Link
                     to="/faqs/litestore"
                     className="nav-link scrollto"
-                    href="faqs/faqs-litestore.html#designers"
                   >
                     For Designers
                   </Link>
@@ -187,7 +174,7 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="dropdown">
-              <a className="nav-link scrollto" href="#">
+              <a className="nav-link scrollto">
                 <span>Account</span> <i className="fas fa-chevron-down" />
               </a>
               <ul>
@@ -197,13 +184,12 @@ const Navbar = () => {
                     className="nav-link scrollto"
                     data-bs-toggle="modal"
                     data-bs-target="#loginmod"
-                    href=""
                   >
                     Sign In
                   </Link>
                 </li>
                 <li>
-                  <Link to="" className="nav-link scrollto" href="signup.html">
+                  <Link to="" className="nav-link scrollto">
                     Sign Up
                   </Link>
                 </li>

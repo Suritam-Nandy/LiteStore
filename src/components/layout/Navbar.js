@@ -33,7 +33,6 @@ const Navbar = () => {
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
-                href="!#"
                 id="navbarDropdown"
                 data-toggle="dropdown"
               >
