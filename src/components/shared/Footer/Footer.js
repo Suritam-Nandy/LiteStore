@@ -99,11 +99,11 @@ const Footer = () => {
           style={{ textAlign: "end" }}
           className="instagram">
             <i className="fab fa-instagram" />
-          </a
+          <a
             href="https://www.linkedin.com/company/litestore/"
             className="linkedin"
           >
-            <i className="fab fa-linkedin-in" />
+          <i className="fab fa-linkedin-in" /></a>
         </div>
       </div>
     </footer>
