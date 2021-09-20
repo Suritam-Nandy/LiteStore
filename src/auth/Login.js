@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import React, { useState } from "react";
-import Input from "../layout/Input";
+import Input from "../components/layout/Input";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -23,7 +23,7 @@ const Login = () => {
         type: "popup",
       })
       .then(() => {
-        history.push("/");
+        history.push("/dashboard");
       });
   };
   const signInWithFacebook = () => {
@@ -33,7 +33,7 @@ const Login = () => {
         type: "popup",
       })
       .then(() => {
-        history.push("/");
+        history.push("/dashboard");
       });
   };
 
@@ -45,7 +45,7 @@ const Login = () => {
     e.preventDefault();
     const some = await firebase.login(user);
     console.log(some);
-    history.replace("/");
+    history.replace("/dashboard");
   };
   return (
     <>
@@ -125,12 +125,26 @@ const Login = () => {
                     Login to dashboard
                   </button>
                 </form>
-                <div className="text-blueGray-400 text-center mb-3 font-bold">
+                <div className="text-blueGray-400 flex flex-col text-center mb-3 font-bold mt-3">
                   <small>Don't have an account</small>
-                  <label className="text-blueGray-500 hover:text-blueGray-600">
-                    {" "}
-                    <Link to="/signup" className="dropdown-item">
-                      SignUP
+                  <label className="text-blueGray-500  ">
+                    <Link
+                      to={{
+                        pathname: "/signup",
+                        role: "LandOwner",
+                      }}
+                      className="dropdown-item text-blueGray-500 hover:text-blueGray-600 font-bold"
+                    >
+                      SignUp as Land Owner
+                    </Link>
+                    <Link
+                      to={{
+                        pathname: "/signup",
+                        role: "Brand",
+                      }}
+                      className="dropdown-item text-blueGray-500 hover:text-blueGray-600 font-bold"
+                    >
+                      SignUp as Brand
                     </Link>
                   </label>
                 </div>

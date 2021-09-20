@@ -7,45 +7,34 @@ const Navbar = () => {
       <div className="container d-flex align-items-center justify-content-between">
         {/* <h1 class="logo"><a style="font-weight: 500;">LiteStore</a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
-        <Link to="/">
-          <a className="logo">
-            <img src="assets/img/logo.webp" alt="" className="img-fluid" />
-          </a>
+        <Link to="/" className="logo">
+          <img src="assets/img/logo.webp" alt="" className="img-fluid" />
         </Link>
         <nav id="navbar" className="navbar">
           <ul>
-            <Link to="/dashboard">
+            <Link to="/dashboard"
+              className="nav-link scrollto"
+              style={{ fontWeight: "bold" }}
+            >
               <li>
-                <a
-                  className="nav-link scrollto"
-                  style={{ fontWeight: "bold" }}
-                >
-                  Dashboard
-                </a>
+                Dashboard
               </li>
             </Link>
-            <Link to="/community">
+            <Link to="/community"
+              className="nav-link scrollto"
+              style={{ fontWeight: "bold" }}>
               <li>
-                <a
-                  className="nav-link scrollto"
-                  style={{ fontWeight: "bold" }}
-                >
-                  Community
-                </a>
+                Community
               </li>
             </Link>
-            <Link to="/listaspace">
+            <Link to="/listaspace" className="nav-link scrollto">
               <li>
-                <a className="nav-link scrollto">
-                  List a space
-                </a>
+                List a space
               </li>
             </Link>
-            <Link to="/allspaces">
+            <Link to="/allspaces" className="nav-link scrollto">
               <li>
-                <a className="nav-link scrollto">
-                  Find a space
-                </a>
+                Find a space
               </li>
             </Link>
 
@@ -215,4 +204,5 @@ const Navbar = () => {
     </header>
   );
 };
+
 export default Navbar;

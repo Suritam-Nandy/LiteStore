@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import Input from "../../layout/Input";
-import { storage } from "../../../store";
-import Sidebar from "../../layout/Sidebar";
+import Input from "../../components/layout/Input";
+import { storage } from "../../store";
+import Sidebar from "../../components/layout/Sidebar";
 
-import ImageField from "../../layout/ImageField";
-import PreviewPicture from "../../layout/PreviewPicture";
+import ImageField from "../../components/layout/ImageField";
+import PreviewPicture from "../../components/layout/PreviewPicture";
 import { ImConnection } from "react-icons/im";
 import { FiMinimize } from "react-icons/fi";
 import {
@@ -52,7 +52,7 @@ const AddSpace = () => {
     description: "",
     availability: true,
     imgUrl: [""],
-    streetLevel: "",
+    streetLevel: false,
     kitchen: false,
     windowDisplay: false,
     handicapAccessible: false,
@@ -60,6 +60,7 @@ const AddSpace = () => {
     airConditioning: false,
     heating: false,
     toilets: false,
+    lighting: false,
     securitySystem: false,
     furniture: false,
     garmetRack: false,
@@ -149,18 +150,23 @@ const AddSpace = () => {
             ...user,
             createdAt: firestore.FieldValue.serverTimestamp(),
             imgUrl: url,
+          })
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+            firestore
+              .collection("allplaces")
+              .doc(docRef.id)
+              .set({
+                ...user,
+                createdAt: firestore.FieldValue.serverTimestamp(),
+                imgUrl: url,
+              });
           });
-        console.log("userplaces completed");
 
-        firestore.collection("allplaces").add({
-          ...user,
-          createdAt: firestore.FieldValue.serverTimestamp(),
-          imgUrl: url,
-        });
         console.log("places completed");
+        history.push("/dashboard");
       });
     }
-    history.push("/");
   };
   return (
     <>

@@ -1,17 +1,7 @@
 import React from "react";
-import Sidebar from "../../layout/Sidebar";
-import PrivateRoute from "../../routes/PrivateRoute";
+import Sidebar from "../../components/layout/Sidebar";
 
 const Dashboard = () => {
-  const dashboardList = [
-    { name: "Home", notificationCount: 0 },
-    { name: "Profile", notificationCount: 2 },
-    { name: "Listed Spaces", notificationCount: 0 },
-    { name: "Interested Customers", notificationCount: 0 },
-    { name: "Calendar", notificationCount: 0 },
-    { name: "Payments", notificationCount: 0 },
-  ];
-
   return (
     <div className="">
       <div className="flex flex-wrap overflow-hidden max-h-full ">
