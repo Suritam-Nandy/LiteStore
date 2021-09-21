@@ -35,13 +35,13 @@ const Company = () => {
                 <div className="member-img">
                   <img src="assets/img/team/image2.webp" className="img-fluid" alt="" />
                   <div className="social">
-                    <a ><i className="fab fa-twitter" /></a>
-                    <a ><i className="fab fa-facebook" /></a>
-                    <a ><i className="fab fa-instagram" /></a>
+                    <a href=""><i className="fab fa-twitter" /></a>
+                    <a href=""><i className="fab fa-facebook" /></a>
+                    <a href=""><i className="fab fa-instagram" /></a>
                   </div>
                 </div>
                 <div className="member-info">
-                  <h4>Puneet Dinesh <a ><i className="fab fa-linkedin" /></a></h4>
+                  <h4>Puneet Dinesh <a href=""><i className="fab fa-linkedin" /></a></h4>
                   <span>Head of Operations</span>
                 </div>
               </div>
@@ -51,13 +51,13 @@ const Company = () => {
                 <div className="member-img">
                   <img src="assets/img/team/image3.webp" className="img-fluid" alt="" />
                   <div className="social">
-                    <a ><i className="fab fa-twitter" /></a>
-                    <a ><i className="fab fa-facebook" /></a>
-                    <a ><i className="fab fa-instagram" /></a>
+                    <a href=""><i className="fab fa-twitter" /></a>
+                    <a href=""><i className="fab fa-facebook" /></a>
+                    <a href=""><i className="fab fa-instagram" /></a>
                   </div>
                 </div>
                 <div className="member-info">
-                  <h4>Pranav Agarwal <a ><i className="fab fa-linkedin" /></a></h4>
+                  <h4>Pranav Agarwal <a href=""><i className="fab fa-linkedin" /></a></h4>
                   <span>Head of Product</span>
                 </div>
               </div>
@@ -67,13 +67,13 @@ const Company = () => {
                 <div className="member-img">
                   <img src="assets/img/team/image1.jpg" className="img-fluid" alt="" />
                   <div className="social">
-                    <a ><i className="fab fa-twitter" /></a>
-                    <a ><i className="fab fa-facebook" /></a>
-                    <a ><i className="fab fa-instagram" /></a>
+                    <a href=""><i className="fab fa-twitter" /></a>
+                    <a href=""><i className="fab fa-facebook" /></a>
+                    <a href=""><i className="fab fa-instagram" /></a>
                   </div>
                 </div>
                 <div className="member-info">
-                  <h4>Tarun Sundaram <a ><i className="fab fa-linkedin" /></a></h4>
+                  <h4>Tarun Sundaram <a href=""><i className="fab fa-linkedin" /></a></h4>
                   <span>Head of Strategy</span>
                 </div>
               </div>
@@ -84,10 +84,13 @@ const Company = () => {
       {/*  Clients Section  */}
       <section id="clients" className="clients" style={{backgroundColor: '#fff'}}>
         <div className="container">
-          <h1 style={{paddingBottom: '20px'}}>Press Release</h1 href="https://www.linkedin.com/feed/update/urn:li:activity:6828933053780520960/">
+          <h1 style={{paddingBottom: '20px'}}>Press Release</h1>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:6828933053780520960/">
             <img src="assets/img/trusted-by/brigade-reap-logo-share.jpg" style={{width: '18%'}} alt="brigade-reap" />
-          </a href="http://bwdisrupt.businessworld.in/article/Brigade-REAP-partners-with-Habitat-for-Humanity-adds-new-track-in-Cohort-10/03-08-2021-399174/">
+          </a>
+          <a href="http://bwdisrupt.businessworld.in/article/Brigade-REAP-partners-with-Habitat-for-Humanity-adds-new-track-in-Cohort-10/03-08-2021-399174/">
             <img src="assets/img/trusted-by/bw.png" style={{width: '38%'}} alt="bwdisrupt" />
+          </a>
           <h3 className="content-style">Welcome to LiteStore.</h3>
         </div>
       </section>{/* End Clients Section */}

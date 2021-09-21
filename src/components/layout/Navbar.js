@@ -33,6 +33,7 @@ const Navbar = () => {
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
+                href="!#"
                 id="navbarDropdown"
                 data-toggle="dropdown"
               >
@@ -43,18 +44,24 @@ const Navbar = () => {
                   <span className="ml-2 navbar-text">{uid}</span>
                 </Link>
               </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown"> className="dropdown-item" href="!#">
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a className="dropdown-item" href="!#">
                   Profile
+                </a>
                 <Link to="/listedspaces" className="dropdown-item">
                   Listed Spaces
                 </Link>
+                <a
                   className="dropdown-item"
                   href="!#"
                   onClick={() => firebase.logout()}
                 >
                   Logout
-                <div className="dropdown-divider"></div> className="dropdown-item" href="!#">
+                </a>
+                <div className="dropdown-divider"></div>
+                <a className="dropdown-item" href="!#">
                   Ads
+                </a>
               </div>
             </li>
           </ul>

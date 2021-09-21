@@ -76,7 +76,7 @@ const AddSpace = () => {
     }
   }, [id]);
 
-  const handleClick = (e) => {
+  const handleClickAmenities = (e) => {
     setUser({ ...user, [e.target.name]: e.target.checked });
     // console.log([e.target.name]);
     // console.log([e.target.checked]);
@@ -284,7 +284,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="streetLevel"
                     />
                     <GiDoubleStreetLights className="w-12 h-8" />
@@ -294,7 +294,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="kitchen"
                     />
                     <MdKitchen className="w-12 h-8" />
@@ -304,7 +304,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="windowDisplay"
                     />
                     <GiWindow className="w-12 h-8" />
@@ -314,7 +314,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="handicapAccessible"
                     />
                     <BiHandicap className="w-12 h-8" />
@@ -324,7 +324,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="electricity"
                     />
                     <GiElectric className="w-12 h-8" />
@@ -334,7 +334,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="airConditioning"
                     />
                     <IoSnow className="w-12 h-8" />
@@ -344,7 +344,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="heating"
                     />
                     <GiHeatHaze className="w-12 h-8" />
@@ -354,7 +354,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="toilets"
                     />
                     <FaToilet className="w-12 h-8" />
@@ -364,7 +364,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="securitySystem"
                     />
                     <BiCctv className="w-12 h-8" />
@@ -374,7 +374,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="lighting"
                       hidden
                     />
@@ -385,7 +385,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="furniture"
                     />
                     <GiSofa className="w-12 h-8 checked:text-gray-800" />
@@ -395,7 +395,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="garmetRack"
                     />
                     <FaStackOverflow className="w-12 h-8" />
@@ -405,7 +405,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="internet"
                     />
                     <ImConnection className="w-12 h-8" />
@@ -415,7 +415,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="soundVideo"
                     />
                     <GiMusicSpell className="w-12 h-8" />
@@ -427,7 +427,7 @@ const AddSpace = () => {
                     <input
                       type="checkbox"
                       className="text-gray-800 mt-2 h-5 w-5"
-                      onClick={handleClick}
+                      onClick={handleClickAmenities}
                       name="minimal"
                     />
                     <FiMinimize className="w-12 h-8" />
