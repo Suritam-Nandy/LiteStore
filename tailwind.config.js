@@ -30,6 +30,7 @@ module.exports = {
       lime: colors.lime,
       trueGray: colors.trueGray,
       yellow: colors.yellow,
+      lsBack: "#1f1f1f",
     },
     extend: {},
   },

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header id="header" className="fixed-top">
+    <header id="header" className="fixed-top ">
       <div className="container d-flex align-items-center justify-content-between">
         {/* <h1 class="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
@@ -15,25 +15,11 @@ const Navbar = () => {
         <nav id="navbar" className="navbar">
           <ul>
             <Link to="/dashboard">
-              <li>
-                <a
-                  className="nav-link scrollto"
-                  href="community.html"
-                  style={{ fontWeight: "bold" }}
-                >
-                  Dashboard
-                </a>
-              </li>
+              <li>Dashboard</li>
             </Link>
             <Link to="/community">
-              <li>
-                <a
-                  className="nav-link scrollto"
-                  href="community.html"
-                  style={{ fontWeight: "bold" }}
-                >
-                  Community
-                </a>
+              <li className="nav-link scrollto hover:text-white  text-lsBack">
+                Community
               </li>
             </Link>
             <Link to="/listaspace">
