@@ -71,7 +71,7 @@ const AddSpace = () => {
     minimal: false,
   });
   const [image, setImage] = useState(null);
-
+  const [files, setFiles] = useState([]);
   useEffect(() => {
     if (id) {
       loadPlace();
@@ -112,6 +112,13 @@ const AddSpace = () => {
       setPicture({ picture: file, pictureUrl: reader.result });
     };
     reader.readAsDataURL(file);
+
+    //   for (let i = 0; i < e.target.files.length; i++) {
+    //     const newFile = e.target.files[i];
+    //     newFile["id"] = Math.random();
+    //  // add an "id" property to each File object
+    //     setFiles(prevState => [...prevState, newFile]);
+    //   }
   };
   const getImagesUrl = () => {
     console.log("upload image");
@@ -121,6 +128,32 @@ const AddSpace = () => {
     console.log(url);
     setImagesUrl(url);
     console.log(imagesUrl);
+
+    // const promises = [];
+    // files.forEach((file) => {
+    //   const uploadTask = storage.ref(`images/${image.name}`).put(file);
+    //   promises.push(uploadTask);
+    //   uploadTask.on(
+    //     firebase.storage.TaskEvent.STATE_CHANGED,
+    //     (snapshot) => {
+    //       const progress =
+    //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    //       if (snapshot.state === firebase.storage.TaskState.RUNNING) {
+    //         console.log(`Progress: ${progress}%`);
+    //       }
+    //     },
+    //     (error) => console.log(error.code),
+    //     async () => {
+    //       const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+    //       // do something with the url
+    //       console.log(downloadURL);
+    //       setImagesUrl(downloadURL);
+    //     }
+    //   );
+    // });
+    // Promise.all(promises)
+    //   .then(() => alert("All files uploaded"))
+    //   .catch((err) => console.log(err.code));
   };
   const submitForm = async (e) => {
     console.log("submitform");
