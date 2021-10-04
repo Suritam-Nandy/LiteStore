@@ -40,7 +40,7 @@ const AddSpace = () => {
     picture: "",
     pictureUrl: "",
   });
-  const [imagesUrl, setImagesUrl] = useState();
+  const [imagesUrl, setImagesUrl] = useState([]);
 
   const [isChecked, setIsChecked] = useState(false);
   const [user, setUser] = useState({
@@ -103,58 +103,56 @@ const AddSpace = () => {
   };
 
   const getPicture = (event) => {
-    console.log("call");
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    reader.onloadend = () => {
-      console.log(file);
-      setImage(file);
-      setPicture({ picture: file, pictureUrl: reader.result });
-    };
-    reader.readAsDataURL(file);
+    // console.log("call");
+    // let reader = new FileReader();
+    // let file = event.target.files[0];
+    // reader.onloadend = () => {
+    //   console.log(file);
+    //   setImage(file);
+    //   setPicture({ picture: file, pictureUrl: reader.result });
+    // };
+    // reader.readAsDataURL(file);
 
-    //   for (let i = 0; i < e.target.files.length; i++) {
-    //     const newFile = e.target.files[i];
-    //     newFile["id"] = Math.random();
-    //  // add an "id" property to each File object
-    //     setFiles(prevState => [...prevState, newFile]);
-    //   }
+    for (let i = 0; i < event.target.files.length; i++) {
+      const newFile = event.target.files[i];
+      newFile["id"] = Math.random();
+      setFiles((prevState) => [...prevState, newFile]);
+    }
   };
-  const getImagesUrl = () => {
+  const getImagesUrl = async () => {
     console.log("upload image");
 
-    storage.ref(`images/${image.name}`).put(image);
-    const url = storage.ref("images").child(image.name).getDownloadURL();
-    console.log(url);
-    setImagesUrl(url);
-    console.log(imagesUrl);
+    // storage.ref(`images/${image.name}`).put(image);
+    // const url = await storage.ref("images").child(image.name).getDownloadURL();
+    // console.log(url);
+    // setImagesUrl(url);
+    // console.log(imagesUrl);
 
-    // const promises = [];
-    // files.forEach((file) => {
-    //   const uploadTask = storage.ref(`images/${image.name}`).put(file);
-    //   promises.push(uploadTask);
-    //   uploadTask.on(
-    //     firebase.storage.TaskEvent.STATE_CHANGED,
-    //     (snapshot) => {
-    //       const progress =
-    //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    //       if (snapshot.state === firebase.storage.TaskState.RUNNING) {
-    //         console.log(`Progress: ${progress}%`);
-    //       }
-    //     },
-    //     (error) => console.log(error.code),
-    //     async () => {
-    //       const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
-    //       // do something with the url
-    //       console.log(downloadURL);
-    //       setImagesUrl(downloadURL);
-    //     }
-    //   );
-    // });
-    // Promise.all(promises)
-    //   .then(() => alert("All files uploaded"))
-    //   .catch((err) => console.log(err.code));
+    const promises = [];
+    const urlarray = [];
+    files.forEach((file) => {
+      const uploadTask = storage
+        .ref()
+        .child(`images/${uid}/${file.name}`)
+        .put(file);
+      promises.push(uploadTask);
+      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, async () => {
+        const downloadURL = await storage
+          .ref("images")
+          .child(`${uid}/${file.name}`)
+          .getDownloadURL();
+        // do something with the url
+        urlarray.push(downloadURL);
+        console.log(downloadURL);
+        setImagesUrl(urlarray);
+      });
+    });
+    Promise.all(promises)
+      .then(() => alert("All files uploaded"))
+      .catch((err) => console.log(err.code));
   };
+  console.log(imagesUrl);
+  console.log(files);
   const submitForm = async (e) => {
     console.log("submitform");
     e.preventDefault();
@@ -171,17 +169,17 @@ const AddSpace = () => {
       }
     } else {
       console.log(image);
-      const uploadData = async () => {
-        console.log("upload image");
+      // const uploadData = async () => {
+      //   console.log("upload image");
 
-        storage.ref(`images/${image.name}`).put(image);
-        const url = await storage
-          .ref("images")
-          .child(image.name)
-          .getDownloadURL();
-        return url;
-      };
-      uploadData().then((url) => {
+      //   storage.ref(`images/${image.name}`).put(image);
+      //   const url = await storage
+      //     .ref("images")
+      //     .child(image.name)
+      //     .getDownloadURL();
+      //   return url;
+      // };
+      getImagesUrl().then(() => {
         console.log("url");
 
         firestore
@@ -192,7 +190,7 @@ const AddSpace = () => {
           .add({
             ...user,
             createdAt: firestore.FieldValue.serverTimestamp(),
-            imgUrl: url,
+            imgUrl: imagesUrl,
           })
           .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
@@ -202,7 +200,7 @@ const AddSpace = () => {
               .set({
                 ...user,
                 createdAt: firestore.FieldValue.serverTimestamp(),
-                imgUrl: url,
+                imgUrl: imagesUrl,
               });
           });
 
@@ -272,22 +270,38 @@ const AddSpace = () => {
                 </div>
               </div>
               <div className="flex flex-row justify-between my-2">
-                <div className="flex flex-col m-1">
+                <div className="flex flex-col  m-1">
                   <h1>Add Image</h1>
 
                   <input
                     type="file"
+                    multiple
                     className="form-control"
                     onChange={(event) => {
                       getPicture(event);
                     }}
                   />
-                  {picture.picture !== "" && (
+                  {files[0] && (
                     <>
-                      <PreviewPicture
-                        picture={picture.picture}
-                        pictureUrl={picture.pictureUrl}
-                      />
+                      <div className=" inline-flex space-x-4 ">
+                        {files.map((file) => {
+                          return (
+                            <>
+                              {/* <PreviewPicture
+                              picture={file}
+                              pictureUrl={picture.pictureUrl}
+                            /> */}
+                              <div className="flex-1 w-100">
+                                <img
+                                  className="w-40"
+                                  src={URL.createObjectURL(file)}
+                                />
+                              </div>
+                            </>
+                          );
+                        })}
+                      </div>
+
                       <div className="mt-6 py-2">
                         <button
                           className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
