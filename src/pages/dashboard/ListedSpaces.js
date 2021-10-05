@@ -98,7 +98,7 @@ const ListedSpaces = () => {
                                 <div className="flex-shrink-0 h-20 w-36 ">
                                   <img
                                     className=" "
-                                    src={place.imgUrl}
+                                    src={`${place.imgUrl}`}
                                     alt=""
                                   />
                                 </div>
