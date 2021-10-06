@@ -285,7 +285,7 @@ const Space = () => {
                       <div className="relative md:row-span-1 col-span-1">
                         <img
                           className="w-full h-40 border-black border"
-                          src={space.imgUrl[3]}
+                          src={space.imgUrl[2]}
                           alt=""
                         />
                         {/*  */}
