@@ -166,7 +166,7 @@ const AllSpaces = () => {
                               <div className="flex-shrink-0 h-20 w-36 ">
                                 <img
                                   className=" "
-                                  src={`${place.imgUrl}`}
+                                  src={`${place.imgUrl[0]}`}
                                   alt=""
                                 />
                               </div>

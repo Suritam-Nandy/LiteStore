@@ -8,13 +8,23 @@ import "firebase/storage";
 
 import { createFirestoreInstance } from "redux-firestore"; // <- needed if using firestore
 
+// const fbConfig = {
+//   apiKey: "AIzaSyDHoq8fW-SIRnNl-sAUu-N0LjDVMU3dbok",
+//   authDomain: "tradegram-test.firebaseapp.com",
+//   projectId: "tradegram-test",
+//   storageBucket: "tradegram-test.appspot.com",
+//   messagingSenderId: "395031025753",
+//   appId: "1:395031025753:web:f03b0ddaa7b596a678f948",
+// };
+
 const fbConfig = {
-  apiKey: "AIzaSyDHoq8fW-SIRnNl-sAUu-N0LjDVMU3dbok",
-  authDomain: "tradegram-test.firebaseapp.com",
-  projectId: "tradegram-test",
-  storageBucket: "tradegram-test.appspot.com",
-  messagingSenderId: "395031025753",
-  appId: "1:395031025753:web:f03b0ddaa7b596a678f948",
+  apiKey: "AIzaSyAh0cK7VxVMPeRvr7W3r1e0X-pI1Uhiv1Q",
+  authDomain: "litestore-242f8.firebaseapp.com",
+  projectId: "litestore-242f8",
+  storageBucket: "litestore-242f8.appspot.com",
+  messagingSenderId: "489960878790",
+  appId: "1:489960878790:web:31df43286dafe2fd685dc7",
+  measurementId: "G-BYVYDLZKLJ",
 };
 
 // react-redux-firebase config
