@@ -38,7 +38,8 @@ const Users = () => {
         <div className="row">
           {places.map((place, index) => (
             <div className="col-lg-3 col-md-6 mb-4" key={place.id}>
-              <div className="card shadow text-center py-4">vatar url={`${place.imgUrl}`} />
+              <div className="card shadow text-center py-4">
+                <Avatar url={`${place.imgUrl}`} />
                 <div className="card-body">
                   <h5 className="card-title mb-0">{place.name}</h5>
                   <h5 className="card-title mb-0">{place.id}sdfsd</h5>

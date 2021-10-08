@@ -29,13 +29,13 @@ const Footer = () => {
               <h4>How it works</h4>
               <ul>
                 <li>
-                  <Link to="/listaspace">List a Space</Link>
+                  <Link to="/listaspace" href="list-your-space.html">List a Space</Link>
                 </li>
                 <li>
-                  <Link >Find a Space</Link>
+                  <Link href="find-a-space.html">Find a Space</Link>
                 </li>
                 <li>
-                  <Link to="/services">LiteStore Services</Link>
+                  <Link to="/services" href="services.html">LiteStore Services</Link>
                 </li>
               </ul>
             </div>
@@ -43,13 +43,13 @@ const Footer = () => {
               <h4>About</h4>
               <ul>
                 <li>
-                  <Link to="/careers">Careers</Link>
+                  <Link to="/careers" href="careers.html">Careers</Link>
                 </li>
                 <li>
-                  <Link to="/company">Company</Link>
+                  <Link to="/company" href="company.html">Company</Link>
                 </li>
                 <li>
-                  <Link to="/faqs">FAQs</Link>
+                  <Link to="/faqs" href="faqs/faq-section.html">FAQs</Link>
                 </li>
               </ul>
             </div>
@@ -57,13 +57,13 @@ const Footer = () => {
               <h4>Discover</h4>
               <ul>
                 <li>
-                  <Link to="/blog">Blog</Link>
+                  <Link to="/blog" href="blogs/list.html">Blog</Link>
                 </li>
                 <li>
-                  <Link to="/community">Community</Link>
+                  <Link to="/community" href="community.html">Community</Link>
                 </li>
                 <li>
-                  <Link to="/designhub">DesignHub</Link>
+                  <Link to="/designhub" href="design.html">DesignHub</Link>
                 </li>
               </ul>
             </div>
@@ -71,10 +71,13 @@ const Footer = () => {
               <h4>Legal</h4>
               <ul>
                 <li>
-                  <Link>Privacy Policy</Link>
+                  <Link href>Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link>Terms of use</Link>
+                  <Link href>Terms of use</Link>
+                </li>
+                <li>
+                  <Link href="dashboard/html/index.html">Dashboard</Link>
                 </li>
               </ul>
             </div>
@@ -97,13 +100,16 @@ const Footer = () => {
         <div
           className="social-links text-center text-md-right pt-3 pt-md-0"
           style={{ textAlign: "end" }}
-          className="instagram">
+        >
+          <a href="" className="instagram">
             <i className="fab fa-instagram" />
+          </a>
           <a
             href="https://www.linkedin.com/company/litestore/"
             className="linkedin"
           >
-          <i className="fab fa-linkedin-in" /></a>
+            <i className="fab fa-linkedin-in" />
+          </a>
         </div>
       </div>
     </footer>

@@ -40,8 +40,6 @@ const AddSpace = () => {
     picture: "",
     pictureUrl: "",
   });
-  const [imagesUrl, setImagesUrl] = useState([]);
-
   const [isChecked, setIsChecked] = useState(false);
   const [user, setUser] = useState({
     area: "",
@@ -71,7 +69,7 @@ const AddSpace = () => {
     minimal: false,
   });
   const [image, setImage] = useState(null);
-  const [files, setFiles] = useState([]);
+
   useEffect(() => {
     if (id) {
       loadPlace();
@@ -103,56 +101,17 @@ const AddSpace = () => {
   };
 
   const getPicture = (event) => {
-    // console.log("call");
-    // let reader = new FileReader();
-    // let file = event.target.files[0];
-    // reader.onloadend = () => {
-    //   console.log(file);
-    //   setImage(file);
-    //   setPicture({ picture: file, pictureUrl: reader.result });
-    // };
-    // reader.readAsDataURL(file);
-
-    for (let i = 0; i < event.target.files.length; i++) {
-      const newFile = event.target.files[i];
-      newFile["id"] = Math.random();
-      setFiles((prevState) => [...prevState, newFile]);
-    }
+    console.log("call");
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      console.log(file);
+      setImage(file);
+      setPicture({ picture: file, pictureUrl: reader.result });
+    };
+    reader.readAsDataURL(file);
   };
-  const getImagesUrl = async () => {
-    console.log("upload image");
 
-    // storage.ref(`images/${image.name}`).put(image);
-    // const url = await storage.ref("images").child(image.name).getDownloadURL();
-    // console.log(url);
-    // setImagesUrl(url);
-    // console.log(imagesUrl);
-
-    const promises = [];
-    const urlarray = [];
-    files.forEach((file) => {
-      const uploadTask = storage
-        .ref()
-        .child(`images/${uid}/${file.name}`)
-        .put(file);
-      promises.push(uploadTask);
-      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, async () => {
-        const downloadURL = await storage
-          .ref("images")
-          .child(`${uid}/${file.name}`)
-          .getDownloadURL();
-        // do something with the url
-        urlarray.push(downloadURL);
-        console.log(downloadURL);
-        setImagesUrl(urlarray);
-      });
-    });
-    Promise.all(promises)
-      .then(() => alert("All files uploaded"))
-      .catch((err) => console.log(err.code));
-  };
-  console.log(imagesUrl);
-  console.log(files);
   const submitForm = async (e) => {
     console.log("submitform");
     e.preventDefault();
@@ -169,17 +128,17 @@ const AddSpace = () => {
       }
     } else {
       console.log(image);
-      // const uploadData = async () => {
-      //   console.log("upload image");
+      const uploadData = async () => {
+        console.log("upload image");
 
-      //   storage.ref(`images/${image.name}`).put(image);
-      //   const url = await storage
-      //     .ref("images")
-      //     .child(image.name)
-      //     .getDownloadURL();
-      //   return url;
-      // };
-      getImagesUrl().then(() => {
+        storage.ref(`images/${image.name}`).put(image);
+        const url = await storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL();
+        return url;
+      };
+      uploadData().then((url) => {
         console.log("url");
 
         firestore
@@ -190,7 +149,7 @@ const AddSpace = () => {
           .add({
             ...user,
             createdAt: firestore.FieldValue.serverTimestamp(),
-            imgUrl: imagesUrl,
+            imgUrl: url,
           })
           .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
@@ -200,7 +159,7 @@ const AddSpace = () => {
               .set({
                 ...user,
                 createdAt: firestore.FieldValue.serverTimestamp(),
-                imgUrl: imagesUrl,
+                imgUrl: url,
               });
           });
 
@@ -209,9 +168,10 @@ const AddSpace = () => {
       });
     }
   };
-  return (
-    <>
-      <div className="flex flex-no-wrap">
+const NewAddSpace = () => {
+    return (
+        <>
+             <div className="flex flex-no-wrap">
         <Sidebar />
         <div className="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6  mt-16">
           <div className="my-2">
@@ -270,50 +230,21 @@ const AddSpace = () => {
                 </div>
               </div>
               <div className="flex flex-row justify-between my-2">
-                <div className="flex flex-col  m-1">
+                <div className="flex flex-col m-1">
                   <h1>Add Image</h1>
 
                   <input
                     type="file"
-                    multiple
                     className="form-control"
                     onChange={(event) => {
                       getPicture(event);
                     }}
                   />
-                  {files[0] && (
-                    <>
-                      <div className=" inline-flex space-x-4 ">
-                        {files.map((file) => {
-                          return (
-                            <>
-                              {/* <PreviewPicture
-                              picture={file}
-                              pictureUrl={picture.pictureUrl}
-                            /> */}
-                              <div className="flex-1 w-100">
-                                <img
-                                  className="w-40"
-                                  src={URL.createObjectURL(file)}
-                                />
-                              </div>
-                            </>
-                          );
-                        })}
-                      </div>
-
-                      <div className="mt-6 py-2">
-                        <button
-                          className="bg-gray-800 text-gray-300 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                          type="button"
-                          onClick={() => {
-                            getImagesUrl();
-                          }}
-                        >
-                          Upload Photos
-                        </button>
-                      </div>
-                    </>
+                  {picture.picture !== "" && (
+                    <PreviewPicture
+                      picture={picture.picture}
+                      pictureUrl={picture.pictureUrl}
+                    />
                   )}
                 </div>
               </div>
@@ -519,8 +450,8 @@ const AddSpace = () => {
           {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
         </div>
       </div>
-    </>
-  );
-};
+        </>
+    )
+}
 
-export default AddSpace;
+export default NewAddSpace

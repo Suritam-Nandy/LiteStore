@@ -146,37 +146,56 @@ const Space = () => {
   if (space == null) {
     return <Loading />;
   }
-
+  let restrictedDates = [];
+  if (space.bookedDates) {
+    restrictedDates = space.bookedDates.map((x) => x.toDate());
+  }
   const startdate = calendarState[0].startDate.toISOString();
   const enddate = calendarState[0].endDate.toISOString();
 
   const formattedStartDate = format(new Date(startdate), "dd MMMM yyyy");
   const formattedEndDate = format(new Date(enddate), "dd MMMM yyyy");
-  const rangeText = `${formattedEndDate} - ${formattedStartDate}`;
+  const rangeText = `${formattedStartDate} - ${formattedEndDate}`;
+
+  // const d1 = calendarState[0].startDate,
+  //   d2 = calendarState[0].endDate,
+  //   diff = (d2 - d1) / 864e5,
+  //   dates = Array.from({ length: diff + 1 }, (_, i) => {
+  //     const date = new Date();
+  //     date.setDate(d1.getDate() + i);
+  //     console.log(date);
+  //     return date;
+  //   });
+
+  var getDateArray = function (start, end) {
+    for (
+      var arr = [], dt = new Date(start);
+      dt <= end;
+      dt.setDate(dt.getDate() + 1)
+    ) {
+      arr.push(new Date(dt));
+    }
+    return arr;
+  };
+
+  var dates = getDateArray(
+    calendarState[0].startDate,
+    calendarState[0].endDate
+  );
+
   const selectDates = () => {
     const selectedd = [...dd, ...dates];
     setdbDates(selectedd);
     const brandbookdd = [...dates];
     setBrandBookDates(brandbookdd);
-    console.log(selectedd);
+    // console.log(d1);
+
+    console.log(dates);
   };
-
-  const d1 = calendarState[0].startDate,
-    d2 = calendarState[0].endDate,
-    diff = (d2 - d1) / 864e5,
-    dates = Array.from({ length: diff + 1 }, (_, i) => {
-      const date = new Date();
-      date.setDate(d1.getDate() + i);
-
-      return date;
-    });
   // if (dates) setdd(...dates);
 
   // console.log(space.bookedDates);
-  let restrictedDates = [];
-  if (space.bookedDates) {
-    restrictedDates = space.bookedDates.map((x) => x.toDate());
-  }
+
   // console.log(restrictedDates);
   // console.log();
 
@@ -224,7 +243,7 @@ const Space = () => {
   // useEffect(() => {
   //   console.log(space);
   // }, [space]);
-
+  console.log(space.imgUrl[0]);
   return (
     <>
       <div className="w-full mx-auto mt-10">
@@ -246,7 +265,7 @@ const Space = () => {
                         <div className="w-full border-black border ">
                           <img
                             className="w-full h-80 border-black border"
-                            src={`${space.imgUrl}`}
+                            src={space.imgUrl[0]}
                             alt=""
                           />
                         </div>
@@ -259,14 +278,14 @@ const Space = () => {
                       <div className="relative md:row-span-1 col-span-1">
                         <img
                           className="w-full h-40 border-black border"
-                          src={`${space.imgUrl}`}
+                          src={space.imgUrl[1]}
                           alt=""
                         />
                       </div>
                       <div className="relative md:row-span-1 col-span-1">
                         <img
                           className="w-full h-40 border-black border"
-                          src={`${space.imgUrl}`}
+                          src={space.imgUrl[2]}
                           alt=""
                         />
                         {/*  */}
@@ -312,6 +331,7 @@ const Space = () => {
                   <DateRange
                     editableDateInputs={true}
                     onChange={(item) => setCalendarState([item.selection])}
+                    minDate={new Date()}
                     moveRangeOnFirstSelection={false}
                     ranges={calendarState}
                     disabledDates={restrictedDates}
