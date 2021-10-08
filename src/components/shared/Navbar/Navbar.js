@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFirebase } from "react-redux-firebase";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const firebase = useFirebase();
+  const role = useSelector((state) => state.firebase.profile.role);
+
   return (
     <header id="header" className="fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
@@ -223,6 +228,18 @@ const Navbar = () => {
                     Brand Sign Up
                   </Link>
                 </li>
+                {role && (
+                  <li>
+                    <Link to="/login">
+                      <span
+                        onClick={() => firebase.logout()}
+                        className="text-sm  ml-2"
+                      >
+                        Logout
+                      </span>
+                    </Link>
+                  </li>
+                )}
               </ul>
             </li>
             <li>
