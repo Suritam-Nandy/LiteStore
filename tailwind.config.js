@@ -35,10 +35,13 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ["checked"],
-      borderColor: ["checked"],
-      textColor: ["checked"],
+      backgroundColor: ["active", "visited", "focus", "checked", "hover"],
+      borderColor: ["focus-visible", "first", "focus", "checked", "hover"],
+      textColor: ["visited", "active", "focus", "checked", "hover"],
+      fontWeight: ["hover", "focus", "active"],
+
       inset: ["checked"],
+      boxShadow: ["active", "visited", "focus", "checked", "hover"],
     },
   },
   plugins: [],

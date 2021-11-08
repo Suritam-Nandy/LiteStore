@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import React, { useState } from "react";
 import Input from "../components/layout/Input";
-import { useFirebase } from "react-redux-firebase";
-import { useHistory } from "react-router-dom";
+import { useFirebase, useFirestore } from "react-redux-firebase";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 const Login = () => {
   let history = useHistory();
+  const { role } = useParams();
   const firebase = useFirebase();
+  const firestore = useFirestore();
+  console.log(role);
   const auth = useSelector((state) => state.firebase.auth);
   const [user, setUser] = useState({
     email: "",
@@ -22,7 +24,11 @@ const Login = () => {
         provider: "google",
         type: "popup",
       })
-      .then(() => {
+      .then((resp) => {
+        firestore.collection("users").doc(resp.user.uid).update({
+          role: role,
+          createdAt: firestore.FieldValue.serverTimestamp(),
+        });
         history.push("/dashboard");
       });
   };
@@ -49,10 +55,7 @@ const Login = () => {
   };
   return (
     <>
-      <div className="container mx-auto px-4 h-full">
-        <Link to="/allspaces" className="dropdown-item">
-          Listed Spaces
-        </Link>
+      <div className="mx-auto h-full">
         <div className="flex content-center items-center justify-center min-h-100 h-screen">
           <div className="w-full lg:w-4/12 px-4 items-center ">
             <div className="relative container flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">

@@ -7,11 +7,35 @@ const Navbar = () => {
   const firebase = useFirebase();
   const role = useSelector((state) => state.firebase.profile.role);
 
+  // const NavbarItems = [
+  //   {
+  //     label: "Dashboard",
+  //     url: "/dashboard",
+  //     active: false,
+  //   },
+  //   {
+  //     label: "Community",
+  //     url: "/community",
+  //     active: false,
+  //   },
+  //   {
+  //     label: "List a space",
+  //     url: "/listaspace",
+  //     active: false,
+  //   },
+  //   {
+  //     label: "Find a space",
+  //     url: "/allspaces",
+  //     active: false,
+  //   },
+  // ];
+
   return (
     <header id="header" className="fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
         {/* <h1 class="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
+
         <Link to="/">
           <a href className="logo">
             <img src="assets/img/logo.webp" alt="" className="img-fluid" />
@@ -19,15 +43,36 @@ const Navbar = () => {
         </Link>
         <nav id="navbar" className="navbar">
           <ul>
+            {/* {NavbarItems.map((item, index) => {
+              console.log(item.url);
+              return (
+                <>
+                  <Link to={`/${item.url}`} key={index}>
+                    <li>
+                      <a
+                        className={`px-2 py-4 text-blueGray-500 hover:text-blueGray-600 scrollto  ${
+                          router.asPath === item.url
+                            ? "text-blueGray-600"
+                            : "text-blueGray-500"
+                        }`}
+                        href
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                  </Link>
+                </>
+              );
+            })} */}
             <Link to="/dashboard">
               <li>
-                <a
-                  className="nav-link scrollto"
-                  href="community.html"
+                <p
+                  className="nav-link scrollto visited:text-black active:text-black focus:text-black"
                   style={{ fontWeight: "bold" }}
                 >
                   Dashboard
-                </a>
+                </p>
               </li>
             </Link>
             <Link to="/community">
