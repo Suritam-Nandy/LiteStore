@@ -54,13 +54,13 @@ const Sidebar = () => {
       {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
       <div
         className={`${
-          open ? "sm:flex -left-72  " : ""
-        } md:w-1/5 xl:w-2/12 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex  pb-2`}
+          open ? " -left-72  " : ""
+        }  md:w-1/5 xl:w-2/12 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between    pb-2`}
       >
         <div
           className={`${
-            open ? "sm:flex -mr-7 " : ""
-          } h-10 w-10  bg-gray-800 absolute -right-10   mt-2  flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer`}
+            open ? "sm:flex -mr-7 -right-10" : "left-0"
+          } xl:hidden flex h-10 w-10  bg-gray-800 absolute    mt-2  items-center shadow rounded-tr rounded-br justify-center cursor-pointer`}
           id="mobile-toggler"
           onClick={() => setOpen(!open)}
         >
