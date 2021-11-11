@@ -533,7 +533,7 @@ th {
   color: #fff;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 420px) {
   .mobile-nav-toggle {
     display: block;
   }

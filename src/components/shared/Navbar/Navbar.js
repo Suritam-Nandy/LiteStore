@@ -1,9 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+
+import { Link, useHistory } from "react-router-dom";
 import { useFirebase } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  let history = useHistory();
+
+  const [open, setOpen] = useState(false);
+  useEffect(() =>
+    history.listen(() => {
+      setOpen(false);
+    })
+  );
+  console.log(open);
+
   const firebase = useFirebase();
   const role = useSelector((state) => state.firebase.profile.role);
 
@@ -35,12 +47,12 @@ const Navbar = () => {
       <div className="container d-flex align-items-center justify-content-between">
         {/* <h1 class="logo"><a href="index.html" style="font-weight: 500;">LiteStore</a></h1> */}
         {/* Uncomment below if you prefer to use an image logo */}
-
         <Link to="/">
           <a href className="logo">
             <img src="assets/img/logo.webp" alt="" className="img-fluid" />
           </a>
         </Link>
+
         <nav id="navbar" className="navbar">
           <ul>
             {/* {NavbarItems.map((item, index) => {
@@ -300,10 +312,54 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <i className="fas fa-list mobile-nav-toggle" />
+          <button type="button" onClick={() => setOpen(!open)}>
+            <i className="fas fa-list mobile-nav-toggle" />
+          </button>
         </nav>
         {/* .navbar */}
       </div>
+      {open && (
+        <nav>
+          <ul
+            className={`${
+              open ? "block" : "hidden"
+            } list-reset md:flex md:items-center md:justify-center `}
+          >
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/dashboard"
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/community"
+              >
+                Community
+              </Link>
+            </li>
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/allspaces"
+              >
+                Find a space
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };
