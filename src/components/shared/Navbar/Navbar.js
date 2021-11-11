@@ -321,9 +321,7 @@ const Navbar = () => {
       {open && (
         <nav>
           <ul
-            className={`${
-              open ? "block" : "hidden"
-            } list-reset md:flex md:items-center md:justify-center `}
+            className={` list-reset md:flex md:items-center md:justify-center `}
           >
             <li className="md:ml-2">
               <Link
