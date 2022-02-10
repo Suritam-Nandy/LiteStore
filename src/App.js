@@ -12,6 +12,8 @@ import { Provider } from "react-redux";
 import store, { rrfProps } from "./store";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import Login from "./auth/Login";
+import LoginPage from "./pages/LoginPage";
+
 import Signup from "./auth/SignUp";
 
 // import ListedSpaces from "./components/listedSpaces/listedspaces";  <-- all places -->  #works fine
@@ -97,7 +99,8 @@ function App() {
             <PrivateRoute exact path="/myspaces" component={MySpaces} />
             <PrivateRoute exact path="/payments" component={Payments} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login/:role" component={Login} />
+            <Route exact path="/login" component={LoginPage} />
             {/* <Route component={NotFound} /> */}
           </Switch>
         </BrowserRouter>

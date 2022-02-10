@@ -47,16 +47,25 @@ const Sidebar = () => {
   }
 
   const [open, setOpen] = useState(false);
-  // console.log(open);
+  console.log(open);
   return (
     <>
       {/* Sidebar starts */}
       {/* Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] */}
       <div
         className={`${
-          open ? "sm:flex" : "hidden"
-        }  w-64 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between  sm:flex h-screen pb-72`}
+          open ? " -left-72  " : ""
+        }  md:w-1/5 xl:w-2/12 absolute mt-16 sm:relative bg-gray-800 shadow md:h-full flex-col justify-between    pb-2`}
       >
+        <div
+          className={`${
+            open ? "sm:flex -mr-7 -right-10" : "left-0"
+          } xl:hidden flex h-10 w-10  bg-gray-800 absolute    mt-2  items-center shadow rounded-tr rounded-br justify-center cursor-pointer`}
+          id="mobile-toggler"
+          onClick={() => setOpen(!open)}
+        >
+          <FiMenu className="text-white" />
+        </div>
         <div className="px-8 ">
           <div className="h-16 w-full pt-5 mt-1.5 flex items-center flex-col">
             <h1 className="text-4xl text-white">{role}</h1>

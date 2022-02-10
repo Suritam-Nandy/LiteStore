@@ -37,12 +37,12 @@ const Signup = (props) => {
         type: "popup",
       })
       .then((resp) => {
-        return firestore.collection("users").doc(resp.user.uid).update({
+        firestore.collection("users").doc(resp.user.uid).update({
           role: role,
           createdAt: firestore.FieldValue.serverTimestamp(),
         });
+        history.push("/dashboard");
       });
-    history.push("/dashboard");
   };
   const signInWithFacebook = () => {
     firebase
@@ -95,9 +95,6 @@ const Signup = (props) => {
   return (
     <>
       <div className=" mx-auto px-4 h-full">
-        <Link to="/allspaces" className="dropdown-item">
-          Listed Spaces
-        </Link>
         <div className="flex content-center items-center justify-center min-h-100 h-screen">
           <div className="w-full lg:w-4/12 px-4 items-center ">
             <div className="relative container flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">

@@ -1,11 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+
+import { Link, useHistory } from "react-router-dom";
 import { useFirebase } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  let history = useHistory();
+
+  const [open, setOpen] = useState(false);
+  useEffect(() =>
+    history.listen(() => {
+      setOpen(false);
+    })
+  );
+  console.log(open);
+
   const firebase = useFirebase();
   const role = useSelector((state) => state.firebase.profile.role);
+
+  // const NavbarItems = [
+  //   {
+  //     label: "Dashboard",
+  //     url: "/dashboard",
+  //     active: false,
+  //   },
+  //   {
+  //     label: "Community",
+  //     url: "/community",
+  //     active: false,
+  //   },
+  //   {
+  //     label: "List a space",
+  //     url: "/listaspace",
+  //     active: false,
+  //   },
+  //   {
+  //     label: "Find a space",
+  //     url: "/allspaces",
+  //     active: false,
+  //   },
+  // ];
 
   return (
     <header id="header" className="fixed-top">
@@ -17,17 +52,39 @@ const Navbar = () => {
             <img src="assets/img/logo.webp" alt="" className="img-fluid" />
           </a>
         </Link>
+
         <nav id="navbar" className="navbar">
           <ul>
+            {/* {NavbarItems.map((item, index) => {
+              console.log(item.url);
+              return (
+                <>
+                  <Link to={`/${item.url}`} key={index}>
+                    <li>
+                      <a
+                        className={`px-2 py-4 text-blueGray-500 hover:text-blueGray-600 scrollto  ${
+                          router.asPath === item.url
+                            ? "text-blueGray-600"
+                            : "text-blueGray-500"
+                        }`}
+                        href
+                        style={{ fontWeight: "bold" }}
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                  </Link>
+                </>
+              );
+            })} */}
             <Link to="/dashboard">
               <li>
-                <a
-                  className="nav-link scrollto"
-                  href="community.html"
+                <p
+                  className="nav-link scrollto visited:text-black active:text-black focus:text-black"
                   style={{ fontWeight: "bold" }}
                 >
                   Dashboard
-                </a>
+                </p>
               </li>
             </Link>
             <Link to="/community">
@@ -255,10 +312,52 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <i className="fas fa-list mobile-nav-toggle" />
+          <button type="button" onClick={() => setOpen(!open)}>
+            <i className="fas fa-list mobile-nav-toggle" />
+          </button>
         </nav>
         {/* .navbar */}
       </div>
+      {open && (
+        <nav>
+          <ul
+            className={` list-reset md:flex md:items-center md:justify-center `}
+          >
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/dashboard"
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/community"
+              >
+                Community
+              </Link>
+            </li>
+            <li className="md:ml-2">
+              <Link
+                className="block no-underline hover:underline py-2 text-gray-darkest hover:text-black md:border-none md:p-0 md:text-xl md:font-semibold"
+                to="/allspaces"
+              >
+                Find a space
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };
